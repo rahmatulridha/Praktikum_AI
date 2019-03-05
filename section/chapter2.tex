@@ -119,5 +119,144 @@ Misalnya, dalam contoh di bawah ini, decision tree belajar dari data untuk mempe
 \end{figure}
 \end{enumerate}
 
+\section{Annisa Fathoroni/1164067}
+\subsection{Teori}
+Penyelesaian Tugas Harian 3 ( No. 1-7 )
+\begin{enumerate}
+\item Binary Classification Dan Ilustrasi Gambarnya
+\begin{itemize}
+\item Pengertian Binary Classification / Klasifikasi Biner:
 
- 
+Klasifikasi biner atau binomial adalah tugas untuk mengklasifikasikan elemen-elemen dari himpunan tertentu ke dalam dua kelompok (memprediksi kelompok mana yang masing-masing dimiliki) berdasarkan aturan klasifikasi. Klasifikasi biner adalah dikotomisasi yang diterapkan untuk tujuan praktis, dan dalam banyak masalah klasifikasi biner praktis, kedua kelompok tidak simetris - daripada akurasi keseluruhan, proporsi relatif dari berbagai jenis kesalahan yang menarik. Misalnya, dalam pengujian medis, false positive (mendeteksi penyakit ketika tidak ada) dianggap berbeda dari false negative (tidak mendeteksi penyakit ketika hadir).
+
+\item Ilustrasi Gambar Binary Classification:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni1.png}
+\caption{capturing}
+\label{contoh}
+\end{figure}
+\end{itemize}
+
+\item Supervised Learning, Unsupervised Learning, Clustering Dan Ilustrasi Gambar
+\begin{itemize}
+\item Pengertian Supervised Learning dan Unsupervised Learning:
+
+Supervised learning adalah sebuah pendekatan dimana sudah terdapat data yang dilatih, dan terdapat variable yang ditargetkan sehingga tujuan dari pendekatan ini adalah mengkelompokan suatu data ke data yang sudah ada, lain halnya dengan unsupervised learning, unsupervised learning tidak memiliki data latih, sehingga dari data yang ada, kita mengelompokan data tersebut menjadi 2 bagian atau 3 bagian dan seterusnya.
+
+\begin{itemize}
+\item Ilustrasi Gambar Supervised Learning dan Unsupervised Learning:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni2.png}
+\caption{capturing}
+\label{contoh}
+\end{figure}
+
+\item Pengertian Clustering:
+
+Clustering atau klasterisasi adalah metode pengelompokan data. Menurut Tan, 2006 clustering adalah sebuah proses untuk mengelompokan data ke dalam beberapa cluster atau kelompok sehingga data dalam satu cluster memiliki tingkat kemiripan yang maksimum dan data antar cluster memiliki kemiripan yang minimum. Clustering merupakan proses partisi satu set objek data ke dalam himpunan bagian yang disebut dengan cluster. Objek yang di dalam cluster memiliki kemiripan karakteristik antar satu sama lainnya dan berbeda dengan cluster yang lain. Partisi tidak dilakukan secara manual melainkan dengan suatu algoritma clustering. Oleh karena itu, clustering sangat berguna dan bisa menemukan group atau kelompokyang tidak dikenal dalam data. Clustering banyak digunakan dalam berbagai aplikasi seperti misalnya pada business inteligence, pengenalan pola citra, web search, bidang ilmu biologi, dan untuk keamanan (security). Di dalam business inteligence, clustering bisa mengatur banyak customer ke dalam banyaknya kelompok. Contohnya mengelompokan customer ke dalam beberapa cluster dengan kesamaan karakteristik yang kuat. Clustering juga dikenal sebagai data segmentasi karena clustering mempartisi banyak data set ke dalam banyak group berdasarkan kesamaannya. Selain itu clustering juga bisa sebagai outlier detection.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni3.jpg}
+\caption{capturing}
+\label{contoh}
+\end{figure}
+\end{itemize}
+
+\item Evaluasi, Akurasi Dan Ilustrasi Gambar
+
+Evaluasi digunakan untuk memeriksa/memastikan dan mengevaluasi model dalam bekerja ( seberapa baik ) dengan mengukur keakuratannya. Kita juga dapat menanalisis kesalahan yang dibuat pada model yang dijalankan, tingkat kebingungan dan menggunakan matriks kebingunan. Accuracy akan didefinisikan sebagai presentasi kasus yang diklasifikasikan dengan benar. Accuracy lebih jelasnya adalah perbandingan kasus yang diidentifikasi benar dengan jumlah semua kasus.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni9.jpeg}
+\caption{capturing}
+\label{contoh}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni10.jpeg}
+\caption{Akurasi}
+\label{contoh}
+\end{figure}
+
+\item Cara membuat dan membaca confussion matrix:
+
+Confusion matrix adalah suatu metode yang biasanya digunakan untuk melakukan perhitungan akurasi pada konsep data mining. Rumus ini melakukan perhitungan dengan 4 keluaran, yaitu: recall, precision, acuraccy dan error rate.
+Rumus dari Error Rate = (b+c)/(a+b+c+d)
+Keterangan:
+jika hasil prediksi negatif dan data sebenarnya negatif.
+jika hasil prediksi positif sedangkan nilai sebenarnya negatif.
+jika hasil prediksi negatif sedangkan nilai sebenarnya positif.
+jika hasil prediksi positif dan nilai sebenarnya positif.
+Contoh perhitungan confusion matrix adalah sebagai berikut, yaitu pengambilan keputusan untuk mendapatkan bantuan beasiswa. Saya menggunakan dua atribut, yaitu rekening listrik dan gaji. Ini adalah pohon keputusannya:
+yang pertama kita lakukan yaitu mencari 4 nilai yaitu a,b,c, dan d:
+a= 5
+b= 1
+c= 1
+d= 3
+Kemudian kita dapat mencari nilai Recall, Precision, accuracy dan Error Rate:
+Recall =3/(1+3) = 0,75
+Precision = 3/(1+3) = 0,75
+Accuracy =(5+3)/(5+1+1+3) = 0,8
+Error Rate =(1+1)/(5+1+1+3) = 0,2
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni4.png}
+\caption{capturing}
+\label{contoh}
+\end{figure}
+
+\item Cara Bekerja K-Fold Cross Validation:
+
+Total instance dibagi menjadi N bagian. 
+Fold ke-1 adalah ketika bagian ke-1 menjadi data uji (testing data) dan 
+Sisanya menjadi data latih (training data). Selanjutnya, hitung akurasi berdasarkan porsi data tersebut. Perhitungan akurasi tersebut dengan menggunakan persamaan sebagai berikut: 
+Fold ke-2 adalah ketika bagian ke-2 menjadi data uji (testing data) dan sisanya menjadi data latih (training data). Selanjutnya, hitung akurasi berdasarkan porsi data tersebut.  
+Demikian seterusnya hingga mencapai fold ke-K. Hitung rata-rata akurasi dari K buah akurasi di atas. Rata-rata akurasi ini menjadi akurasi final.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni5.png}
+\caption{capturing}
+\label{contoh}
+\end{figure}
+
+\item Decision Tree
+
+Decision tree adalah salah satu metode klasifikasi yang paling populer karena mudah diinterpretasikan oleh manusia. Decision tree digunakan untuk pengenalan pola dan termasuk dalam pengenalan pola secara statistik.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni6.jpg}
+\caption{capturing}
+\label{contoh}
+\end{figure}
+
+\item Information Gain dan Entropi
+
+Information gain adalah salah satu atribute selection measure yang digunakan untuk memilih test atribute tiap node pada tree. Atribut dengan information gain tertinggi dipilih sebagai test atribut dari suatu node. Ada 2 kasus berbeda pada saat penghitungan Information Gain, pertama untuk kasus penghitungan atribut tanpa missing value dan kedua, penghitungan atribut dengan missing value.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni7.png}
+\caption{capturing}
+\label{contoh}
+\end{figure}
+
+Entropi adalah suatu parameter untuk mengukur tingkat keberagaman (heterogenitas) dari kumpulan data. Semakin heterogen, nilai entropi semakin besar. 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter2-AnnisaFathoroni8.png}
+\caption{capturing}
+\label{contoh}
+\end{figure}
+
+\end{itemize}
+\end{enumerate}
