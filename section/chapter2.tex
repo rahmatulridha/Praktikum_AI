@@ -119,6 +119,342 @@ Misalnya, dalam contoh di bawah ini, decision tree belajar dari data untuk mempe
 \end{figure}
 \end{enumerate}
 
+\section{scikit-learn}
+HARI KEDUA TASYA WIENDHYRA 1164086
+
+\begin{enumerate}
+
+\item
+\begin{verbatim}
+	# load dataset (student mat pakenya)
+	import pandas as pd
+	durian = pd.read_csv('student-mat.csv', sep=';')
+	len(d)
+\end{verbatim}
+
+\par
+Codingan diatas digunakan untuk mengimport atau memanggil module pandas sebagai pd. Kemudian mendefinisikan variabel "durian" yang akan memanggil dataset yang didapatkan dari data csv. Jika skrip dijalankan di Spyder, hasilnya seperti berikut 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder1.png}
+\caption{Loading Dataset}
+\label{Spyder}
+\end{figure}
+\item
+\begin{verbatim}
+	# generate binary label (pass/fail) based on G1+G2+G3 
+	# (test grades, each 0-20 pts); threshold for passing is sum>=30
+	durian['pass'] = durian.apply(lambda row: 1 if (row['G1']+row['G2']+row['G3']) 
+											>= 35 else 0, axis=1)
+	durian = durian.drop(['G1', 'G2', 'G3'], axis=1)
+	durian.head()
+\end{verbatim}
+
+\par
+ada bagian ini mendeklarasikan pass/fail nya data berdasarkan G1+G2+G3. Dengan ketentuan nilai pass nya yaitu sama dengan 30.
+kemudian pada variabel durian dideklarasikan  jika baris dengan G1+G2+G3 ditambahkan, dan hasilnya sama dengan 35 maka axisnya 1. ketika dijalankan hasilnya seperti berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder2.png}
+\caption{Generate Binary Label}
+\label{Spyder}
+\end{figure}
+\item
+\begin{verbatim}
+	# use one-hot encoding on categorical columns
+	durian = pd.get_dummies(durian, columns=['sex', 'school', 'address', 
+									'famsize', 
+									'Pstatus', 'Mjob', 'Fjob', 
+	                               'reason', 'guardian', 'schoolsup', 
+								   'famsup', 'paid', 'activities',
+	                               'nursery', 'higher', 'internet', 
+									'romantic'])
+	durian.head()
+\end{verbatim}
+\par
+One-hot encoding adalah proses di mana variabel kategorikal dikonversi menjadi bentuk yang dapat disediakan untuk algoritma ML untuk melakukan pekerjaan yang lebih baik dalam prediksi. Karena saya memuat data menggunakan panda, disini menggunakan fungsi panda pdgetdummies untuk jenis kelamin , sekolah, alamat dll. Metode head ini digunakan untuk mengembalikan baris n atas 5 secara default dari frame atau seri data. hasilnya seperti berikut 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder3.png}
+\caption{One-hot Encoding}
+\label{Spyder}
+\end{figure}
+\item
+\begin{verbatim}
+	# shuffle rows
+	durian = durian.sample(frac=1)
+	# split training and testing data
+	durian_train = d[:500]
+	durian_test = d[500:]
+
+	durian_train_att = durian_train.drop(['pass'], axis=1)
+	durian_train_pass = durian_train['pass']
+
+	durian_test_att = durian_test.drop(['pass'], axis=1)
+	durian_test_pass = durian_test['pass']
+
+	durian_att = durian.drop(['pass'], axis=1)
+	durian_pass = d['pass']
+
+	# number of passing students in whole dataset:
+	import numpy as np
+	print("Passing: %d out of %d (%.2f%%)" % (np.sum(d_pass), len(d_pass), 
+	       100*float(np.sum(d_pass)) / len(d_pass)))
+\end{verbatim}
+
+\par
+Sammple digunakan untuk mengembalikan sampel acak item dari objek. Pada bagian tersebut, terdapat train dan test yaing digunakan untuk untuk membagi train, test dan kemudian membagi lagi train ke validasi dan test.\\
+Kemudia akan mengimport module numpy sebagai np yang akan digunakan untuk mengembalikan nilai passing dari pelajar dari keseluruhan dataset dengan cara print.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder4.png}
+\caption{Shuffle Rows}
+\label{Spyder}
+\end{figure}
+\item 
+\begin{verbatim}
+	# fit a decision tree
+	from sklearn import tree
+	mangga = tree.DecisionTreeClassifier(criterion="entropy", max_depth=5)
+	mangga = mangga.fit(durian_train_att, durian_train_pass)
+\end{verbatim}
+
+\par
+Dari librari scikitlearn import modul tree. Kemudian definisikan variabel Mangga dengan menggunakan DecisionClassifier. KEmudian pada variabel mangga terdapat Criterion yaitu suatu fungsi untuk mengukur kualitas split, setelah itu agar DecisionTreeClassifier dapat dijalankan gunakan perintah fit. hasilnya seperti dibawah
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder5.png}
+\caption{Fit Decision Tree}
+\label{Spyder}
+\end{figure}
+\item
+\begin{verbatim}
+	# visualize tree
+	import graphviz
+	dot_data = tree.export_graphviz(mangga, out_file=None, label="all", 
+									impurity=False, proportion=True,
+	                                feature_names=list(durian_train_att), 
+									class_names=["fail", "pass"], 
+	                                filled=True, rounded=True)
+	graph = graphviz.Source(dot_data)
+	graph
+\end{verbatim}
+
+\par
+Graphviz adalah perangkat lunak visualisasi grafik open source. Visualisasi grafik adalah cara mewakili informasi struktural sebagai diagram grafik dan jaringan abstrak. TREEEXPORTGRAPHVIZ merupakan fungsi yang menghasilkan representasi Graphviz dari decision tree, yang kemudian ditulis ke outfile. Sehingga akan muncul gambardiagram  grafik bercabang.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder6.png}
+\caption{Fit Decision Tree}
+\label{Spyder}
+\end{figure}
+\item
+\begin{verbatim}
+	# save tree
+	tree.export_graphviz(mangga, out_file="student-performance.dot", 
+						 label="all", impurity=False, 
+						 proportion=True,
+	                     feature_names=list(durian_train_att), 
+	                     class_names=["fail", "pass"], 
+	                     filled=True, rounded=True)
+\end{verbatim}
+
+\par
+TREEEXPORTGRAPHVIZ merupakan fungsi yang menghasilkan representasi Graphviz dari decision tree, yang kemudian ditulis ke outfile.Disini akan menyimpan classifiernya, akan meng ekspor file student performance jika salah akan mengembalikan nilai fail.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder7.png}
+\caption{Fit Decision Tree}
+\label{Spyder}
+\end{figure}
+\item
+\begin{verbatim}
+	mangga.score(durian_test_att, durian_test_pass)
+\end{verbatim}
+
+\par
+Score juga disebut prediksi, dan merupakan proses menghasilkan nilai berdasarkan model pembelajaran mesin yang terlatih, diberi beberapa data input baru. Nilai atau skor yang dibuat dapat mewakili prediksi nilai masa depan, tetapi mereka juga mungkin mewakili kategori atau hasil yang mungkin. Jadi disini Mangga akan memprediksi nilai dari durian test att dan test pass. Hasilnya seperti dibawah ini
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder8.png}
+\caption{Score}
+\label{Spyder}
+\end{figure}
+\item
+\begin{verbatim}
+	from sklearn.model_selection import cross_val_score
+	nangka = cross_val_score(mangga, durian_att, durian_pass, cv=5)
+	# show average score and +/- two standard deviations away 
+	#(covering 95% of scores)
+	print("Accuracy: %0.2f (+/- %0.2f)" % (nangka.mean(), nangka.std() * 2))
+\end{verbatim}
+
+\par
+Skrip ini akan mengevaluasi score dengan validasi silang. Dimana variabel nangka berisikan crossvalscore yang merupakan fungsi pembantu pada estimator dan dataset. Kemudian akan menampilkan score rata rata dan kurang lebih dua standar deviasi yang mencakup 95 persen score. dengan menggunakan perintah print hasil yang didapatkan sebagai berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder9.png}
+\caption{Cross Val Score}
+\label{Spyder}
+\end{figure}
+\item 
+\begin{verbatim}
+	for max_depth in range(1, 20):
+	    mangga = tree.DecisionTreeClassifier(criterion="entropy", 
+			max_depth=max_depth)
+	    nangka = cross_val_score(mangga, durian_att, durian_pass, cv=5)
+	    print("Max depth: %d, Accuracy: %0.2f (+/- %0.2f)" % 
+				(max_depth, nangka.mean(), nangka.std() * 2)
+			 )
+\end{verbatim}
+
+\par
+Pada skrip ini menunjukkan seberapa dalam tree itu. Semakin dalam tree, semakin banyak perpecahan yang dimilikinya dan menangkap lebih banyak informasi tentang data. variabel mangga akan mendefinisikan tree nya yang kemudian variabel nangka akan mengevaluasi score dengan validasi silang. disini mendefinisikan decision tree dengan kedalaman mulai dari 1 hingga 20 dan merencanakan pelatihan dan menguji skor auc. Jika di run hasilnya seperti berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder10.png}
+\caption{Max Depth}
+\label{Spyder}
+\end{figure}
+\item
+\begin{verbatim}
+	depth_acc = np.empty((19,3), float)
+	i = 0
+	for max_depth in range(1, 20):
+	    mangga = tree.DecisionTreeClassifier(criterion="entropy", 
+			max_depth=max_depth)
+	    nangka = cross_val_score(t, d_att, d_pass, cv=5)
+	    depth_acc[i,0] = max_depth
+	    depth_acc[i,1] = nangka.mean()
+	    depth_acc[i,2] = nangka.std() * 2
+	    i += 1
+
+	depth_acc
+\end{verbatim}
+
+\par
+Depth acc akan membuat array kosong dengan mengembalikan array baru dengan bentuk dan tipe yang diberikan, tanpa menginisialisasi entri. Dengan 19 sebagai bentuk array kosong, 3 sebagai output data-type dan float urutan kolom-utama (gaya Fortran) dalam memori. variabel mangga yang akan melakukan split score dan nangka akan mengvalidasi score secara silang. dan pada akhirnya nangka std yaitu menghitung standar deviasi dari data yang diberikan (elemen array) di sepanjang sumbu yang ditentukan (jika ada), hasilnya sebagai berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder11.png}
+\caption{Depth in Range}
+\label{Spyder}
+\end{figure}
+\item 
+\begin{verbatim}
+	import matplotlib.pyplot as plt
+	fig, ax = plt.subplots()
+	ax.errorbar(depth_acc[:,0], depth_acc[:,1], yerr=depth_acc[:,2])
+	plt.show()
+\end{verbatim}
+
+\par
+Mengimpor librari dari matplotlib yaitu pylot sebagai plt\\
+fig dan ax menggunakan subplots untuk membuat gambar dan satu set subplot.\\
+axerrorbar akan membuat error bar
+kemudian grafik akan ditampilkan menggunakan show. Grafiknya seperti berikut
+\\
+\\
+\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/spyder12.png}
+\caption{Matplotlib}
+\label{Spyder}
+\end{figure}
+\end{enumerate}
+
+
+\section{Penanganan Error}
+HARI KEDUA TASYA WIENDHYRA 1164086
+\subsection{Error Graphviz}
+\begin{enumerate}
+	\item
+Berikut ini merupakan eror yang didapatkan saat menjalankan graphviz pada Spyder
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/erorspyder1.png}
+\caption{Error Graphviz}
+\label{Error}
+\end{figure}
+	\item
+Pada gambar diatas kode erornya adalah ExecutableNotFound failed to execute dot Tsvg. Eror ini terjadi karena tidak terdaftarnya environment variable dari Graphviz pada PATH di PC.
+	\item
+Solusi yang bisa dilakukan untuk mengatasi eror tersebut adalah sebagai berikut : \\
+\begin{itemize}
+\item
+Buka Folder dimana Anaconda2 terinstall. Disini Anacondanya terinstal di folder E
+\item
+Kemudian, pada Anaconda2 buka Library/Bin/graphviz
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/solusi3.png}
+\caption{Folder Graphviz}
+\label{Eror}
+\end{figure}
+\item
+Salin alamat tersebut, kemudian buka Environment Variable dan Edit. 
+\item
+Pada bagian PATH pilih edit, dan salin alamat tersebut seperti berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/solusi4.png}
+\caption{Menambahkan Graphviz kePATH}
+\label{Eror}
+\end{figure}
+\item
+Klik ok, kemudian restart Spyder dan jalankan kembali Skrip, maka hasilnya akan seperti berikut dan eror berhasil diselesaikan
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/solusi5.png}
+\caption{Evaluasi Eror}
+\label{Eror}
+\end{figure}
+\end{itemize}
+\end{enumerate}
+
+\subsection{Error File Not Exist}
+\begin{enumerate}
+	\item
+Berikut ini merupakan eror yang didapatkan saat menjalankan file csv sebagai dataset
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/erorspyder2.png}
+\caption{Error File Not Exist}
+\label{Error}
+\end{figure}
+	\item
+Pada gambar diatas kode erornya adalah IOError File student csv does not exist. Eror ini terjadi karena file yang dituju tidak berada didalam file yang salam dengan skrip ataupun filenya belum didefinisikan.
+	\item
+Solusi yang bisa dilakukan untuk mengatasi eror tersebut adalah sebagai berikut : \\
+\begin{itemize}
+\item
+Buka Spyder, kemudian pada pojok kanan atas ada kolom sebagai berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/solusi6.png}
+\caption{Kolom Direktori}
+\label{Eror}
+\end{figure}
+\item
+Pada kolom tersebut buka folder dimana file csv atau datasetnya tersimpan. Pada tutorial ini alamat foldernya sebagai berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/solusi7.png}
+\caption{Memasuki Direktori Dataset}
+\label{Eror}
+\end{figure}
+\item
+Kemudian jalankan lagi skrip tadi, akan berhasil seperti dibawah ini dan eror terselesaikan
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/solusi8.png}
+\caption{Evaluasi Error}
+\label{Eror}
+\end{figure}
+\end{itemize}
+\end{enumerate}
+
 \section{Annisa Fathoroni/1164067}
 \subsection{Teori}
 Penyelesaian Tugas Harian 3 ( No. 1-7 )
@@ -353,3 +689,6 @@ Penyelesaian Tugas Harian 3 ( No. 1-7 )
 \par information gain didasarkan pada penurunan entropi setelah dataset dibagi pada atribut. Membangun pohon keputusan adalah semua tentang menemukan atribut yang mengembalikan perolehan informasi tertinggi. Sedangkan Entropi itu dibangun dari atas ke bawah dari simpul akar dan melibatkan mempartisi data ke dalam himpunan bagian yang berisi instance dengan nilai yang sama yaitu homogen. 
 \end{itemize}
 \end{enumerate}
+
+
+
