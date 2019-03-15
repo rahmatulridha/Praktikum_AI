@@ -360,16 +360,6 @@ Hasilnya sebagai berikut
 \end{figure}
 \end{itemize}
 
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-
-
-\usepackage{natbib}
-\usepackage{graphicx}
-\usepackage{listings}
-
-\begin{document}
-
 \section{Annisa Cahyani/1164066}
 \subsection{Teori}
 Penyelesaian Tugas Harian 5 ( No. 1-6 )
@@ -378,23 +368,20 @@ Penyelesaian Tugas Harian 5 ( No. 1-6 )
 \begin{itemize}
 \item Pengertian Random Forest:
 \par Random forest (RF) adalah suatu algoritma yang digunakan pada klasifikasi data dalam jumlah yang besar. Klasifikasi random forest dilakukan melalui penggabungan pohon (tree) dengan melakukan training pada sampel data yang dimiliki. Penggunaan pohon (tree) yang semakin banyak akan mempengaruhi akurasi yang akan didapatkan menjadi lebih baik. Penentuan klasifikasi dengan random forest diambil berdasarkan hasil voting dari tree yang terbentuk.
-
-\par
 \end{itemize}
 \item Cara Membaca Dataset, Dan artikan makna setiap file dan isinya.
+\end{enumerate}
 \begin{itemize}
 \item Cara Membaca Dataset :
+\end{itemize}
 \par Membaca Dataset
 \begin{enumerate}
-\item Langakh-langkah  yang harus di lakukan yaitu:
+\item Langkah-langkah  yang harus di lakukan yaitu:
 \begin{itemize}
 \item Pertama kita harus membuka Aplikasi yang digunakan untuk membuka datasetnya terlebih dahulu 
 \item saya menggunakan spyder dari Anaconda Navigator
 \item kemudian kita import libraries seperti numphy, pandas, matplotlib dll ( sesuai yang dibutuhkan ).
 \item lalu untuk memasukkan kode python yang akan digunakan untuk membaca file csv yang berada pada dataset 
-
-
-\par
 \end{itemize}
 \item Cross Validation Dan Ilustrasi Gambar :
 \begin{itemize}
@@ -412,9 +399,6 @@ Penyelesaian Tugas Harian 5 ( No. 1-6 )
 \par 
 \par
 \item SVM ( 29 \% )
-\par 
-
-\par
 \end{itemize}
 \item Confusion Matrix Dan Ilustrasinya :
 \begin{itemize}
@@ -437,6 +421,439 @@ Penyelesaian Tugas Harian 5 ( No. 1-6 )
 \item Pengertian Voting pada Random Forest :
 \par Voting pada random forest yaitu suatu penetuan hasil klasifikasi yang akan diambil atau hasil dari hasil pengklasifikasian data
 \par 
-
+\end{itemize}
 \end{enumerate}
+
+\section{Praktek Program}
+\section{Tasya Wiendhyra / 1164086}
+HARI KEDUA PRAKTEK MINGGU KETIGA
+\subsection{Aplikasi Sederhana Menggunakan Pandas}
+Disini saya akan membuat program sederhana menggunakan Pandas yaitu untuk memilih baris dari DataFrame yang diberikan berdasarkan value di salah satu kolom.
+\begin{lstlisting}[caption=Code Program Sederhana Pandas,label={lst:3.1}]
+import pandas as pd
+d = {'kol1': [1, 4, 3, 4, 5], 'kol2': [4, 5, 6, 7, 8], 'kol3': [7, 8, 9, 0, 1]}
+df = pd.DataFrame(data=d)
+print("Original DataFrame")
+print(df)
+print('Baris Untuk kolom2 dengan value 7')
+print(df.loc[df['kol2'] == 7 ] )
+\end{lstlisting}
+Dari code diatas dapat dijelaskan perbarisnya sebagai berikut :\\
+\begin{itemize}
+\item
+Baris pertama, yaitu import pandas yang artinya kita akan mengimport librari Pandas dari python dengan inisiasi pd.
+\item
+Variabel d didefinisikan data data untuk kolom 1, kolom2, dan kolom3 
+\item
+Variabel df akan mengubah data pada variabel d disejajarkan menjadi baris dan kolom dengan menggunakan pd dataframe.
+\item
+Baris selanjutnya yaitu akan mencetak atau menampilkan tulisan Original dataFrame pada jendela konsol.
+\item
+Print df artinya akan mencetak atau menampilkan DataFrame dari data yang telah dibuat tadi.
+\item
+Baris selanjutnya yaitu akan mencetak atau menampilkan tulisan Baris Untuk kolom2 dengan value 7 pada jendela konsol.
+\item
+Baris terakhir akan menampilkan data yang telah disortir berdasarkan perintah. Dimana hanya akan menampilkan data yang terdapat value 7 pada kolom 2.
+\end{itemize}
+
+Hasilnya sebagai berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/praktek1.png}
+\caption{Aplikasi Sederhana Menggunakan Pandas}
+\label{Praktek}
+\end{figure}
+
+\subsection{ Aplikasi Sederhana Menggunakan Numpy}
+Program yang akan dibuat yaitu menentukan atau menemukan  nilai yang sama dari dua array . dapat dilihat dalam lsting \ref{lst:3.2}.
+\begin{lstlisting}[caption=Code Program Sederhana Numpy,label={lst:3.2}]
+import numpy as np
+array1 = np.array([0, 10, 20, 40, 60])
+print("Array1: ",array1)
+array2 = np.array([10, 30, 40])
+print("Array2: ",array2)
+print("Data Yang Sama Dari Kedua Array Adalah:")
+print(np.intersect1d(array1, array2))
+\end{lstlisting}
+
+Dari code diatas dapat dijelaskan perbarisnya sebagai berikut :\\
+\begin{itemize}
+\item
+Baris pertama, yaitu import numpy yang artinya kita akan mengimport librari Numpy dari python dengan inisiasi np.
+\item
+Variabel array1 berisikan np array yang dimana akan membuat sebuah Array berisikan value yang telah disebutkan.
+\item
+Akan mencetak tulisan "Array1" dan menampilkan data dari variabel array1.
+\item
+Variabel array2 berisikan np array yang dimana akan membuat sebuah Array berisikan value yang telah disebutkan.
+\item
+Akan mencetak tulisan "Array2" dan menampilkan data dari variabel array2.
+\item
+Baris selanjutnya akan mencetak dan menampilkan tulisan "Data Yang Sama Dari Kedua Array Adalah:" pada jendela konsol.
+\item
+Dan yang terakhir np intersect1d akan menampilkan irisan dari array1 dan array2
+\end{itemize}
+
+Hasilnya sebagai berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/praktek2.png}
+\caption{Aplikasi Sederhana Menggunakan Numpy}
+\label{Praktek}
+\end{figure}
+\subsection{Aplikasi Sederhana Menggunakan Matplotlib}
+Program yang akan dibuat yaitu membuat dua baris atau lebih dengan lebar dan warna yang berbeda. Code lengkap pada lsting \ref{lst:3.3}
+\begin{lstlisting}[caption=Code Program Sederhana Matplotlib,label={lst:3.3}]
+import matplotlib.pyplot as plt
+# line 1 points
+x1 = [10,20,30]
+y1 = [20,40,10]
+# line 2 points
+x2 = [10,20,30]
+y2 = [40,10,30]
+# Set the x axis label of the current axis.
+plt.xlabel('x - Cintaku')
+# Set the y axis label of the current axis.
+plt.ylabel('y - Cintamu')
+# Set a title 
+plt.title('Dua Baris Atau Lebih Dengan Lebar Dan Warna Yang Berbeda Guys ')
+# Display the figure.
+plt.plot(x1,y1, color='salmon', linewidth = 3,  label = 'line1 lebar 3')
+plt.plot(x2,y2, color='mediumvioletred', linewidth = 5,  label = 'line2 lebar 5')
+# show a legend on the plot
+plt.legend()
+plt.show()
+\end{lstlisting}
+Dari code diatas dapat dijelaskan sebagai berikut :\\
+\begin{itemize}
+\item
+Pertama tama yaitu akan meng import librari Pyplot dari  Matplotlib sebagai plt.
+\item
+Variabel x1 dan y1 akan berisikan value untuk titik atau point dari garis 1 nya.
+\item
+Begitu juga dengan variabel x2 dan y2 akan berisikan value untuk titik atau point dari garis 2 nya.
+\item
+Plt.xlabel akan mengatur label sumbu x dari axis saat ini dengan nama x Cintaku.
+\item
+Plt.ylabel akan mengatur label sumbu y dari axis saat ini dengan nama x Cintamu.
+\item
+Plt title akan mendefinisikan title atau judul dari grafik ini.
+\item
+plt plot akan menampilkan figurenya. Untuk line 1 diberi warna salmon dengan lebar garisnya 3 cm diberi label "line1 lebar 3". Dan untuk  line 2 diberi warna mediumvioletred dengan lebar garisnya 5 cm diberi label "line2 lebar 5".
+\item
+plt legend untuk menampilkan legend 
+\item
+Plt show digunakan untuk menampilkan grafik pada saat skrip dijalankan.
+\end{itemize}
+
+Hasilnya sebagai berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{figures/praktek3.png}
+\caption{Aplikasi Sederhana Menggunakan Matplotlib}
+\label{Praktek}
+\end{figure}
+\subsection{Menjalankan Program Klasifikasi Random Forest}
+Berikut adalah output dari percobaan Random Forest yang telah dilakukan
+\begin{itemize}
+\item Jika dilihat dari outputnya, code berikut berfungsi untuk membaca data yang berupa dataset dengan format text file. Dengan mendefinisikan variabel imgatt yang berisikan value untuk membaca data, juga menggunakan code untuk skip data yang mengandung bad lines agar tidak terjadi eror pada saat pembacaan file.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf1.png}\newpage
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Output ini mengembalikan baris n teratas (5 secara default) dari dataframe imgatt.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf2.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\\
+\item Output ini menampilkan jumlah baris dan kolom dari dataframe imgatt.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf3.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\\
+\item Dari outputnya dapat dilihat bahwa variabel imgatt2 menggunakan function pivot untuk mengubah kolom jadi baris, dan baris jadi kolom dari dataframe sebelumnya.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf4.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\\
+\\
+\item Sama seperti output sebelumnya, imgatt2 head itu berfungsi untuk mengembalikan nilai atau value teratas dari dataframe imgatt2.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf5.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\\
+\\
+\\
+\\
+\item Output ini menampilkan jumlah baris dan kolom dari dataframe imgatt2
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf6.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Dan melakukan pivot yang mana imgid menjadi index yang artinya unik.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{figures/rf7.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\item Output diatas akan meload jawabannya yang berisi apakah burung itu termasuk dalam spesies yang mana. Dua kolomnya adalah imgid dan label.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf8.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Output dari percobaan sebelumnya, menunjukkan 11788 baris dan 1 kolom. Dimana kolom itu adalah jenis spesies burungnya.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf9.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Melakukan join antara imgatt2 dengan imglabels karena isinya sama. Sehingga kita akan mendapatkan data ciri dan data jawabannya atau labelnya sehingga bisa dikatekorikan supervised learning.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf10.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Output diatas akan drop label yang didepan, dan menggunakan label yang paling belakang yang baru di join.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf11.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Output berikut mengecek isinya. Ini mengecek 5 data teratas dari df att
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf12.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Output berikut mengecek isinya. Ini mengecek 5 data teratas dari df label
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf13.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Output diatas membagi menjadi dua bagian, 8000 row pertama sebagai data training sisanya sebagai data testing.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf14.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Memanggil kelas RandomForestClassifier. max features diartikan sebagai berapa banyak kolom pada setiap tree disini kolom pada setiap tree adalah 50.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf15.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Output ini melakukan fit untuk membangun random forest yang sudah ditentukan dengan maksimum fitur sebanya 50 untuk perpohonnya.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf16.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Menampilkan hasil prediksi dari random forest sebelumnya.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf17.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\item Menampilkan besaran akurasinya dari prediksi diatas atau Score perolehan dari klasifikasi.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/rf18.png}
+\caption{Program Random Forest Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsection{Menjalankan Program Confusion Matrix}
+Berikut adalah output dari percobaan Confusion Matrix yang telah dilakukan
+\begin{itemize}
+\item  Memetakan Random Forest ke dalam Confusion Matrix
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/cm1.png}
+\caption{Program Confusion Matrix Tasya}
+\label{Praktek}
+\end{figure} 
+
+\item  Melihat hasil dari gambar diatas
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/cm2.png}
+\caption{Program Confusion Matrix Tasya}
+\label{Praktek}
+\end{figure} 
+
+\item Plotting Confusion Matrix dengan Matplotlib
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/cm3.png}
+\caption{Program Confusion Matrix Tasya}
+\label{Praktek}
+\end{figure}
+
+\item Set plot sumbunya sesuai dengan nama datanya dan membaca file classes txt
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/cm4.png}
+\caption{Program Confusion Matrix Tasya}
+\label{Praktek}
+\end{figure}
+
+\item Plot hasil perubahan label
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/cm5.png}
+\caption{Program Confusion Matrix Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsection{Menjalankan Program  Klasifikasi SVM dan Decission Tree}
+Berikut adalah output dari percobaan  Klasifikasi SVM dan Decission Tree yang telah dilakukan
+\begin{itemize}
+\item Mencoba klasifikasi dengan decission tree dengan dataset yang sama dan akan muncul akurasi prediksinya.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/tree1.png}
+\caption{Program Decission Tree Tasya}
+\label{Praktek}
+\end{figure}
+
+\item Mencoba klasifikasi dengan SVM dengan dataset yang sama dan akan muncul akurasi prediksinya.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/svm1.png}
+\caption{Program SVM Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsection{Menjalankan Program Cross Validation}
+Berikut adalah output dari percobaan  Cross Validation yang telah dilakukan
+\begin{itemize}
+\item Hasil Cross Validation untuk  Random Forest
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/cv1.png}
+\caption{Program Cross Validation Tasya}
+\label{Praktek}
+\end{figure}
+
+\item Hasil Cross Validation untuk Decission Tree
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/cv2.png}
+\caption{Program Cross Validation Tasya}
+\label{Praktek}
+\end{figure}
+
+\item Hasil Cross Validation untuk SVM
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/cv3.png}
+\caption{Program Cross Validation Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsection{Menjalankan Program Komponen Informasi}
+Berikut adalah output dari percobaan Komponen Informasi yang telah dilakukan
+\begin{itemize}
+\item Dari output ini dapat mengetahui berapa banyak tree yang dibuat, berapa banyak atribut yang dipakai dan informasi lainnya
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/ki1.png}
+\caption{Program Komponen Informasi Tasya}
+\label{Praktek}
+\end{figure}
+
+\item Output berikut merupakan hasil dari plotting komponen informasi agar dapat dibaca
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/ki2.png}
+\caption{Program Komponen Informasi Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\section{Penanganan Error}
+HARI KEDUA TASYA WIENDHYRA 1164086
+\subsection{Error Index}
+\begin{enumerate}
+	\item
+Berikut ini merupakan eror yang didapatkan saat menjalankan program diatas
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/eror3.png}
+\caption{Error Index}
+\label{Error}
+\end{figure}
+	\item
+Pada gambar diatas kode erornya adalah IndentationError unexpected indent. Eror ini terjadi karena adanya inkosisten pemberian indent di kode program.
+	\item
+Solusi yang bisa dilakukan untuk mengatasi eror tersebut adalah sebagai berikut : 
+\end{enumerate}
+\begin{itemize}
+\item
+Buka file code program dan lihat pada bagian erornya
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/solusi9.png}
+\caption{File Codingan}
+\label{Eror}
+\end{figure}
+\item
+Dapat dilihat pada baris kedua terdapat spasi dibagian depan, hilangkan atau hapus spasi tersebut seperti berikut 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/solusi10.png}
+\caption{Menghapus Spasi}
+\label{Eror}
+\end{figure}
+\item Save, kemudian ketika dijalankan eror akan teratasi
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/solusi11.png}
+\caption{Eror Teratasi}
+\label{Eror}
+\end{figure}
+\end{itemize}
 
