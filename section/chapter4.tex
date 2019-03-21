@@ -1,7 +1,68 @@
 \chapter{Experiment and Result}
-brief of experiment and result.
-\section{Experiment}
-Please tell how the experiment conducted from method.
+brief of experiment and result. Chapter 4
 
-\section{Result}
-Please provide the result of experiment
+\section{Teori}
+\section{Tasya Wiendhyra/1164086}
+Hari Pertama Minggu Keempat
+\subsection{Klasifikasi Teks}
+\subsubsection{Pengertian Dan Ilustrasi}
+Merupakan salah satu tugas terpenting dalam Pemrosesan Bahasa Alami (Natural Language Processing). Ini adalah proses mengklasifikasikan string teks atau dokumen ke dalam kategori yang berbeda, tergantung pada konten string. Klasifikasi teks memiliki berbagai aplikasi, seperti mendeteksi sentimen pengguna dari tweet, mengklasifikasikan email sebagai spam atau ham, mengklasifikasikan posting blog ke dalam kategori yang berbeda, penandaan otomatis permintaan pelanggan, dan sebagainya. BErikut adalah contoh dari Klasifikasi Teks.\\
+Contohnya, misal kita ingin mencari kata dog, table, on, the . kemudian jika kata yang dimaksud sesuai maka akan menampilkan bilangan biner 1 dan jika salah 0. Seperti dibawah ini :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter4tasya1.png}
+\caption{Klasifikasi Teks Tasya}
+\label{Contoh}
+\end{figure}
+\\
+\\
+\\
+\\
+\subsection{Klasifikasi Bunga}
+Jelaskan mengapa klasifikasi bunga tidak bisa menggunakan machine learning, sertakan ilustrasi sendiri.\\
+Dikarenakan tidak semua bunga memliki ciri - ciri yang sama. Atau dalam kata lain terdapat data noise dalam klasifikasi bunga sehingga tidak bisa menggunakan machine learning.\\
+Contohnya Anggrek memiliki warna ungu, dengan jumlah kelopak 5. Kemudian ada bunga warna ungu dengan jumlah kelopak yang sama namun ternyata bukan anggrek dan kategorinya banyak sekali. Bahkan ada bunga yang tidak jelas apakah warnanya sesuai atau tidak, sehingga bisa menyebabkan data noise.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter4tasya2.png}
+\caption{Klasifikasi Bunga Berwana Ungu Tasya}
+\label{Contoh}
+\end{figure}
+
+\subsection{Pembelajaran Mesin Pada Teks Kata - Kata di Youtube}
+Menggunakan teknik bag-of-words pada klasifikasi berbasis text dan kata untuk mengklasifikasikan komentar yang ada di internet sebagai spam atau bukan. Misalkan pada kolom komentar dapat di cek seberapa sering suatu kata muncul dalam kalimat. Setiap kata dapat dijadikan baris dan kolomnya ini merupakan kategori kata terbut, apakah masuk kedalam spam atau tidak. dan contoh lainnya yaitu pada Caption. dimana akan muncul subtitle secara otomatis dari youtube menggunakan sensor suara yang disesuaikan dengan kata yang telah ditentukan. Contohnya seperti berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter4tasya3.png}
+\caption{Klasifikasi Comment Spam Di Youtube Tasya}
+\label{Contoh}
+\end{figure}
+
+\subsection{Arti Score 44\% Pada Random Forest, 27\% Pada Decission Tree Dan 29\% Dari SVM}
+Itu merupakan presentase keakurasian prediksi yang dilakukan pada saat testing menggunakan label pada dataset yang digunakan. Score merupakan mendefinisikan aturan evaluasi model. Maka pada saat dijalankan akan muncuk persentase tersebut yang menunjukan keakurasian atau keberhasilan dari prediksi yang dilakukan. Jika menggunakan Random Forest maka hasilnya 40\% , jika menggunakan Decission Tree hasil prediksinya yaitu 27\% dan pada SVM 29\% .
+
+\subsection{Bag of Words}
+\subsubsection{Pengertian Dan Ilustrasi}
+Merupakan representasi teks yang menggambarkan kemunculan kata-kata dalam dokumen. ePngelompokan kata kata kedalam perhitunga, berapakali sebuah kata muncul dalam satu kalimat. Disebut "tas" kata-kata, karena informasi tentang susunan atau struktur kata dalam dokumen dibuang. Model ini hanya berkaitan dengan apakah kata-kata yang diketahui muncul dalam dokumen, bukan di mana dalam dokumen.\\
+Contohnya disini akan melihat kemunculan kata dari kalimat :
+\begin{enumerate}
+\item I Love Dogs
+\item I hate dogs and knitting
+\item Knitting is my hobby and passion. 
+\end{enumerate}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter4tasya4.png}
+\caption{Bag of Words Tasya}
+\label{Contoh}
+\end{figure}
+
+\subsection{TF-IDF}
+\subsubsection{Pengertian Dan Ilustrasi}
+TF-IDF  memberi kita frekuensi kata dalam setiap dokumen dalam korpus atau mengganti data jadi number. Ini adalah rasio berapa kali kata itu muncul dalam dokumen dibandingkan dengan jumlah total kata dalam dokumen itu. Itu meningkat seiring jumlah kemunculan kata itu di dalam dokumen meningkat. Setiap dokumen memiliki tf sendiri. Dalam ilustrasi disini saya akan mengganti contoh Bag of Words menjadi bentuk TF-IDF.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter4tasya5.png}
+\caption{Contoh TF-IDF Tasya}
+\label{Contoh}
+\end{figure}
