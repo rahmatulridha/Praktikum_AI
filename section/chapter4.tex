@@ -479,4 +479,311 @@ Pada gambar diatas Dataset StudentPerformanceExam tidak terdapat atribut student
 \end{figure}
 \end{itemize}
 
+\subsection{Annisa Fathoroni/1164067}
+Pengerjaanya Tugas Harian 8 ( No 1-8 )
+\begin{enumerate}
+\item Pembuatan Aplikasi Pandas Sederhana Dengan Menggunakan Dataset berisi 500 baris data.
+\begin{itemize}
+\item Penjelasan Code:
 
+\begin{verbatim}
+import pandas as pd
+d = pd.read_csv('tictactoe.csv', sep=',')
+
+df = pd.DataFrame(d, columns = ['top-left-square', 'top-middle-square', 'top-right-square', 'middle-left-square', 'middle-middle-square', 'middle-right-square', 'bottom-left-square', 'bottom-middle-square', 'bottom-right-square', 'Class'])
+
+dummy = pd.get_dummies (df['Class'])
+dummy.head()
+\end{verbatim}
+
+\begin{enumerate}
+\item Baris 1 : Mengimport Library Pandas sebagai pd
+\item Baris 2 : Membaca dataset ‘tictactoe’.
+\item Baris 3 : Mengambil dataframe dari library pandas.
+\item Baris 4 : Mengubah categorical menjadi integer.
+\item Baris 5 : Menampilkan 5 data teratas.
+\end{enumerate}
+\item Hasil Dari Aplikasi Sederhana Code Pandas
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/Chapter4AnnisaFathoroni20.png}
+\caption{Aplikasi Pandas-Annisa Fathoroni}
+\label{Aplikasi Pandas-Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni21.png}
+\caption{Aplikasi Pandas-Annisa Fathoroni}
+\label{Aplikasi Pandas-Annisa Fathoroni}
+\end{figure}
+\end{itemize}
+
+\item Pemecahan dataframe menjadi dua dataframe yaitu 450 row pertama dan 50 data sisa.
+\begin{itemize}
+\item Dataframe 1 : 450 row data pertama
+\item Dataframe 2 : 50 row data sisanya.
+\item Codingan Dan Penjelasannya :
+
+\begin{verbatim}
+d_train= d[:450]
+d_test= d[450:]
+\end{verbatim}
+
+\begin{enumerate}
+\item Baris 1 : Membuat variabel dengan 450 data awal untuk dijadikan data training
+\item Baris 2 : Membuat variabel dengan 50 data sisanya untuk data testing ( dimulai dari data ke 451 sampai akhir data )
+\end{enumerate}
+\item Hasil Dari Pemecahan Dataframe
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni22.png}
+\caption{Pemecahan Data Frame-Annisa Fathoroni}
+\label{Pemecahan Data Frame-Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/Chapter4AnnisaFathoroni23.png}
+\caption{Pemecahan Data Frame-Annisa Fathoroni}
+\label{Pemecahan Data Frame-Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/Chapter4AnnisaFathoroni24.png}
+\caption{Pemecahan Data Frame-Annisa Fathoroni}
+\label{Pemecahan Data Frame-Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item Vektorisasi dan klasifikasi dari Youtube Shakira dengan Decision Tree
+
+\begin{verbatim}
+import pandas as pd
+d = pd.read_csv("Youtube05-Shakira.csv")
+\end{verbatim}
+
+Penjelasan:
+
+Mendefinisikan variabel untuk memanggil Decision Tree dan melakukan pengujian lali digunakan untuk memprediksi dan hasilnya muncul dalam bentuk array. df score memunculkan akurasi prediksi yang dilakukan terhadap df.
+
+\begin{itemize}
+\item Hasil
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni29.png}
+\caption{Vektorisasi dan Klasifikasi Decision Tree-Annisa Fathoroni}
+\label{Vektorisasi dan Klasifikasi Decision Tree-Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni28.png}
+\caption{Vektorisasi dan Klasifikasi Decision Tree-Annisa Fathoroni}
+\label{Vektorisasi dan Klasifikasi Decision Tree-Annisa Fathoroni}
+\end{figure}
+\end{itemize}
+
+\item Vektorisasi dan klasifikasi dari Youtube Shakira dengan SVM
+
+\begin{verbatim}
+from sklearn import svm
+clfsvm = svm.SVC()
+clfsvm.fit(d_train_att, d_train_label)
+
+clfsvm.score(d_test_att, d_test_label)
+\end{verbatim}
+
+Penjelasan:
+
+Import SVM dari sklearn lalu melakukan fit dari d train att dan d train label atau disebut denga pengujian. Mendefinisikan variabel df untuk melakukan prediksi dataset Youtube LMFAO dengan SVM. Dan akan muncul hasil prediksinya.
+
+\begin{itemize}
+\item Hasil Dari Codingan Klasifikasi SVM
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni30.png}
+\caption{Vektorisasi Klasifikasi SVM-Annisa Fathoroni}
+\label{Vektorisasi Klasifikasi SVM-Annisa Fathoroni}
+\end{figure}
+\end{itemize}
+\item Klasifikasi dari data vektorisasi dari nomor sebelumnya dari decision tree.
+
+\begin{verbatim}
+from sklearn import tree
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(d_train_att, d_train_label)
+clf.predict(d_test_att)
+clf.score(d_test_att,d_test_label)
+\end{verbatim}
+
+Penjelasan:
+
+Mendefinisikan variabel untuk memanggil Decision Tree dan melakukan pengujian lali digunakan untuk memprediksi dan hasilnya muncul dalam bentuk array. df score memunculkan akurasi prediksi yang dilakukan terhadap df.
+
+\begin{itemize}
+\item Hasil:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni31.png}
+\caption{Klasifikasi Data Vektorisasi dari sebelumnya-Annisa Fathoroni}
+\label{Klasifikasi Data Vektorisasi dari sebelumnya-Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item Plot Confusion Matrix menggunakan Matplotlib
+
+\begin{verbatim}
+import matplotlib.pyplot as plt
+import itertools
+def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues):
+    """
+    This function prints and plots the confusion matrix.
+    Normalization can be applied by setting `normalize=True`.
+    """
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print("Normalized confusion matrix")
+    else:
+        print('Confusion matrix, without normalization')
+
+    print(cm)
+
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    #plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=90)
+    plt.yticks(tick_marks, classes)
+
+    fmt = '.2f' if normalize else 'd'
+    thresh = cm.max() / 2.
+    #for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+    #    plt.text(j, i, format(cm[i, j], fmt),
+    #             horizontalalignment="center",
+    #             color="white" if cm[i, j] > thresh else "black")
+
+    plt.tight_layout()
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+    
+
+import numpy as np
+np.set_printoptions(precision=2)
+plt.figure(figsize=(60,60), dpi=300)
+plot_confusion_matrix(cm, classes=clf, normalize=True)
+plt.show()
+\end{verbatim}
+
+Penjelasan :
+
+Fungsi ini mencetak dan memplot Confussion Matrix. Normalisasi dapat diterapkan dengan mengatur 'normalize = True'. Ada Confussion Matrik menggunakan normalisasi dan ada confussion matrik tidak menggunakan normalisasi.
+
+\begin{itemize}
+\item Hasil Program Cross Validation
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni32.jpeg}
+\caption{Plot Confusion Matrix-Annisa Fathoroni}
+\label{Plot Confusion Matrix-Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item Program Cross Validation
+\begin{verbatim}
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(clf,d_train_att,d_train_label,cv=5)
+
+skorrata2=scores.mean()
+skoresd=scores.std()
+\end{verbatim}
+
+\begin{enumerate}
+\item Baris 1 : Mengimport cross validation dari sklearn
+\item Baris 2 : Variabel scrores akan melakukan cross validation pada variabel tersebut
+\item Baris 3 : Variabel skorrata2 akan menghitung nilai rata-rata dari variabel scores menggunakan function mean
+\item Baris 4 : Skoresd menghitung standar dari data yang diberikan
+\end{enumerate}
+
+\begin{itemize}
+\item Hasil Program Cross Validation
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni25.png}
+\caption{Cross Validation-Annisa Fathoroni}
+\label{Cross Validation-Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni26.png}
+\caption{Cross Validation-Annisa Fathoroni}
+\label{Cross Validation-Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni27.png}
+\caption{Cross Validation-Annisa Fathoroni}
+\label{Cross Validation-Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item Program Pengamatan Komponen Informasi
+
+Penjelasan :
+
+Max featuresnya dari range 5 sampai 50, n estimators dengan range 10 sampai 150. Variabel rf params berisikan function np empty dimana akan membuat array baru berisikan tipe yang didefinisikan dengan random value. Mendefinisika i dimulai dari angka 0 dimana max features dan n estimators menggunakan klasifikasi randomforestclassifier menggunakan data prediksi. Mendefinisikan rfparams untuk max features , n estimators, nilai rata dan std
+
+\begin{itemize}
+\item Hasil:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni34.png}
+\caption{Program Pengamatan-Annisa Fathoroni}
+\label{Program Pengamatan-Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item PENANGANAN ERROR.
+\begin{itemize}
+\item Kode Error serta jenis error:
+ 
+\begin{verbatim}
+FileNotFoundError: File b'dataset/Youtube05-Shakira.csv' does not exist
+\end{verbatim}
+
+\begin{itemize}
+\item Solusi penanganan error:
+
+Hapus dataset pada code dan pastikan satu folder.
+
+\end{itemize}
+\item Screenshoot Error :
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.6]{figures/Chapter4AnnisaFathoroni33.jpeg}
+\caption{Error/Annisa Fathoroni}
+\label{contoh}
+\end{figure}
+
+\end{itemize}
+\end{enumerate}
