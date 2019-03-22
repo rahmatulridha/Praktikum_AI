@@ -785,5 +785,220 @@ Hapus dataset pada code dan pastikan satu folder.
 \label{contoh}
 \end{figure}
 
+
+\subsection{Praktek Annisa Cahyani 1164066}
+Pengerjaan Tugas Harian 8 ( Nomor 1-8 )
+\begin{enumerate}
+\item Pembuatan Aplikasi Pandas Sederhana Dengan Menggunakan Dataset yang  berisi 500 baris data.
+\begin{itemize}
+\item Penjelasan Code Pada Pandas Sederhana
+\begin{enumerate}
+\item Pada baris yang pertama menjelaskan tentang  mengimport Library Pandas sebagai pd
+\item Pada baris yang kedua itu  Membuat variabel cahya yang dimana membaca dataset berupa format csv dengan separator.
+\item Pada baris yang ketiga yaitu untuk  menampilkan hasil dari variabel cahya ( berupa jumlah/angka karena len )
+\item Pada baris yang keempat yaitu untuk membuat variabel cahya yang dimana mengambil atau  memanggil DataFrame dari library pd ( pandas ) dengan parameter variabel.
+\end{enumerate}
+\item Hasil Dari Aplikasi Sederhana Code Pandas Yaitu
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/cahyani1.jpg}
+\caption{cahyani1}
+\label{cahyani1}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\item Pemecahan dataframe menjadi dua dataframe yaitu 450 row pertama dan 50 data sisa.
+\begin{itemize}
+\item Pada dataframe yang pertama yaitu  450 row dari data pertama
+\item Pada dataframe yang kedua yaitu sebanyak  50 row dari data sisanya.
+\item Codingan Dan Penjelasannya yaitu :
+\begin{enumerate}
+\item Pada baris yang pertama yaitu untuk membuat suatu variabel cahya_test dari variabel cahya_train dengan 450 data awal untuk dijadikan data training
+\item Pada baris yang kedua yaitu untuk membuat variabel cahya_test dari variabel cahya_train dengan 50 data yang sisanya untuk data pada bagian testing yang dimana dimulai dari data ke 451 sampai akhir data 
+\end{enumerate}
+\item Hasil Dari Pemecahan Dataframe
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/cahyani2.jpg}
+\caption{cahyani2}
+\label{cahyani2}
+\end{figure}
+\end{itemize}
+\par
+\par
+\item Vektorisasi Klasifikasi Data 
+\par
+\begin{lstlisting}
+from sklearn import tree
+clf = tree.DecisionTreeClassifier(criterion="entropy", max_depth=5)
+clf = clf.fit(d_train_att, d_train_label)
+\end{lstlisting}
+\par Penjelasan tersebut sesuai dengan hasil.
+\begin{enumerate}
+\item yang dimana hasil dari impor tree dari sklearn. Dan untuk mendefinisikan variabel clf berfungsi untuk memanggil pada bagian Decission Tree Classifier serta melakukan fit atau suatu pengujian.
+\item yang dimana akan menggunakan prediksi padabagian clf dengan menggunakan function predict untuk memprediksi suatu test. Dan hasilnya akan muncul dalam bentuk array.
+\item pada bagian clf score akan memunculkan sebuah akurasi suatu prediksi
+\end{enumerate}
+\par
+\begin{itemize}
+\item Hasil Program Yang Menggunakan Decision Tree
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/cahyani3.jpg}
+\caption{cahyani3}
+\label{cahyani3}
+\end{figure}
+\par
+\par
+\par
+\end{itemize}
+\par
+\par
+\item Vektorisasi Dengan Mengguakan Klasifikasi SVM
+\par
+\begin{lstlisting}
+from sklearn import svm
+clfsvm = svm.SVC()
+clfsvm.fit(d_train_att, d_train_label)
+clfsvm.score(d_test_att, d_test_label)
+\end{lstlisting}
+\par Penjelasan adalah :
+\begin{enumerate}
+\item yang pertama kita lakukan pengimportan module SVM dari sklearn
+\item Kemudian melakukan fit dari d train att dan d train label atau disebut dengan sebuah  pengujian
+\end{enumerate}
+\par
+\begin{itemize}
+\item Hasil Dari Klasifikasi SVM
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/Cahyani4.jpg}
+\caption{Cahyani4}
+\label{Cahyani4}
+\end{figure}
+\par
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\item Vektorisasi Yang Menggunakan Klasifikasi Decision Tree
+\par
+\begin{lstlisting}
+from pada sklearn import tree
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(d_train_att, d_train_label)
+clf.predict(d_test_att)
+clf.score(d_test_att,d_test_label)
+\end{lstlisting}
+\par Penjelasannya adalah  :
+\begin{enumerate}
+\item Pada hasil impor tree dari sklearn tersebut. Dan melauakan pendefinisikan variabel clf untuk memanggil dari Decission Tree Classifier dan melakukan sebuah fit atau suatu pengujian.
+\item yang di dalamnya akan menjelaskan bahwa yang digunakan prediksi untuk clf dengan menggunakan function predict untuk memprediksi suatu test.
+\item kemudian untuk yang clf score akan memunculkan akurasi prediksi yang dilakukan terhadap clf
+\end{enumerate}
+\begin{itemize}
+\item Hasil Program Cross Validation
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/cahyani5.jpg}
+\caption{cahyani5}
+\label{cahyani5}
+\end{figure}
+\par
+\par
+\par
+\end{itemize}
+\par
+\par
+\item Plot Confusion Matrix
+\begin{itemize}
+\par Pot Confusion Matrix yaitu fungsi dari code tersebut  untuk mencetak dan memplot Confussion Matrix. Yang dimana normalisasi dapat diterapkan dengan mengaturnya seperti `normalize = True`.
+\item Hasil Plot Dari Confusion Matrix
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.25]{figures/cahyani6.jpg}
+\caption{cahyani6}
+\label{cahyani6}
+\end{figure}
+\par
+\end{itemize}
+\par
+\par
+\item Program Cross Validation
+\par Pada bagian codingan ataupun hasil dari cross validation berikut, akan menjelaskan dimana variabel score tersebut akan melakukan sebuah cross validation pada variabel clf, d train att, dan train label. 
+\begin{itemize}
+\item Hasil Program Cross Validation
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/cahyani7.jpg}
+\caption{cahyani7}
+\label{cahyani7}
+\end{figure}
+\par
+\end{itemize}
+\par
+\par
+\item Program Pengamatan Komponen Informasi
+\par Penjelasannya adalah :
+\begin{itemize}
+\item Hasil Dari Program Cross Validation
+\par
+\item Pada bagian max featuresnya dari range 4 yaitu sampai 50
+\item Sedangkan Untuk n estimators dengan range 10 yaitu sampai 70
+\item Kemudian pada variable bagian rf params yang berisikan function np empty yang dimana akan membuat array baru yang berisikan sebuah tipe yang telah didefinisikan dengan random value
+\item Untuk mendefinisikan pada nilai i dimulai dari angka 0 yang dimana max features dan n estimators menggunakan sebuah  klasifikasi randomforestclassifier yang menggunakan sebuah data prediksi.
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/cahyani8.jpg}
+\caption{cahyani8}
+\label{cahyani8}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\end{enumerate}
+
+\par
+\par
+\par
+\subsection{Penanganan Yang Error Cahya}
+Untuk Menangani dan Mengatasi Error Pada Praktek yaitu 
+\begin{enumerate}
+\item Error yang pertama :
+\begin{itemize} 
+\item Code Yang Error yaitu :
+\begin{lstlisting}
+import pada pandas as pd
+d = pd.read_csv("dataset/Youtube04-Eminem.csv")
+\end{lstlisting}
+\item Peringatan Yang Error :
+\begin{lstlisting}
+FileNotFoundError: File b'dataset/Youtube04-Eminem.csv' does not exist
+\end{lstlisting}
+\item Gambar Error yang pertama adalah : 
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.3]{figures/errorcahya.jpg}
+\caption{errorcahya}
+\label{errorcahya}
+\end{figure}
+\begin{itemize}
+\item Cara Penanganan error adalah :
+\begin{enumerate}
+\item Pada bagian dari codingan yang akan dieksekusi sebenarnya itu untuk membaca dataset dari Youtube04-Eminem.csv
+\item Namun, telah terdapat yang error dan hal tersebut disebabkan karena file codingan yang telah dieksekusi tidak berada pada folder yang sama dengan dataset eminem.
+\item Sehingga dengan menganti codingan pada bagian tersebut, maka tidak akan terdapat error lagi.
+\par
+\par
+\end{enumerate}
+\end{itemize}
 \end{itemize}
 \end{enumerate}
