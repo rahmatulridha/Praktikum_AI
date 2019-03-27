@@ -120,5 +120,71 @@ Skip-Gram adalah kebalikannya, yaitu mencoba memprediksi vektor kata-kata yang a
 \end{itemize}
 \par
 \par
+\end{enumerate}
 
+
+\section{Tasya Wiendhyra /1164086}
+HARI PERTAMA MINGGU KELIMA
+
+\subsection{Kenapa Kata-Kata Harus Di Lakukan Vektorisasi Beserta Ilustrasi}
+Karena ketika menggunakan algoritma machine learning tidak bisa  secara langsung menggunakan teks melainkan teks tersebut harus diubah menjadi angka. Kita membutuhkan cara untuk merepresentasikan data teks untuk algoritma pembelajaran mesin, vektorirasi membantu mengubah teks biasa kedalam bentuk vektor yang dapat dimengerti oleh komputer atau machine learning. Kita mungkin ingin melakukan klasifikasi dokumen, sehingga setiap dokumen adalah "input" dan label kelas adalah "output" untuk algoritma prediksinyai. Algoritma mengambil vektor angka sebagai input, oleh karena itu kita perlu mengkonversi dokumen menjadi vektor angka dengan panjang tetap atau sama.
+\par Untuk ilustrasinya misal,  saya memiliki kamus berisikan kata-kata {MonkeyLearn, is, not, great}, dan saya ingin membuat vektor teks "MonkeyLearn is great", saya akan memiliki vektor berikut: (1, 1, 0, 0, 1,) .
+
+\subsection{Mengapa Dimensi Dari Vektor Dataset Google Bisa Sampai 300 Beserta Ilustrasi}
+Karena di dalam satu dataset berisikan setidaknya 3 Milyar kata dan kalimat. Yang dimana dimensi berisikan kata - kata unik dari data tersebut. Maka dari itu dimensi pada dataset Google bisa mencapai 300.
+
+Untuk ilustrasinya, misalkan kita memiliki sebuah buku dengan tebal 1000 , dimana bukunya dibagi menjadi dua Chapter. Kemudian kita akan menggabungkan kata dari setiap Chapter tersebut. Maka akan didapatkan irisan yang akan berjumlah lebih dari 200. dikarenakan banyak kata yang berbeda beda.
+
+\subsection{Konsep Vektorisasi Untuk Kata}
+Konsepnya yaitu kata atau teks akan dihapuskan noisy datanya atau dihapus data yang tidak terpakai, seperti tag html jika ada, titik, koma, dll. Kemudian tokenization artinya kita akan mengelompokan kalimat menjadi token atua membagi kata kata menjadi potingan kecil. Baru setelah itu dilakukan normalisasi untuk mengubah datanya menjadi angka.
+
+Ilustrasinya, misalnya ada beberapa kalimat seperti berikut :
+\begin{itemize}
+\item There used to be Iron Age.
+
+Kemudian didapatkan token seperti berikut “There”,”was”,”to”,”be”,”used”,”Stone”,”Bronze,”Iron”,”Revolution”,”Digital”,”Age”,”of”,”Now”,”it”,”is”
+
+Maka ketika di cek pada kalimat diatas hasilya seperti berikut 
+\item There used to be iron age = [1,0,1,1,1,0,0,1,0,0,1,0,0,0,0]
+\end{itemize}
+
+\subsection{Konsep Vektorisasi Untuk Dokumen}
+Hampir mirip dengan konsep kata, namun untuk di dokumen biasanya konsepnya digunakan untuk mencari kesamaan atau memprediksi seberapa sering menculan kata dalam 2 kalimat atau 2 paragraf.
+
+Ilustrasinya, misalkan dalam sebuah artikel kita ingin mencari seberapa banyak kata "dimana" muncul. Maka dengan Doc2Vec dapat diprediksi hasilnya.
+
+\subsection{Mean Dan Standar Deviasi}
+\subsubsection{Pengertian}
+Mean adalah nilai rata-rata dari beberapa buah data. Nilai mean dapat ditentukan dengan membagi jumlah data dengan banyaknya data.
+
+Deviasi standar adalah ukuran ringkasan perbedaan setiap pengamatan dari rata-rata. Deviasi standar mengukur penyebaran data tentang nilai rata-rata. Ini berguna dalam membandingkan set data yang mungkin memiliki mean yang sama tetapi rentang yang berbeda.
+
+\subsubsection{Contoh}
+\begin{enumerate}
+\item Misalkan kita sudah menghitung tinggi anjing.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya1.png}
+\caption{Contoh Mean dan Standar Deviasi }
+\label{Teori}
+\end{figure}
+\item Tingginya dilihat dari bahu : 600mm, 470mm, 170mm, 430mm and 300mm.
+\item Kita hitung mean atau rata ratanya, dengan menjumlahkan seluruh data dan membaginya dengan jumlah n nya hasilnya yaitu 394.
+\item Kemudian kita ingin melihat berapa perbedaan tinggi dari anjing - anjing tersebut menggunakan variance. 
+\item Baru Gunakan standar deviasi didapatkan hasil 147 mm . DEngan Deviasi Standar kita bisa tahau mana anjing dengan tinggi normal dan anjing yang kekurangan tinggi.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya2.png}
+\caption{Contoh Mean dan Standar Deviasi }
+\label{Teori}
+\end{figure}
+
+\subsection{Skip-gram}
+Arsitektur model Skip-gram biasanya  mencoba untuk memprediksi kata konteks sumber (kata-kata sekitarnya) diberi kata target (kata tengah). Contohnya seperti berikut 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya3.png}
+\caption{Contoh Skipgram }
+\label{Teori}
+\end{figure}
 \end{enumerate}
