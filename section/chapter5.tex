@@ -382,6 +382,231 @@ PermuteSentences merupakan class yang digunakan unutm melakukan pengocokan secar
 \label{Praktek}
 \end{figure}
 
+\subsection{Fungsi Librari gensim TaggedDocument dan Doc2Vec}
+Doc2vec adalah algoritma unsupervised untuk menghasilkan vektor untuk kalimat / paragraf / dokumen. Dan TaggedDocument merupaka function dari Doc2Vec untuk menampilkan tag kata atau kalimat yang diinginkan dari sebuah dokumen.
+
+\begin{itemize}
+\item Impor modul TaggedDocument dan modul Doc2Vec
+\item Hasilnya seperti berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya18.png}
+\caption{TaggedDocument Tasya }
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+
+\subsection{Menambahkan data Training Dari File Dengan Doc2Vec}
+Yang harus dilakukan yaitu :
+\begin{enumerate}
+\item Import librari re atau request dari python dan import modul os untuk memungkinkan kita menggunakan operasi sistem sesuai yang dibutuhkan.
+\item Medefinisikan variabel unsup sentences yang berisikan variabel kosong.
+\item Panggil data training dan data testing dari file yang telah disediakan
+\item Kemudian coba data tersebut
+\end{enumerate}
+
+Untuk lebih jelasnya, berikut hasil percobaan dari praktek yang dilakukan
+\begin{verbatim}
+for dirname in ["/train/pos", "/train/neg", "/train/unsup", "/test/pos", "/test/neg"]:
+    for fname in sorted (os.listdir("aclImdb/"+dirname)):
+        if fname[-4:] == '.txt':
+            with open("aclImdb/"+dirname+"/"+ fname, encoding = 'UTF-8') as f:
+                sent = f.read()
+                words = extract_words(sent)
+                unsup_sentences.append(TaggedDocument(words,[dirname+"/"+fname]))
+\end{verbatim}
+\begin{itemize}
+\item Untuk skrip diatas mengambil contoh dataset dari Imdb yang kemudian memanggil data training dan data testing nya.
+\item File tersebut diambil dari folder aclImdb
+\item File yang dibuka berbentuk teks atau berekstensi txt
+\item Kemudian file yang dibuka tadi diasiasikan sebagai f
+\item variabel sent akan membaca f
+\item Variabel words akan memanggil dan mengirimkan fungsi extract words dari skrip sebelumnya
+\item KEmudian list dari unsup sentences akan diupdate dengan menambahkan objek baru dan diberi tag. berikut hasilnya
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya20.png}
+\caption{Data Training Imdb Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+\begin{itemize}
+\item Untuk contoh dibawah pun sama seperti ynag diatas, bedanya hanya untuk contoh kedua ini dilakukan proses token dan datasetnya dari review polarity.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya21.png}
+\caption{Data Training Polarity Tasya}
+\label{Praktek}
+\end{figure}
+
+\item Untuk contoh dibawah pun sama seperti yang diatas, bedanya hanya untuk contoh kedua ini dilakukan proses token dan datasetnya dari review rotten tomatoes.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya22.jpg}
+\caption{Data Training Tomatoes}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsection{Mengapa Harus Dilakukan Pengocokan Dan Pembersihan Data}
+Pengocokan dilakukan untuk mendapatkan hasil yang lebih akurat pada saat melakukan score, karena pengocokan mempengaruhi performa positif negatifnya dari scoring.\\
+
+Kemudian Pembersihan data dilakukan untuk membersihkan tag spasi ataupun data noisy yang tidak diperlukan dalam dokumen.
+\begin{itemize}
+\item Import dulu librari re atau request
+\item Kemudian Disini akan mendefinisikan function extract words untuk menghapus tag html, hapus tanda petik dan lainnya
+\item Setelah itu Data akan dirandomatau dilakukan pengocokan dengan mengimport librari modul dengan mendefinisikan class PermuteSentences. BErikut skrip lengkapnya
+\item \begin{verbatim}
+import re
+def extract_words(sent):
+    sent = sent.lower()
+    sent = re.sub(r'<[^>]+>', ' ', sent) #hapus tag html
+    sent = re.sub(r'(\w)\'(\w)', ' ', sent) #hapus petik satu
+    sent = re.sub(r'\W', ' ', sent) #hapus tanda baca
+    sent = re.sub(r'\s+', ' ', sent) #hapus spasi yang berurutan
+    return sent.split()
+
+import random
+class PermuteSentences(object):
+    def __init__(self, sents):
+        self.sents=sents
+        
+    def __iter__(self):
+        shuffled = list(self.sents)
+        random.shuffle(shuffled)
+        for sent in shuffled:
+            yield sent
+\end{verbatim}
+\item Berikut merupakan hasil dari pengocokan dan pembersihan data
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya19.png}
+\caption{Pengcokan Dan Pembersihan Data Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+
+
+\subsection{Mengapa Model Harus Di Save Dan Temporari Training Harus Dihapus}
+\begin{itemize}
+\item Sebelum model di save atau disipman lakukan pengocokan terlebih dahulu seperti berikut.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya23.jpg}
+\caption{Save Model Tasya}
+\label{Praktek}
+\end{figure}
+\item Kemudian setelah itu gunakan perintah Doc2Vec load dan memasukan nama file setelah disimpan.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya24.jpg}
+\caption{Save Model Tasya}
+\label{Praktek}
+\end{figure}
+\item Ketika model telah di save, barulah hapus temporari dengan skrip berikut. Maka hasil dari kedua praktek diatas adalah sebagi berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya25.jpg}
+\caption{Save Model HAsil Tasya}
+\label{Praktek}
+\end{figure}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya26.jpg}
+\caption{Save Model  HasilTasya}
+\label{Praktek}
+\end{figure}
+
+Hal yang dapat disimpulkan yaitu :\\
+Model disave untuk memudahkan kita dalam meng-edit file, kita tidak perlu mengetik ulang semua skrip dan tinggal membuka file tersebut jika ingin menguji ulang modelnya.\\
+Temporari training merupakan data training yang sebelumnya kita gunakan untuk mencoba skripnya, namun karena kita telah membuat modelnya dan untuk menghemat memori dilakukan penghapusan temporari training agar tidak terjadi lag ataupun hal lainnya.
+\end{itemize}
+
+
+\subsection{Infer Code}
+Infer vektor digunakan untuk mengkalkulasikan berapa vektor dari kata yang dberikan. Atau dengan kata lain mengubah kata yang diberikan menjadi bentuk vektor. Dari model yang telah dibuat\\
+\begin{itemize}
+\item Masukan skrip berikut yang artinya akan memanggil infer vector untuk mengkompres kalimat berikut menjadi bentuk vektor
+\begin{verbatim}
+model.infer_vector(extract_words("I will go home"))
+\end{verbatim}
+\item Hasilnya seperti berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya32.jpg}
+\caption{Infer Code Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsection{Cosine Similarity}
+Cosine similarity digunakan untuk melihat kesamaan atau kemiripan dari suatu kalimat/paragraf yang diinginkan. Apakah kalimat tersebut dapat dikategorikan dalam satu kategori atau tidak.
+Disini saya akan membandingkan beberapa kalimat seperti berikut :\\
+\begin{itemize}
+\item Masukan perintah berikut diamana sistem akan mengimpor cosine similarity dan kemudian gunakan function infer vector untuk membandingkan dua kalimat berikut.
+\item Hasilnya seperti berikut, data dilihat bahwa kata 
+\begin{verbatim}
+from sklearn.metrics.pairwise import cosine_similarity
+cosine_similarity(
+        [model.infer_vector(extract_words("she going to school, after wash hand"))],
+        [model.infer_vector(extract_words("Services sucks."))])
+\end{verbatim}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya27.jpg}
+\caption{Infer Code Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsection{Score Dari Cross Validation}
+\begin{itemize}
+\item Pertama kita akan mengimpor KNN RF dan numpy
+\begin{verbatim}
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_val_score
+import numpy as np
+\end{verbatim}
+\item Kemudian lakukan cek score dengan perintah berikut 
+\begin{verbatim}
+
+scores = cross_val_score(clf, sentvecs, sentiments, cv=5)
+np.mean(scores), np.std(scores)
+\end{verbatim}
+
+\item Hasilnya seprti berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya29.jpg}
+\caption{Score Cross Validation Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsection{Penanganan Error}
+ TASYA WIENDHYRA 1164086
+\subsubsection{Error MEmory}
+\begin{enumerate}
+	\item
+Berikut ini merupakan eror yang didapatkan saat menjalankan program diatas
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter5tasya31.jpg}
+\caption{Error Memory Tasya }
+\label{Error}
+\end{figure}
+\item Eror diatas merupakan memori eror dimana memori dari ram hampir terpakai semua sehingga program tidak dapat dijalankan. Cara mengatasinya yaitu
+\begin{itemize}
+\item Membatasi penggunaan memori
+\item Menambah kapasitas ram
+\item Jika terjadi blank screen atau lag, force shutdown. Dan jangan membuka aplikasi yang memakan banyak memori lainnya.
+\end{itemize}
+\end{enumerate}
+
+
 \section{Annisa Fathoroni/1164067}
 \subsection{Praktek}
 Penjelasan Tugas Harian 10 ( No 1-10 ). ( Dan Penanganan Error )
@@ -924,3 +1149,4 @@ Penjelasan Tugas Harian 10
 \par
 \end{itemize}
 \end{enumerate}
+
