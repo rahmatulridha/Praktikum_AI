@@ -555,7 +555,213 @@ Penjelasan: Digunakan untuk melakukan pengocokan atau acak pada text yang diigin
 \end{figure}
 
 \end{itemize}
+
+\item Library Gensim TaggedDocument Dan Doc2Vac
+\begin{itemize}
+\item Contoh atau Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni40.jpg}
+\caption{Tagged Document dan Doc2Vec - Annisa Fathoroni}
+\label{Tagged Document dan Doc2Vec - Annisa Fathoroni}
+\end{figure}
+
+Penjelasan:
+
+Import library gensim dan meng-import modul Tagged Document dan Doc2Vac.Tagged Document adalah dokumen yang 'memisahkan informasi dan struktur dari presentasi' dengan menggunakan tag. Fungsi Doc2Vec berisi alpha dan min alpha parameter, tetapi itu berarti bahwa tingkat pembelajaran meluruh selama satu periode dari alpha untuk min alpha.
+
+\end{itemize}
+
+\item Menambahkan Data Training (Melatih Modul Doc2Vec)
+\begin{itemize}
+\item Contoh atau Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni42.jpg}
+\caption{Model 1 - Annisa Fathoroni}
+\label{Model 1 - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni43.jpg}
+\caption{Model 2 - Annisa Fathoroni}
+\label{Model 2 - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni44.jpg}
+\caption{Model 3 - Annisa Fathoroni}
+\label{Model 3 - Annisa Fathoroni}
+\end{figure}
+
+Penjelasan:
+
+Membaca direktori name dari data yang ada di dalam kurung, terdapat ada 3 data.
+
+\end{itemize}
+
+\item Pengocokan Dan Pembersihan Data.
+\begin{itemize}
+\item Contoh atau Ilustrasi Gambar: 
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni60.jpg}
+\caption{Pengocokan dan Pembersihan Data - Annisa Fathoroni}
+\label{Pengocokan dan Pembersihan Data - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni61.jpg}
+\caption{Pengocokan dan Pembersihan Data - Annisa Fathoroni}
+\label{Pengocokan dan Pembersihan Data - Annisa Fathoroni}
+\end{figure}
+
+Penjelasan:
+
+Mengimport Library Re. Kemudian membuat fungsi utuk menghapus tag html dan perkocokan. Dimana di dalam variabel ini ada kodingan untuk menghapus tag html yaitu petik satu, tanda baca dan spasi yang berurutan. Melakukan pengacakan model terhadap data unsupervised learning. Dan kemudian baru membuat modelnya setelah dilakukan pengacakan terhadap yang pertama tadi.
+
+\end{itemize}
+
+\item Mengapa Model Harus Di Save Dan Temporari Training Harus Dihapus
+\begin{itemize}
+\item Contoh atau Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni49.jpg}
+\caption{Model Disave dan Temporari Train Hapus - Annisa Fathoroni}
+\label{Model Disave dan Temporari Train Hapus - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni50.jpg}
+\caption{Model Disave dan Temporari Train Hapus - Annisa Fathoroni}
+\label{Model Disave dan Temporari Train Hapus - Annisa Fathoroni}
+\end{figure}
+
+Penjelasan:
+
+Untuk mencegah ram agar tidak lemot atau lambat. Sedangkan kenapa temporari training harus dihapus mengosongkan memori agar sedikit lega atau tidak lemot.
+
+\end{itemize}
+
+\item Infercode
+\begin{itemize}
+\item Contoh atau Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni51.jpg}
+\caption{Infercode - Annisa Fathoroni}
+\label{Infercode - Annisa Fathoroni}
+\end{figure}
+
+Penjelasan:
+
+Untuk menyimpulkan vektor yang berhubungan dengan vektor dokumen baru dan output tersebut merupakan sebuah array.
+
+\end{itemize}
+
+\item Cosinesimilarity
+\begin{itemize}
+\item Contoh atau Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni52.jpg}
+\caption{Cosinesimilarity - Annisa Fathoroni}
+\label{Cosinesimilarity - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni53.jpg}
+\caption{Cosinesimilarity - Annisa Fathoroni}
+\label{Cosinesimilarity - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni54.jpg}
+\caption{Cosinesimilarity - Annisa Fathoroni}
+\label{Cosinesimilarity - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni55.jpg}
+\caption{Cosinesimilarity - Annisa Fathoroni}
+\label{Cosinesimilarity - Annisa Fathoroni}
+\end{figure}
+
+Penjelasan: 
+
+Cosine Similarity dapat diimplementasikan untuk menghitung nilai kemiripan antar kalimat dan menjadi salah satu teknik untuk mengukur kemiripan  teks yang  popular. 
+
+\end{itemize}
+
+\item Praktek Score Dari Cross Validation
+\begin{itemize}
+\item Contoh atau Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni56.jpg}
+\caption{Score Cross Validation - Annisa Fathoroni}
+\label{Score Cross Validation - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni57.jpg}
+\caption{Score Cross Validation - Annisa Fathoroni}
+\label{Score Cross Validation - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni58.jpg}
+\caption{Score Cross Validation - Annisa Fathoroni}
+\label{Score Cross Validation - Annisa Fathoroni}
+\end{figure}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni59.jpg}
+\caption{Score Cross Validation - Annisa Fathoroni}
+\label{Score Cross Validation - Annisa Fathoroni}
+\end{figure}
+
+Penjelasan: 
+
+Hasil dari praktek tersebut menunjukan untuk menghitung memprediksi dan mengetahui keakuratan dari suatu nilai.
+
+\item PENANGANAN ERROR
+\begin{itemize}
+\item Contoh atau Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter5AnnisaFathoroni11Error.jpg}
+\caption{Error - Annisa Fathoroni}
+\label{Error - Annisa Fathoroni}
+\end{figure}
+
+Solusi:
+
+Pastikan dataset berada dalam satu folder.
+
+\end{itemize}
+\end{itemize}
 \end{enumerate}
+
 
 
 \section{Annisa Cahyani-1164066}
@@ -697,7 +903,7 @@ Penjelasan Tugas Harian 10
 \par
 \begin{figure}[!hbtp]
 \centering
-\includegraphics[scale=0.2]{figures/cahya-exract-word.jpg}
+\includegraphics[scale=0.2]{figures/cahya-exract-word.jpeg}
 \caption{cahya-extract-word}
 \label{cahya-extraxt-word}
 \end{figure}
