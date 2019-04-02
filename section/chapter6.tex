@@ -156,3 +156,84 @@ Sebuah jenis model yang digunakan dalam perhitungan ataupun code program yang di
 
 \end{itemize}
 \end{enumerate}
+
+\section{Tasya Wiendhyra / 1164086}
+\subsection{Teori}
+\begin{enumerate}
+\item Kenapa file suara harus di lakukan MFCC. dilengkapi dengan ilustrasi atau gambar. \\
+\par Nilai-nilai MFCC meniru pendengaran manusia dan mereka biasanya digunakan dalam aplikasi pengenalan suara serta genre musik
+deteksi. Nilai-nilai MFCC ini akan dimasukkan langsung ke jaringan saraf.Agar dapat diubah menjadi bentuk vektor, dan dapat digunakan pada machine learning. Disebabkan machine learning hanya mengerti bilangan vektor saja.\\
+Ilustrasinya, Ketika ingin menggunakan file suara dalam machine learning, misalnya untuk melihat jam. Machine learning tidak memahami rekaman suara melainkan vektor. Maka rekaman tersebut akan diubah kedalam bentuk vektor kemudian vektor akan menyesuaikan dengan kata kata yang sudah disediakan. Jika cocok maka akan mengembalikan waktu yang diinginkan
+
+\item Konsep dasar neural network dilengkapi dengan ilustrasi atau gambar
+\par Neural Network ini terinspirasi dari jaringan saraf otak manusia. Dimana setiap neuron terhubung ke setiap neuron di lapisan berikutnya. Lapisan pertama menerima input dan lapisan terakhir memberikan keluaran. Struktur jaringan, yang berarti jumlah neuron dan koneksinya, diputuskan sebelumnya dan tidak dapat berubah, setidaknya tidak selama training. Juga, setiap input harus memiliki jumlah nilai yang sama. Ini berarti bahwa gambar, misalnya, mungkin perlu diubah ukurannya agar sesuai dengan jumlah neuron input.\\
+
+Ilustrasinya. misalkan kita ingin encode sebuah kalimat yaitu "what time is it" kemudian Anda menginisialisasi lapisan jaringan Anda dan hidden statel. Bentuk dan dimensi hidden state akan tergantung pada bentuk dan dimensi jaringan saraf berulang Anda. Kemudian Anda mengulangi input Anda, meneruskan kata danhidden state ke NN. NN mengembalikan output dan kondisi tersembunyi yang dimodifikasi. Anda terus mengulang sampai Anda kehabisan kata-kata. Terakhir Anda melewatkan output ke layer feedforward, dan itu mengembalikan prediksi. Bahwa kita ingin mengetahui pukul berapa sekarang.
+
+\item Konsep pembobotan dalam neural network.dilengkapi dengan ilustrasi atau gambar
+\par Bobot mewakili kekuatan koneksi antar unit. Jika bobot dari node 1 ke node 2 memiliki besaran lebih besar, itu berarti bahwa neuron 1 memiliki pengaruh lebih besar terhadap neuron. 2. Bobot penting untuk nilai input. Bobot mendekati nol berarti mengubah input ini tidak akan mengubah output. Bobot negatif berarti meningkatkan input ini akan mengurangi output. Bobot menentukan seberapa besar pengaruh input terhadap output. Seperti contoh berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya2.png}
+\caption{Contoh Pembobotan Neural Network Tasya}
+\label{Teori}
+\end{figure}
+
+\item Konsep fungsi aktifasi dalam neural network. dilengkapi dengan ilustrasi atau gambar
+\par Fungsi aktivasi digunakan untuk memperkenalkan non-linearitas ke jaringan saraf. Ini menekan nilai dalam rentang yang lebih kecil yaitu. fungsi aktivasi Sigmoid memeras nilai antara rentang 0 hingga 1. Ada banyak fungsi aktivasi yang digunakan dalam industri pembelajaran yang dalam dan ReLU, SeLU dan TanH lebih disukai daripada fungsi aktivasi sigmoid. Ilustrasinya, ketika fungsi aktivasi linier, jaringan saraf dua lapis mampu mendekati hampir semua fungsi. Namun, jika fungsi aktivasi identik dengan fungsi aktivasi F (X) = X), properti ini tidak puas, dan jika MLP menggunakan fungsi aktivasi yang sama, seluruh jaringan setara dengan jaringan saraf lapis tunggal.
+
+\item Cara membaca hasil plot dari MFCC,dilengkapi dengan ilustrasi atau gambar\\
+Berikut merupakan hasil plot dari rekaman suara :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya1.png}
+\caption{Cara Membaca Hasil Plot MFCC Tasya}
+\label{Teori}
+\end{figure}
+Dari gambar tersebut dapat diketahui :\\
+\begin{itemize}
+\item Terdapat 2 dimensi yaitu x sebagai waktu, dan y sebagai power atau desibel.
+\item Dapat dilihat bahwa jika berwarna biru maka power dari suara tersebut rendah, dan jika merah power dari suara tersebut tinggi
+\item Dibagian atas terdapat warna merah pudar yang menandakan bahwa tidak ada suara sama sekali dalam jangkauan tersebut.
+\end{itemize}
+
+\item Jelaskan apa itu one-hot encoding,dilengkapi dengan ilustrasi kode dan atau gambar.
+\par One-hot encoding adalah representasi variabel kategorikal sebagai vektor biner. Mengharuskan nilai kategorikal dipetakan ke nilai integer. Kemudian, setiap nilai integer direpresentasikan sebagai vektor biner yang semuanya bernilai nol kecuali indeks integer, yang ditandai dengan 1.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya3.png}
+\caption{One Hot Encoding Tasya}
+\label{Teori}
+\end{figure}
+
+\item fungsi dari np/.unique dan to categorical dalam kode program,dilengkapi dengan ilustrasi atau gambar.\\
+Untuk np unique fungsinya yaitu menemukan elemen unik array. Mengembalikan elemen unik array yang diurutkan. Ada tiga output opsional selain elemen unik:\\
+\begin{itemize}
+\item Indeks array input yang memberikan nilai unik
+\item Indeks array unik yang merekonstruksi array input
+\item Berapa kali setiap nilai unik muncul dalam array input.
+\end{itemize}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya4.png}
+\caption{Numpy Unique Tasya}
+\label{Teori}
+\end{figure}
+
+Untuk  To Categorical fungsinya untuk mengubah vektor kelas (integer) ke matriks kelas biner.
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya5.png}
+\caption{To Categorical Tasya}
+\label{Teori}
+\end{figure}
+
+\item Fungsi dari Sequential dalam kode program,dilengkapi dengan ilustrasi atau gambar.\\
+Sequential berfungsi sebagai tumpukan linear lapisan. COntohnya sebagai berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya6.png}
+\caption{Sequential Tasya}
+\label{Teori}
+\end{figure}
+\end{enumerate}
