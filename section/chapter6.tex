@@ -489,3 +489,181 @@ Baris 11: Memproses 100 lagu di genre rock
 \end{itemize}
 
 \end{enumerate}
+
+\section{Annisa Cahyani-1164066}
+\subsection{Praktek}
+\begin{enumerate}
+\item Penjelasan Mengenai Isi Data GTZAN Genre Collection Dan Data Dari Freesound.
+\begin{itemize}
+\item Penjelasan Isi Data GTZAN :
+\par Pada GTZAN Genre Collection ini isinya itu seperti data musik yang telah di folderkan yang berdasarkan dengan genre lagu.
+\par
+\item Ilustrasi Gambar ( Contoh ) : \ref{cahya-chapter6-1}
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-1.jpg}
+\caption{Contoh dari GTZA Genre Collection}
+\label{cahya-chapter6-1}
+\end{figure}
+\par
+\item Penjelasan Mengenai Contoh Code :
+\begin{enumerate}
+\item Baris Code yang pertama yaitu filename pop itu merupakan sebuah variabel yang berisikan direktori dari file yang ditujukan, dan code ini juga menggunakan file audio dari genre pop.
+\item Baris Code yang kedua ini untuk membuat variabel x pop dan sr pop ini digunakan untuk meload file dari variabel filename pop yang menggunakan librari Librosa yang berdurasi 10.
+\end{enumerate}
+\end{itemize}
+\par
+\item Penjelasan Perbaris Kode Program Dari Display\_Mfcc.
+\begin{itemize}
+\item Penjelasan :
+\par
+\begin{enumerate}
+\item Baris Code yang pertama itu kita membuat fungsi display pada mfcc untuk menampilkan sebuah vektorisasi dari song
+\item Baris Code yang kedua itu membuat variabel Y untuk melakukan proses load atau untuk membaca sebuah variable. 
+\item Baris Code yang ketiga yaitu membuat variabel mfcc yang berfungsi untuk memanggil variabel Y dan untuk mengubah song menjadi sebuah vektor
+\item Baris Code yang keempat yaitu untuk melakuakan plotting sebuah gambar
+\item Baris Code yang kelima yaitu berfungsi untuk menampilkan specshow dari library librosa
+\item Baris Code yang keenam yaitu berfungsi untuk menambahkan sebuah colorbar
+\item Baris Code yang ketujuh yaitu berfungsi untuk menetapkan judul untuk song yang akan dieksekusi
+\item Baris Code yang kedelapan yaitu berfungsi untuk menyesuaikan tight layout sehingga tight layout itu cocok dengan gambar.
+\item Baris Code yang kesembila yaitu berfungsi untuk menampilkan hasil dari show inputan
+\end{enumerate}
+\par
+\item Ilustrasi Gambar : Ketika program tersebut dijalankan maka akan memberikan hasil seperti pada gambar berikut \ref {cahya-chapter6-2} dan \ref{cahya-chapter6-2-2}.
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-2.jpg}
+\caption{cahya-chapter6-2}
+\label{cahya-chapter6-2}
+\end{figure}
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-2-2.jpg}
+\caption{Cahya-chapter6-2-2}
+\label{cahya-chapter6-2-2}
+\end{figure}
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\par
+\item Penjelasan Perbaris Code Dari Extract\_Feature\_Song().
+\begin{itemize}
+\item Penjelasan Code :
+\begin{enumerate}
+\item Baris Code yang pertama yaitu berfungsi untuk membuat suatu fungsi extract feature song dengan menggunakan sebuah yaitu inputan parameter f
+\item Baris Code yang kedua yaitu berfungsi untuk membuat variabel pada y yang dimana itu berfungsi untuk membaca inputan pada parameter f 
+\item Baris Code yang ketiga yaitu berfungsi untuk membuat sebuah variabel mfcc yang dimana difungsikan untuk membuat sebuah feature dari variabel y
+\item Baris Code yang keempat yaitu berfungsi untuk membuat sebuah normalisasi pada nilai dari -1 sampai 1 
+\item Baris Code yang kelima yaitu berfungsi untuk return = mengembalikan atau dapat didefinisikan untuk mengambil 25000 data yang pertama.
+\end{enumerate}
+\par
+\item Ilustrasi Gambar : Ketika program tersebut dijalankan maka akan memberikan hasil seperti pada gambar berikut \ref{cahya-chapter6-3}.
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-3.jpg}
+\caption{cahya-chapter6-3}
+\label{cahya-chapter6-3}
+\end{figure}
+\par
+\par
+\item Mengapa Yang Diambil Itu Merupakan 25.000 Baris Data Pertama ?
+\par Karena data yang digunakan itu hanya 25.000 dan pada baris data pertama sehingga dapat menghindari down pada sistem yang dieksekusi.
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\item Penjelasan Perbaris Code Dari Generate\_Features\_And\_Labels().
+\begin{itemize}
+\item Penjelasan Code :
+\begin{enumerate}
+\item Baris Code yang pertama yaitu berfungsi untuk membuat sebuah perintah pada fungsi generate features and labels
+\item Baris Code yang kedua yaitu berfungsi untuk pembuatan sebuah variabel all\_features dengan menggunakan parameter yang kosong
+\item Baris Code yang ketiga yaitu berfungsi untuk pembuatan sebuah variabel all\_labels dengan menggunakan parameter yang kosong
+\item Baris Code yang keempat yaitu berfungsi untuk membuat atau untuk mendefinisikan sebuah variable genres yang didalamnya berisikan nama folder-folder yang ada pada variabel genres tersebut.
+\item Baris Code yang kelima yaitu berfungsi untuk membuat sebuah perintah pada fungsi looping
+\item Baris Code yang keenam yaitu berfungsi untuk membuat sebuah atribut pada sound files yang dimana berisi perintah looping pada setiap folder dari folder yang genres dan mengambil semua file berekstensi au.
+\item Baris Code yang ketujuh yaitu berfungsi untuk memunculkan song yang telah dieksekusi.
+\item Baris Code yang kedelapan yaitu berfungsi untuk membuat sebuah perintah dari fungsi dari sound\_files
+\item Baris Code yang kesembilan yaitu berfungsi untuk membuat sebuah variabel pada features untuk memanggil sebuah fungsi pada extract features song (f) itu sebagai inputan.
+\item Baris Code yang kesepuluh yaitu berfungsi untuk memasukkan semua features yang menggunakan sebuah perintah append pada all\_features
+\item Baris Code yang keseblas yaitu berfungsi untuk memasukkan semua genres yang telah menggunakan perintah append pada all\_labels
+\item Baris Code yang keduabelas yaitu berfungsi untuk mendefinisikan sebuah label\_uniq\_ids dan label\_row\_ids itu sebagai variabel yang dimana akan mengeksekusi perintah np.unique
+\item Baris Code yang ketigabelas yaitu berfungsi untuk membuat sebuah variabel label\_row\_ids untuk menentukan type yang ada pada variabel tersebut dengan menggunakan type bit yang sesuai yang digunakan.
+\item Baris Code yang keempat belas yaitu berfungsi untuk membuat sebuah variabel onehot\_labels yang dimana akan mengeksekusi to\_categorical pada variabel yang parameter low\_row\_ids dan len(label\_uniq\_ids)
+\item Baris Code yang kelima belas yaitu berfungsi untuk mengembalikan atau untuk menampilkan sebuah hasil eksekusi yang berasal dari variabel parameter all\_features dan onehot\_labels
+\end{enumerate}
+\par
+\item Ilustrasi Gambar : Ketika program tersebut dijalankan maka akan memberikan hasil seperti pada gambar berikut \ref{cahya-chapter6-4}.
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-4.jpg}
+\caption{cahya-chapter6-4}
+\label{cahya-chapter6-4}
+\end{figure}
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\item Penjelasan Penggunaan Fungsi Generate\_Features\_And\_Labels() Sangat Lama Ketika Meload Dataset Genre.
+\begin{itemize}
+\par
+\item Penjelasan : 
+\par Disini fungsi pada Generate\_Features\_And\_Labels()ini akan sangat lama ketika meload sebuah dataset pada genre itu dikarenakan yang ada dalam dataset tersebut memilik 1000 data yang dimana pada 1000 data tersebut dibagi menjadi 10 bagian genre. 
+\par
+\item Ilustrasi Gambar : \ref{cahya-chapter6-5}
+\par Penjelasan :
+\par Dan hasil yang akan di dapatkan yaitu berada dari gambar yaitu dengan melakukan sebuah pemrosesan load untuk data pada masing genre. Yang dimana akan menghasilkan setiap genre itu terdiri dari 100 data yang apabila di akumulatifkan dengan 10 jenis genre musik.
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-5.jpg}
+\caption{cahya-chapter6-5}
+\label{cahya-chapter6-5}
+\end{figure}
+\par
+\end{itemize}
+\end{enumerate}
+\par
+\par
+\par
+\subsection{ Cahya - Penanganan Error Chapter 6}
+\begin{enumerate}
+\item Screenshoot Error : \ref{cahya-chapter6-error}
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-error.jpg}
+\caption{cahya-chapter6-error}
+\label{cahya-chapter6-error}
+\end{figure}
+\par
+\par
+\item Code Error Yaitu :
+\par Pada NameError: name 'librosa' is not defined
+\item Penyelesaian Error :
+\begin{enumerate}
+\item Untuk menanganinya yaitu kita harus mendefinisikan library librosanya tersebut sebelum menjalankan perintahnya
+\item Dan code yang harus dijalankan itu berfungsi untuk mendefinisikan library librosa
+\par
+\item Kemudia setelah itu silahkan jalankan code yang ada tersebut, kemudian jalankan kembali code yang telah menghasilkan error tadi
+\item Apabila semua langkah-langkahnya telah diikuti maka tidak akan terjadi error lagi.
+\end{enumerate}
+\end{enumerate}
