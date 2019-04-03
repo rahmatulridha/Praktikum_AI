@@ -667,3 +667,325 @@ Baris 11: Memproses 100 lagu di genre rock
 \item Apabila semua langkah-langkahnya telah diikuti maka tidak akan terjadi error lagi.
 \end{enumerate}
 \end{enumerate}
+
+\section{Tasya Wiendhyra \ 1164086}
+\subsection{Praktek Program}
+\subsubsection{Isi dari data GTZAN Genre Collection dan data dari freesound. Buat kode program untuk meload data tersebut untuk digunakan pada MFCC}
+\begin{enumerate}
+\item GTZAN Genre Collection berisikan klasifikasi genre musik. Terdapat 1000 audio dengan durasi maksimal 30 detik dan terdapat 10 genre musik didalamnya. Dalam setiap genre berisikan 100 tracks musik.
+\item Data dari Freesound berisikan instrument alat musik tertentu dalam bentuk wav
+\end{enumerate}
+Untuk Meload Data tersebut untuk digunakan pada MFCC caranya seperti berikut :
+\begin{itemize}
+\item
+\begin{verbatim}
+import librosa
+import librosa.feature
+import librosa.display
+import glob
+import numpy as np
+import matplotlib.pyplot as plt
+from keras.models import Sequential
+from keras.layers import Dense, Activation
+from keras.utils.np_utils import to_categorical
+
+# In[]
+audio_path = 'genres/classical/classical.00010.au'
+x , sr = librosa.load(audio_path)
+print(type(x), type(sr))
+\end{itemize}
+\item Codingan Diatas akan meload libray librosa yang akan digunakan untuk menggunakan mfcc
+\item Librosa\.feature akan meload feature dari librosa
+\item Librosa\.display akan mengambil fungsi display pada librosa
+\item glob merupakan modul pada python yang digunakan untuk meload segala jenis format file termasuk musik
+\item mengimport numpy sebagai np yang digunakan untuk data array dari musik
+\item import matplotlib untuk melakukan plotting dari audio
+\item Mengimport modul Sequential dari librari Keras untuk membuat suatu model
+\item Dense dan Activation sebagai Operasi linier di mana setiap input terhubung ke setiap output dengan bobot atau weight.
+\item Dari library keras akan meload modul to_categorical
+\item Kemudian untuk me load datanya, disini variabel audio_path berisikan direktori file tujuan yang digunakan.
+\item Variabel x dan sr berguna untuk meload variabel audio_path menggunakanlibrari Librosa
+\item Kemudia print atau tampilkan x dan s dalam bentuk array.Hasilnya seperti berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya23.png}
+\caption{Meload Data Genre Collection Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{Fungsi Display MFCC}
+Berikut merupakan Code dari fungsi Display mfcc: \\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya8.png}
+\caption{Display MFCC Tasya}
+\label{Praktek}
+\end{figure}
+Penjelasan dari code diatas yaitu :
+\begin{itemize}
+\item def display_mfcc yaitu kita akan mendefinisikan fungsi yang diberinama display_mfcc dengan inoutan song
+\item Variabel y akan meload variabel song
+\item Variabel MFCC akan menggunakan feauture mmfcc pada Librosa untuk melakukan konversi audio menjadi bentuk vektor
+\item Kemudian hasil tadi akan diplotting.
+\item Berikut merupakan contoh dari plotting audio dari genre Classical. Ketikan kode berikut  yang dimana akan memanggil fungsi dispkay mfcc utuk plotting dari audioyang dituju.
+\begin{verbatim}
+display_mfcc('genres/classical/classical.00010.au')
+\end{verbatim}
+\item Hasilnya sebagai berikut 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya24.png}
+\caption{Hasil Display MFCC Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{Fungsi Extract Features Song}
+Berikut merupakan code dari fungsi extract features song :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya9.png}
+\caption{Extract Features Tasya}
+\label{Praktek}
+\end{figure}
+Penjelasan dari code diatas yaitu :
+\begin{itemize}
+\item Variabel y akan melaod variabel atau inputan f menggunakan librari Librosa
+\item Variabel mfcc akan melakukan mfcc dari variabel y
+\item Variabel mfcc kemudian akan dibagi oleh numpy amax dan dikembalikan lagi nilainya ke variabel mfcc.
+\item Hasil Tadi kemudian akan ditampilkan dalam bentuk array dengan mengambil 25000 row pertama
+\item Mengapa mengambil 25000 row pertama? dikarenakan Audio yang terdapat pada dataset ini tidak menentu durasinya. Dan kita harus mengambil data yang memiliki durasi yang sama untuk mempermudah dalam melakukan training.
+\end{itemize}
+
+\subsubsection{Fungsi Generate Features And Labels}
+Berikut merupakan code dari fungsi Generate Features And Labels :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya10.png}
+\caption{Fungsi Generate Features And Labels Tasya}
+\label{Praktek}
+\end{figure}
+Penjelasan dari code diatas yaitu :
+\begin{itemize}
+\item Variabel all features berisikan array kosong
+\item Variabel all labels berisikan array kosong
+\item Variabel genres disesuaikan dengan nama folder sebelumnya, dan berisikan folder folder dari genre yang ada
+\item Melakukan looping, untuk folder tadi
+\item Variabel sound\_files akan mengambil file dari folder genres dan mengambil semua file dengan ekstensi au didalamnya.
+\item print akan menampilkan Tulisan Prossesing dengan jumlah file didalam folder dan nama folder tersebut
+\item Memanggil fungsi extract\_features\_song kedalam inputan f dalam sound\_files dan melakukan vektorisasi dimasukan kedalam variabel features.
+\item Semua fitures akan dimasukan kedalam all\_features.
+\item Semua genre diamsukan ke all\_labels.
+\item Variabel label\_uniq\_ids dan label\_row\_ids mendefinisikan label unique dari all\_labels kedalam bentuk integer.
+\item Kemudian variabel onehot\_labels akan mengubahnya ke dalam bentuk one hot encoding dengan menggunakan to\_categorical.Sehingga dimensinya menjadi 1000 x 10 dikarenakan terdapat 1000 lagu dan 10 binari untuk merepresentasikan one-hot encodingnya.
+\item Mengembalikan all\_features dan onehot\_labels kedalam satu matriks.
+\end{itemize}
+
+\subsubsection{Penggunaan Fungsi Generate Features And Labels Sangat Lama Ketika Meload Dataset Genre}
+\par Dikarenakan TErdapat 10 folder dengan genre berbeda, dan didalamnya terdapat 100 audio. Dari setiap folder itu akan dilakukan features dan perubahan label. Karena banyaknya jumlah file maka proses loadnya pun lama.\\
+Untuk prakteknya ketikan code berikut 
+\begin{verbatim}
+features, labels = generate_features_and_labels()
+\end{verbatim}
+Akan didapatkan hasil seperti berikut yang dimana menunujukan proses bahwa sedang dilakukan ektraksi audio ke features dan labels :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya11.png}
+\caption{Hasil Fungsi Generate Features And Labels Tasya}
+\label{Praktek}
+\end{figure}
+
+\subsubsection{Pemisahan Data Training Dan Data Set Sebesar 80\%}
+\par Pemisahan 80\% digunakan untuk memudahkan dalam melakukan pengacakan atau pengocokan nantinya. Dimana 80\% merupakan data training dan sisanya 20\% merupakan datatestnya. data training perlu lebih banyak agar saat dilakukan pengocokan tidak teracak dalam urutan yang berbeda. Berikut code programnya :
+\begin{verbatim}
+training_split = 0.8
+
+# last column has genre, turn it into unique ids
+alldata = np.column_stack((features, labels))
+
+np.random.shuffle(alldata)
+splitidx = int(len(alldata) * training_split)
+train, test = alldata[:splitidx,:], alldata[splitidx:,:]
+
+print(np.shape(train))
+print(np.shape(test))
+
+train_input = train[:,:-10]
+train_labels = train[:,-10:]
+
+test_input = test[:,:-10]
+test_labels = test[:,-10:]
+
+print(np.shape(train_input))
+print(np.shape(train_labels))
+\end{verbatim}
+Penjelasan dari code diatas :
+\begin{itemize}
+\item Training split akan memisahkan training set sebanyak 80\%
+\item Melakukan penumpukan features dan labels
+\item Melakukan Pengocokan untuk alldata dengan mengalikan isi dari alldata dengan training\_split
+\item Memisahkan mana yang termasuk data train dan mana yang termasuk data test
+\item Menampilkan isi dari train dan test. Dapat dilihat bahwa untuk training terdapat 800 kolom dan untuk test 200 kolom dengan jumlah baris yang sama yaitu 25010
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya15.png}
+\caption{Pemisahan Data Training dan Data Set Tasya}
+\label{Praktek}
+\end{figure}
+\item Variabel train\_input akan berisikan train dengan mengecualikan 10 baris terakhir
+\item Variabel train\_labels berisikan train dengan mengambil sisa dari train\_input atau hanya mengambil 10 baris terakhir saja
+\item Untuk variabel test\_input dan test\_label sama penjelasannya seperti diatas.
+\item Baris selanjutnya digunakan untuk menampilkan isi atau shape dari hasil training dan testing barusan, seperti berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya16.png}
+\caption{Pemisahan Data Training dan Data Set Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{Fungsi Sequential}
+Berikut code lengkapnya :
+\begin{verbatim}
+model = Sequential([
+    Dense(100, input_dim=np.shape(train_input)[1]),
+    Activation('relu'),
+    Dense(10),
+    Activation('softmax'),
+    ])
+\end{verbatim}
+Hasilnya seperti berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya17.png}
+\caption{Pemisahan Data Training dan Data Set Tasya}
+\label{Praktek}
+\end{figure}
+Dari hasil diatas dapat dijelaskan bahwa :\\
+\begin{itemize}
+\item Layer pertama dense dari 100 neuron untuk inputan
+\item Activationnya menggunakan fungsi relu yaitu jika ada inputan dengan nilai maksimum maka inputan itu yang akan terpilih.
+\item Dense 10 mengkategorikan 10 neuron untuk jenis genrenya untuk output nya.
+\item Untuk dense diatas aktivasinya menggunakan fungsi Softmax
+\end{itemize}
+
+\subsubsection{Fungsi Compile}
+ Berikut code lengkapnya :
+\begin{verbatim}
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+print(model.summary())
+\end{verbatim}
+Hasilnya seperti berikut : \\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya18.png}
+\caption{Fungsi Compile Tasya}
+\label{Praktek}
+\end{figure}
+Dari hasil diatas dapat dijelaskan bahwa :\\
+\begin{itemize}
+\item Menggunakan algortima adam sebagai optimizer. Adam yaitu algoritme pengoptimalan yang dapat digunakan sebagai ganti dari prosedur penurunan gradien stokastik klasik untuk memperbarui bobot jaringan yang berulang berdasarkan data training.
+\item Loss nya menggunakan categorical\_crossentropy untuk fungsi optimasi skor
+\end{itemize}
+
+\subsubsection{Fungsi Fit}
+Berikut code lengkapnya :
+\begin{verbatim}
+model.fit(train_input, train_labels, epochs=10, batch_size=32,
+          validation_split=0.2)
+\end{verbatim}
+Hasilnya seperti berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya19.png}
+\caption{Fungsi Fit Tasya}
+\label{Praktek}
+\end{figure}
+Dari hasil diatas dapat dijelaskan bahwa :\\
+\begin{itemize}
+\item Melakukan pelatihan dengan epoch atau iterasi dengan rambatan balik sebanyak 10, kemudian dalam sekali epochs dilakukan 32  sampel yang diproses sebelum model diperbarui.
+\item Validation\_split sebesar 20\% untuk melakukan pengecekan pada cross score validation
+\end{itemize}
+
+\subsubsection{Fungsi Evaluate}
+Berikut code lengkapnya :
+\begin{verbatim}
+loss, acc = model.evaluate(test_input, test_labels, batch_size=32)
+
+print("Done!")
+print("Loss: \%\.4f, accuracy: \%\.4f" \% (loss, acc))
+\end{verbatim}
+Hasilnya seperti berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya20.png}
+\caption{Fungsi Evaluate Tasya}
+\label{Praktek}
+\end{figure}
+Dari hasil diatas dapat dijelaskan bahwa :\\
+\begin{itemize}
+\item Melakukan evaluasi atau  menemukan model terbaik yang mewakili data dan seberapa baik model yang dipilih akan bekerja di masa depan. Menggunakan test input dan test label.
+\item Kemudian Hasilnya dapat dilihat seperti berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya21.png}
+\caption{Fungsi Evaluate Tasya}
+\label{Praktek}
+\end{figure}
+\item Dimana Loss yaitu hasil prediksi yang salah sebanyak 1,3620 dan keakurasian prediksinya yaitu 53\%
+\end{itemize}
+
+\subsubsection{Fungsi Predict}
+Berikut code lengkapnya :
+\begin{verbatim}
+model.predict(test_input[:1])
+\end{verbatim}
+Hasilnya seperti berikut : \\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6tasya22.png}
+\caption{Fungsi Predict Tasya}
+\label{Praktek}
+\end{figure}
+Dari hasil diatas dapat dijelaskan bahwa :\\
+\begin{itemize}
+\item Untuk melakukan prediksi diambil satu baris dari test\_input
+\item Nilai yang tertinggi terdapat pada label kedua atau genre Classical
+\item Untuk baris yang dipilih prediksi yang tepat yaitu lagu tersebut termasuk kedalam genre Classical
+\end{itemize}
+
+\subsection{Penanganan Error}
+Tasya Wiendhyra 1164086
+\subsubsection{Module Eror}
+Berikut merupakan eror yang dijumpai ketika menjalankan skrip diatas
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6eror.png}
+\caption{Module Error Tasya}
+\label{Error}
+\end{figure}
+\begin{itemize}
+\item Jenis error tersebut adalah ModuleNotFoundError : No Module named 'librosa' . Error ini terjadi dikarenakan target atau tujuannya tidak terinstall. Maka yang perlu dilakukan yaitu :
+\begin{itemize}
+\item Buka Anconda atau conda prompt
+\item Ketikan 'conda install -c conda-forge librosa dan enter
+\item Tunggu sampai proses instalasi berhasil
+\item Jika Sudah, jalankan kembali skrip tadi maka hasilnya seperti berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/chapter6eror1.png}
+\caption{Penyelesaian Module Error Tasya}
+\label{Error}
+\end{figure}
+\item Tandanya eror sudah berhasil ditangani
+\end{itemize}
+\end{itemize}
+
+
+
+
+
+
