@@ -321,15 +321,11 @@ Penjelasan Tugas Harian11 ( No 1-8 )
 \section{Annisa Fathoroni/1164067}
 \subsection{Praktek}
 \begin{enumerate}
+
 \item Penjelasan isi data GTZAN Genre Collection dan data dari Freesound.
 
-\par Code Yang Digunakan :
-\begin{figure}[!hbtp]
-\centering
-\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni16.jpeg}
-\caption{Code GTZAN - Annisa Fathoroni}
-\label{Code Display MFCC - Annisa Fathoroni}
-\end{figure}
+Code Yang Digunakan :
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni1.py}
 
 \begin{itemize}
 \item Penjelasan isi data GTZAN:
@@ -354,12 +350,7 @@ Penjelasan Tugas Harian11 ( No 1-8 )
 \item Penjelasan perbaris kode program dari display MFCC.
 \begin{itemize}
 \item Code Yang Digunakan :
-\begin{figure}[!hbtp]
-\centering
-\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni14.jpg}
-\caption{Code Display MFCC - Annisa Fathoroni}
-\label{Code Display MFCC - Annisa Fathoroni}
-\end{figure}
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni2.py}
 
 \item Penjelasan:
 
@@ -389,12 +380,8 @@ Penjelasan Tugas Harian11 ( No 1-8 )
 \item Penjelasan perbaris code dari Extract Feature Song.
 \begin{itemize}
 \item Code yang digunakan:
-\begin{figure}[!hbtp]
-\centering
-\includegraphics[scale=0.6]{figures/Chapter6AnnisaFathoroni15.jpg}
-\caption{Code Extract Feature Song - Annisa Fathoroni}
-\label{Code Extract Feature Song - Annisa Fathoroni}
-\end{figure}
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni3.py}
+
 \item Penjelasan Code:
 \begin{enumerate}
 \item Baris Code 1 : Membuat fungsi extract feature song dengan inputan parameter f
@@ -421,6 +408,10 @@ Biar supaya tidak terjadi overhead pada komputer atau laptop atau proses eksekus
 
 \item Penjelasan perbaris code dari Generate Features and Labels.
 \begin{itemize}
+
+Code yang digunakan:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni4.py}
+
 \item Penjelasan:
 \begin{enumerate}
 \item Baris Code 1: Membuat perintah untuk fungsi generate features and labels.
@@ -453,6 +444,10 @@ Biar supaya tidak terjadi overhead pada komputer atau laptop atau proses eksekus
 
 \item Penjelasan penggunaan fungsi Generate Features and Labels sangat lama ketika Meload Dataset Genre.
 \begin{itemize}
+
+\item Code yang digunakan:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni5.py}
+
 \item Penjelasan:
 
 Baris 1: Variabel features and label akn mengeksekusi isi dari features and label
@@ -481,10 +476,155 @@ Baris 11: Memproses 100 lagu di genre rock
 
 \begin{figure}[!hbtp]
 \centering
-\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni18.jpg}
+\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni18.jpeg}
 \caption{Fungsi Generate Features and Label Load Dataset Genre - Annisa Fathoroni}
 \label{Fungsi Generate Features and Label Load Dataset Genre - Annisa Fathoroni}
 \end{figure}
+
+\end{itemize}
+
+\item Kenapa harus dilakukan pemisahan data training dan dataset sebesar 80\%
+
+Code Yang Digunakan :
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni6.py}
+
+\begin{itemize}
+\item Penjelasan:
+
+Untuk kemudahan dalam melakukan pengacakan, sebesar 80\% untuk data training dan 20\% untuk data test. Sehingga memperlihatkan bahwa data dipisah dan dipecah berpatokan dengan ketentuan 80\%. Untuk hasil pertama data trainingnya ada 800 baris dengan 25000 kolom dan data set sebanyak 200 baris dengan 10 kolom, sedangkan untuk hasil kedua yang telah digabungkan dengan one-hot encoding maka data training terdapat 800 baris dan data set dengan 200 baris namun keduanya memiliki jumlah kolom yang sama yaitu 25010.
+
+\item Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni19.png}
+\caption{Pemisahan Data Training dan Dataset - Annisa Fathoroni}
+\label{Pemisahan Data Training dan Dataset - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item Parameter dari fungsi Sequensial()
+
+Code Yang Digunakan :
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni7.py}
+
+\begin{itemize}
+\item Penjelasan:
+
+Untuk layer pertama densenya dari 100 neuron kemudian untuk inputan activationnya menggunakan fungsi relu. Dense 10 mengkategorikan 10 neuron untuk jenis genrenya untuk keluarnnya menggunakan aktivasi yaitu fungsi Softmax.
+
+\item Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni20.png}
+\caption{Parameter Fungsi Sequensial - Annisa Fathoroni}
+\label{Parameter Fungsi Sequensial - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item Parameter dari fungsi Compile().
+
+Code Yang Digunakan :
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni8.py}
+
+\begin{itemize}
+\item Penjelasan:
+
+Untuk dilakukan pemrosesan menggunakan algortima adam sebagai optimizer yang sudah didefinisikan. Kemudian adam tersebut merupakan algoritma pengoptimalan dan untuk memperbarui bobot jaringan yang berulang berdasarkan data training sebelumnya. Untuk loss sendiri menggunakan categorical crossentropy yang difungsikan sebagai optimasi skor atau accuracy. Dan model tersebut digabungkan serta disimpulkan kemudian dicetak.
+
+\item Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni21.png}
+\caption{Parameter Fungsi Compile - Annisa Fathoroni}
+\label{Parameter Fungsi Compile - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item Parameter dari fungsi Fit().
+
+Code Yang Digunakan :
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni9.py}
+
+\begin{itemize}
+\item Penjelasan:
+
+Untuk dilakukan pelatihan dengan epoch dengan rambatan balik sebanyak 10, kemudian dalam sekali epochs dilakukan 32  sampel yang diproses sebelum model diperbarui. Dilakukan validation split sebesar 20\% untuk melakukan pengecekan pada cross score validation yang telah dilakukan.
+
+\item Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni22.png}
+\caption{Parameter Fungsi Fit - Annisa Fathoroni}
+\label{Parameter Fungsi Fit - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item Parameter dari fungsi Evaluate()
+
+Code Yang Digunakan :
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni10.py}
+
+\begin{itemize}
+\item Penjelasan:
+
+Untuk menggunakan test input dan test label dilakukan evaluasi atau proses menemukan model terbaik yang mewakili data dan seberapa baik model yang dipilih akan dijalankan kedepannya. Kemudian pada hasilnya sendiri dapat dilihat bahwa Loss merupaka hasil prediksi yang salah sebanyak 1,7985 dan keakurasian prediksinya sebesar 0,4200.
+
+\item Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni23.png}
+\caption{Parameter Fungsi Evaluate - Annisa Fathoroni}
+\label{Parameter Fungsi Evaluate - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item Parameter dari fungsi Predict()
+
+Code Yang Digunakan :
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/AnnisaFathoroni11.py}
+
+\begin{itemize}
+\item Penjelasan:
+
+Untuk melakukan prediksi diambil dari satu baris berdasarkan test\_input . Nilai yang tertinggi terdapat pada label kedua yang dipilih prediksi yang tepat kemudian akan dikelompokkan.
+
+\item Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroni24.png}
+\caption{Parameter Fungsi Predict - Annisa Fathoroni}
+\label{Parameter Fungsi Predict - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\item PENANGANAN ERROR
+
+\begin{itemize}
+
+\item Ilustrasi Gambar:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter6AnnisaFathoroniError.png}
+\caption{Error - Annisa Fathoroni}
+\label{Error - Annisa Fathoroni}
+\end{figure}
+
+\item Penjelasan:
+
+ Install library tersebut pada Anaconda Prompt, jika proses penginstalan telah berhasil atau selesai dilakukan maka error akan teratasi.
 
 \end{itemize}
 
