@@ -675,25 +675,10 @@ Baris 11: Memproses 100 lagu di genre rock
 \item GTZAN Genre Collection berisikan klasifikasi genre musik. Terdapat 1000 audio dengan durasi maksimal 30 detik dan terdapat 10 genre musik didalamnya. Dalam setiap genre berisikan 100 tracks musik.
 \item Data dari Freesound berisikan instrument alat musik tertentu dalam bentuk wav
 \end{enumerate}
-Untuk Meload Data tersebut untuk digunakan pada MFCC caranya seperti berikut :
+Untuk Meload Data tersebut untuk digunakan pada MFCC caranya dapat dilihat seperti pada listing berikut.
+\lstinputlisting[caption=Kode Load Data Untuk MFCC, label={lst:loadingdata}]{src/load_data.tex}
 \begin{itemize}
-\item
-\begin{verbatim}
-import librosa
-import librosa.feature
-import librosa.display
-import glob
-import numpy as np
-import matplotlib.pyplot as plt
-from keras.models import Sequential
-from keras.layers import Dense, Activation
-from keras.utils.np_utils import to_categorical
-
-# In[]
-audio_path = 'genres/classical/classical.00010.au'
-x , sr = librosa.load(audio_path)
-print(type(x), type(sr))
-\end{itemize}
+\item PEnjelasannya sebagain berikut :\\
 \item Codingan Diatas akan meload libray librosa yang akan digunakan untuk menggunakan mfcc
 \item Librosa\.feature akan meload feature dari librosa
 \item Librosa\.display akan mengambil fungsi display pada librosa
@@ -702,9 +687,9 @@ print(type(x), type(sr))
 \item import matplotlib untuk melakukan plotting dari audio
 \item Mengimport modul Sequential dari librari Keras untuk membuat suatu model
 \item Dense dan Activation sebagai Operasi linier di mana setiap input terhubung ke setiap output dengan bobot atau weight.
-\item Dari library keras akan meload modul to_categorical
-\item Kemudian untuk me load datanya, disini variabel audio_path berisikan direktori file tujuan yang digunakan.
-\item Variabel x dan sr berguna untuk meload variabel audio_path menggunakanlibrari Librosa
+\item Dari library keras akan meload modul to\_categorical
+\item Kemudian untuk me load datanya, disini variabel audio\_path berisikan direktori file tujuan yang digunakan.
+\item Variabel x dan sr berguna untuk meload variabel audio\_path menggunakanlibrari Librosa
 \item Kemudia print atau tampilkan x dan s dalam bentuk array.Hasilnya seperti berikut :
 \begin{figure}[ht]
 \centering
@@ -724,14 +709,12 @@ Berikut merupakan Code dari fungsi Display mfcc: \\
 \end{figure}
 Penjelasan dari code diatas yaitu :
 \begin{itemize}
-\item def display_mfcc yaitu kita akan mendefinisikan fungsi yang diberinama display_mfcc dengan inoutan song
+\item def display\_mfcc yaitu kita akan mendefinisikan fungsi yang diberinama display\_mfcc dengan inputan song
 \item Variabel y akan meload variabel song
-\item Variabel MFCC akan menggunakan feauture mmfcc pada Librosa untuk melakukan konversi audio menjadi bentuk vektor
+\item Variabel MFCC akan menggunakan feauture mfcc pada Librosa untuk melakukan konversi audio menjadi bentuk vektor
 \item Kemudian hasil tadi akan diplotting.
-\item Berikut merupakan contoh dari plotting audio dari genre Classical. Ketikan kode berikut  yang dimana akan memanggil fungsi dispkay mfcc utuk plotting dari audioyang dituju.
-\begin{verbatim}
-display_mfcc('genres/classical/classical.00010.au')
-\end{verbatim}
+\item Berikut merupakan contoh dari plotting audio dari genre Classical. Ketikan kode berikut  yang dimana akan memanggil fungsi dispkay mfcc utuk plotting dari audioyang dituju dapat dilihat dilisting berikut .
+\lstinputlisting[caption=Code Fungsi Display MFCC, label={lst:DisplayMFCC}]{src/display_mfcc.tex}
 \item Hasilnya sebagai berikut 
 \begin{figure}[ht]
 \centering
@@ -784,10 +767,8 @@ Penjelasan dari code diatas yaitu :
 
 \subsubsection{Penggunaan Fungsi Generate Features And Labels Sangat Lama Ketika Meload Dataset Genre}
 \par Dikarenakan TErdapat 10 folder dengan genre berbeda, dan didalamnya terdapat 100 audio. Dari setiap folder itu akan dilakukan features dan perubahan label. Karena banyaknya jumlah file maka proses loadnya pun lama.\\
-Untuk prakteknya ketikan code berikut 
-\begin{verbatim}
-features, labels = generate_features_and_labels()
-\end{verbatim}
+Berikut codingannya :\\
+\lstinputlisting[caption=Panggil Genenrate Labels, label={lst:generatelables}]{src/panggil_generatelabel.tex}
 Akan didapatkan hasil seperti berikut yang dimana menunujukan proses bahwa sedang dilakukan ektraksi audio ke features dan labels :
 \begin{figure}[ht]
 \centering
@@ -797,29 +778,8 @@ Akan didapatkan hasil seperti berikut yang dimana menunujukan proses bahwa sedan
 \end{figure}
 
 \subsubsection{Pemisahan Data Training Dan Data Set Sebesar 80\%}
-\par Pemisahan 80\% digunakan untuk memudahkan dalam melakukan pengacakan atau pengocokan nantinya. Dimana 80\% merupakan data training dan sisanya 20\% merupakan datatestnya. data training perlu lebih banyak agar saat dilakukan pengocokan tidak teracak dalam urutan yang berbeda. Berikut code programnya :
-\begin{verbatim}
-training_split = 0.8
-
-# last column has genre, turn it into unique ids
-alldata = np.column_stack((features, labels))
-
-np.random.shuffle(alldata)
-splitidx = int(len(alldata) * training_split)
-train, test = alldata[:splitidx,:], alldata[splitidx:,:]
-
-print(np.shape(train))
-print(np.shape(test))
-
-train_input = train[:,:-10]
-train_labels = train[:,-10:]
-
-test_input = test[:,:-10]
-test_labels = test[:,-10:]
-
-print(np.shape(train_input))
-print(np.shape(train_labels))
-\end{verbatim}
+\par Pemisahan 80\% digunakan untuk memudahkan dalam melakukan pengacakan atau pengocokan nantinya. Dimana 80\% merupakan data training dan sisanya 20\% merupakan datatestnya. data training perlu lebih banyak agar saat dilakukan pengocokan tidak teracak dalam urutan yang berbeda. Berikut code programnya pada listing ini :\\
+\lstinputlisting[caption=Code Pemisahan Data Training Dan Testing, label={lst:pemisahan}]{src/traintest.tex}
 Penjelasan dari code diatas :
 \begin{itemize}
 \item Training split akan memisahkan training set sebanyak 80\%
@@ -846,15 +806,8 @@ Penjelasan dari code diatas :
 \end{itemize}
 
 \subsubsection{Fungsi Sequential}
-Berikut code lengkapnya :
-\begin{verbatim}
-model = Sequential([
-    Dense(100, input_dim=np.shape(train_input)[1]),
-    Activation('relu'),
-    Dense(10),
-    Activation('softmax'),
-    ])
-\end{verbatim}
+Berikut code lengkapnya :\\
+\lstinputlisting[caption=Code Fungsi Sequential, label={lst:fungsisequential}]{src/sequential.tex}
 Hasilnya seperti berikut :\\
 \begin{figure}[ht]
 \centering
@@ -871,13 +824,8 @@ Dari hasil diatas dapat dijelaskan bahwa :\\
 \end{itemize}
 
 \subsubsection{Fungsi Compile}
- Berikut code lengkapnya :
-\begin{verbatim}
-model.compile(optimizer='adam',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
-print(model.summary())
-\end{verbatim}
+ Berikut code lengkapnya : \\
+\lstinputlisting[caption=Code Fungsi Compile, label={lst:fungsicompile}]{src/compile.tex}
 Hasilnya seperti berikut : \\
 \begin{figure}[ht]
 \centering
@@ -892,11 +840,8 @@ Dari hasil diatas dapat dijelaskan bahwa :\\
 \end{itemize}
 
 \subsubsection{Fungsi Fit}
-Berikut code lengkapnya :
-\begin{verbatim}
-model.fit(train_input, train_labels, epochs=10, batch_size=32,
-          validation_split=0.2)
-\end{verbatim}
+Berikut code lengkapnya :\\
+\lstinputlisting[caption=Code Fungsi Fit, label={lst:fungsifit}]{src/fit.tex}
 Hasilnya seperti berikut :\\
 \begin{figure}[ht]
 \centering
@@ -911,13 +856,8 @@ Dari hasil diatas dapat dijelaskan bahwa :\\
 \end{itemize}
 
 \subsubsection{Fungsi Evaluate}
-Berikut code lengkapnya :
-\begin{verbatim}
-loss, acc = model.evaluate(test_input, test_labels, batch_size=32)
-
-print("Done!")
-print("Loss: \%\.4f, accuracy: \%\.4f" \% (loss, acc))
-\end{verbatim}
+Berikut code lengkapnya : \\
+\lstinputlisting[caption=Code Fungsi Evaluate, label={lst:fungsievaluate}]{src/evaluate.tex}
 Hasilnya seperti berikut :\\
 \begin{figure}[ht]
 \centering
@@ -939,10 +879,8 @@ Dari hasil diatas dapat dijelaskan bahwa :\\
 \end{itemize}
 
 \subsubsection{Fungsi Predict}
-Berikut code lengkapnya :
-\begin{verbatim}
-model.predict(test_input[:1])
-\end{verbatim}
+Berikut code lengkapnya : \\
+\lstinputlisting[caption=Code Fungsi Predict, label={lst:fungsipredict}]{src/predict.tex}
 Hasilnya seperti berikut : \\
 \begin{figure}[ht]
 \centering
