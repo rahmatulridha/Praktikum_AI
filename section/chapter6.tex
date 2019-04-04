@@ -630,6 +630,7 @@ Untuk melakukan prediksi diambil dari satu baris berdasarkan test\_input . Nilai
 
 \end{enumerate}
 
+
 \section{Annisa Cahyani-1164066}
 \subsection{Praktek}
 \begin{enumerate}
@@ -637,6 +638,11 @@ Untuk melakukan prediksi diambil dari satu baris berdasarkan test\_input . Nilai
 \begin{itemize}
 \item Penjelasan Isi Data GTZAN :
 \par Pada GTZAN Genre Collection ini isinya itu seperti data musik yang telah di folderkan yang berdasarkan dengan genre lagu.
+\par
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/1-cahya.py}
+\par
 \par
 \item Ilustrasi Gambar ( Contoh ) : \ref{cahya-chapter6-1}
 \par
@@ -656,6 +662,11 @@ Untuk melakukan prediksi diambil dari satu baris berdasarkan test\_input . Nilai
 \par
 \item Penjelasan Perbaris Kode Program Dari Display\_Mfcc.
 \begin{itemize}
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/2-cahya.py}
+\par
+\par
 \item Penjelasan :
 \par
 \begin{enumerate}
@@ -694,6 +705,11 @@ Untuk melakukan prediksi diambil dari satu baris berdasarkan test\_input . Nilai
 \par
 \item Penjelasan Perbaris Code Dari Extract\_Feature\_Song().
 \begin{itemize}
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/3-cahya.py}
+\par
+\par
 \item Penjelasan Code :
 \begin{enumerate}
 \item Baris Code yang pertama yaitu berfungsi untuk membuat suatu fungsi extract feature song dengan menggunakan sebuah yaitu inputan parameter f
@@ -726,6 +742,11 @@ Untuk melakukan prediksi diambil dari satu baris berdasarkan test\_input . Nilai
 \par
 \item Penjelasan Perbaris Code Dari Generate\_Features\_And\_Labels().
 \begin{itemize}
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/4-cahya.py}
+\par
+\par
 \item Penjelasan Code :
 \begin{enumerate}
 \item Baris Code yang pertama yaitu berfungsi untuk membuat sebuah perintah pada fungsi generate features and labels
@@ -765,6 +786,11 @@ Untuk melakukan prediksi diambil dari satu baris berdasarkan test\_input . Nilai
 \par
 \item Penjelasan Penggunaan Fungsi Generate\_Features\_And\_Labels() Sangat Lama Ketika Meload Dataset Genre.
 \begin{itemize}
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/5-cahya.py}
+\par
+\par
 \par
 \item Penjelasan : 
 \par Disini fungsi pada Generate\_Features\_And\_Labels()ini akan sangat lama ketika meload sebuah dataset pada genre itu dikarenakan yang ada dalam dataset tersebut memilik 1000 data yang dimana pada 1000 data tersebut dibagi menjadi 10 bagian genre. 
@@ -779,8 +805,162 @@ Untuk melakukan prediksi diambil dari satu baris berdasarkan test\_input . Nilai
 \label{cahya-chapter6-5}
 \end{figure}
 \par
+\par
+\par
+\par
+\item Mengapa Harus Dilakukan Sebuah Pemisahan Data Training Dan Data Set Sebesar 80\%?
+\begin{itemize}
+\item Penjelasan :
+\par Karena diperlukannya Pemisahan sebesar 80\% data itu untuk mempermudah untuk melakukan pengacakan yang dimana pada komposisinya sendiri yaitu sebesar 80\% untuk data yang training dan 20\% untuk data test. Disin data trainingnya memang harus lebih banyak karena pada saat pengecekan data akan berada pada urutan yang berbeda. 
+\par
+\par
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/6-cahya.py}
+\par
+\item Ilustrasi Gambar :
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-6.png}
+\caption{cahya-chapter6-6}
+\label{cahya-chapter6-6}
+\end{figure}
+\par
+\item Penjelasan : 
+\par Dan disin berdasarkan dari gambar dan hasil dari codingan ini, memperlihatkan bahwa data tersebut dipisah dan dipecah dengan berpatokan pada ketentuan 80\%. Dan untuk hasil yang pertama pada data trainingnya yaitu 800 baris dengan 25000 kolom dan untuk data set itu 200 baris dengan 10 kolom, Dan untuk hasil kedua kedua data yang telah digabungkan tersebut dengan menggunakan one-hot encoding sehingga data training itu 800 baris dan data set itu 200 baris tetapi pada kedua data tersebut memiliki jumlah kolom yang sama.
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\item Penjelasan Parameter Dari Fungsi Sequential().
+\begin{itemize}
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/7-cahya.py}
+\par
+\item Ilustrasi Gambar : \ref{cahya-chapter6-7}
+\par Pada gambar tersebut dapat dilihat bahwa untuk layer pertama densenya dari 100 neuron kemudian untuk inputan activationnya menggunakan fungsi relu ( nilai maksimum yang akan dipilih ). Dense 10 mengkategorikan 10 neuron untuk jenis genrenya untuk keluarnnya menggunakan aktivasi yaitu fungsi Softmax.
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-7.png}
+\caption{cahya-chapter6-7}
+\label{cahya-chapter6-7}
+\end{figure}
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\item Penjelasan Masing-Masing Parameter Dari Fungsi Compile().
+\begin{itemize}
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/8-cahya.py}
+\par
+\par
+\item Ilustrasi Gambar : \ref{cahya-chapter6-8}
+\par
+\par Penjelasan :
+\par Seperti gambar yang ada yaitu untuk model.compilenya harus melakukan sebuah pemrosesan algortima yang menggunakan adam yaitu berfungsi sebagai optimizer yang telah didefinisikan. Lalu adam itu merupakan algoritme yang pengoptimalan yang berfungsi untuk memperbarui bobot jaringan yang berulang berdasarkan data training sebelumnya.
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-8.png}
+\caption{cahya-chapter6-8}
+\label{cahya-chapter6-8}
+\end{figure}
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\par
+\par
+\item Penjelasan Dari Setiap Parameter Pada Fungsi Fit().
+\begin{itemize}
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/9-cahya.py}
+\par
+\item Penjelasan :
+\par Sesuai dengan gambar yang ada dapat kita lihat bahwa pada model fit tersebut harus dilakukan sebuah pelatihan dengan menggunakan epoch atau iterasi berapa kali nilai digunakan dengan sebanyak rambatan balik 10, dan dalam sekali epochs itu dilakukan akan 32 sampel yang akan diproses sebelum model itu diperbarui. Dan akan dilakukan dilakukan validation\_split sebesar 20\% itu untuk melakukan pengecekan cross score validation.
+\par
+\par
+\item Ilustrasi Gambar : \ref{cahya-chapter6-9}
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-9.png}
+\caption{cahya-chapter6-9}
+\label{cahya-chapter6-9}
+\end{figure}
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\item Penjelasan Masing-Masing Parameter Dari Fungsi Evaluate().
+\begin{itemize}
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/10-cahya.py}
+\par
+\item Penjelasan :
+\par Dari code tesebut dengan menggunakan test input dan test label maka akan dilakukan evaluasi atau proses untuk menemukan sebuah model yang terbaik yang akan mewakili data dan seberapa baik model yang dipilih.
+\par Dan hasil yaitu bahwa Loss itu merupakan hasil prediksi yang salah sebanyak 1,7985 dan keakurasian prediksinya yaitu 0,4200.
+\par
+\par
+\item Ilustrasi Gambar : \ref{cahya-chapter6-10}
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-10.png}
+\caption{cahya-chapter6-10}
+\label{cahya-chapter6-10}
+\end{figure}
+\par
+\par
+\par
+\par
+\par
+\end{itemize}
+\item Penjelasan Mengenai Parameter Dari Fungsi Predict().
+\begin{itemize}
+\item Code Yang Digunakan :
+\par
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/11-cahya.py}
+\par
+\par
+\item Ilustrasi Gambar : \ref{cahya-chapter6-11}
+\par Penjelasan :
+\par Dari code tersebut maka digunakan untuk melakukan sebuah prediksi yang telah diambil dari satu baris yang berdasarkan dari test\_input . Dan nilai yang tertinggi muncul pada label yang kedua yaitu dipilih sebagi prediksi yang tepat dan kemudian dikelompokkan.
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/cahya-chapter6-11}
+\caption{Cahya-chapter6-11}
+\label{cahya-chapter6-11}
+\end{figure}
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
 \end{itemize}
 \end{enumerate}
+
 \par
 \par
 \par
@@ -807,6 +987,7 @@ Untuk melakukan prediksi diambil dari satu baris berdasarkan test\_input . Nilai
 \item Apabila semua langkah-langkahnya telah diikuti maka tidak akan terjadi error lagi.
 \end{enumerate}
 \end{enumerate}
+
 
 \section{Tasya Wiendhyra \ 1164086}
 \subsection{Praktek Program}
