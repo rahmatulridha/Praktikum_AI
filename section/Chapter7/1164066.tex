@@ -1,4 +1,4 @@
-\section{Annisa Cahyani / 1164066}
+\section{Annisa Cahyani-1164066}
 \subsection{Teori}
 \begin{enumerate}
 \item Mengapa File Teks Harus Dilakukan Tokenizer Besera Ilustrasi Gambar :
@@ -15,7 +15,7 @@
 \par
 \begin{figure}[!hbtp]
 \centering
-\includegraphics[scale=0.2]{figures/Chapter 7/1164066/Teori/chapter-7-no-1-cahya.jpg}
+\includegraphics[scale=0.2]{figures/chapter-7-no-1-cahya.jpg}
 \caption{Tokenizer - cahya}
 \label{chapter-7-no-1-cahya}
 \end{figure}
@@ -23,13 +23,97 @@
 \end{itemize}
 \par
 \par
+\par
+\par
 \item Konsep Dasar K Fold Cross Validation Pada Dataset Komentar Youtube Pada Kode Listing Beserta Dengan Ilustrasi Gambar :
+\begin{itemize}
+\item Code		:
+\lstinputlisting[firstline=8, lastline=20, caption=K Fold Cross Validation,label={lst:7.0}]{src/1164066/chapter-7-2-cahya.py}
+\item Penjelasan	: 
+\par Untuk kejelasan dari StartifiedKFold yang dicontohkan ialah digunakan dan berisikan presentasi sampel untuk setiap kelas yang ada ( youtube).
+\par
+\end{itemize}
+\par
+\par
+\par
 \item Jelaskan Apa Maksud Kode Program For Train Dan Test In Splits Dilengkapi Dengan Ilustrasi Gambar :
-\item Apa Maksud Kode Program train\_content = d['CONTENT'].iloc[train\_idx] dan test\_content = d['CONTENT'].iloc[test\_idx] Dilengkapi Dengan Ilustrasi Gambar :
+\begin{itemize}
+\item Penjelasan	:
+\par Kode Program For Train dan Test In Splits sendiri digunakan ataupun difungsikan untuk pengujian. Pegujiannya yaitu menguji apakah setiap data pada dataset yang dieksekusi sudah di split.
+\par 
+\par
+\end{itemize}
+\par
+\item Apa Maksud Kode Program\emph{train\_content = d['CONTENT'].iloc[train\_idx]} dan \emph{test\_content = d['CONTENT'].iloc[test\_idx]}. Dilengkapi Dengan Ilustrasi Gambar :
+\begin{itemize}
+\item Penjelasan	:
+\par Maksud dari code program tersebut ialah difungsikan dalam pengambilan data pada kolom atau index CONTENT. index CONTENT tersebut merupakan bagian dari train\_idx dan test\_idx.
+\par
+\par
+\end{itemize}
+\par
 \item Apa Maksud Dari Fungsi Tokenizer = Tokenizer(num words=2000) Dan Tokenizer.fit on texts(train content), Dilengkapi Dengan Ilustrasi Gambar :
-\item Apa Maksud Dari Fungsi d train inputs = tokenizer.texts to matrix(train content, mode=’tfidf ’) dan d test inputs = tokenizer.texts to matrix(test content, mode=’tfidf ’), Dilengkapi Dengan Ilustrasi Kode Dan Atau Gambar :
-\item Apa Maksud Dari Fungsi d train inputs = d train inputs/np.amax(np.absolute(d\_train) :
-\item Apa Maksud Dari Fungsi Di Listing ?? Dengan Parameter Tersebut. [caption=Compile model,label=lst:7.2] model.compile(loss=’categoricalcrossentropy0, optimizer =0 adamax0, metrics = [0accuracy0]) :
+\begin{itemize}
+\item Penjelasan	:
+\par  Fungsi dari Tokenizer diatas ialah untuk melakukan vektorisasi kata tentunya. Fungsi tokenizer ini mengeksekusi jumlah data yang akan diubah sebesar 2000 kata. Kemudian untuk  \emph{tokenizer.fit\_on\_texts(train\_content)} digunakan untuk melakukan fit tokenizer.
+\par
+\par
+\end{itemize}
+\par
+\item Apa Maksud Dari Fungsi code berikut ( \emph{d\_train\_inputs = tokenizer.texts\_to\_matrix(train\_content, mode='tfidf')} dan \emph{d\_test\_inputs = tokenizer.texts\_to\_matrix(test\_content, mode='tfidf')} ), Dilengkapi Dengan Ilustrasi Kode Dan Atau Gambar :
+\begin{itemize}
+\item Penjelasan	:
+\par Dapat dikatakan bahwa maksud dari codingan diatas ialah untuk variabel d\_train\_inputs dimana akan melakukan tokenizer dari bentuk teks ke / menjadi matrix dari data train\_content menggunakan mode matrik yaitu tfidf.
+\par
+\par
+\end{itemize}
+\par
+\item Jelaskan Apa Maksud Dari Fungsi Berikut ( \emph{d\_train\_inputs = d\_train\_inputs/np.amax(np.absolute(d\_train\_inputs))} dan \emph{d\_test\_inputs = d\_test\_inputs/np.amax(np.absolute(d\_test\_inputs))} ) Kemudian Dilengkapi Dengan Ilustrasi Gambar :
+\begin{itemize}
+\item Penjelasan : 
+\par Berdasarkan code diatas, menjelaskan bahwa fungsi tersebut akan membagi matrix tfidf yang sudah dieksekusi sebelumnya dengan amax. Amaxnya berfungsi dalam pengembalian maksimum array atau maksimum sepanjang sumbu.
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\item Jelaskan Apa Maksud Dari \emph{d\_train\_outputs = np.utils.to\_categorical(d['CLASS'].iloc[train]} Dan \emph{d\_test\_outputs = np\_utils.to\_categorical(d['CLASS'].iloc[test\_idx]} Dalam Kode Program Dilengkapi Dengan Ilustrasi Gambar :
+\begin{itemize}
+\item Penjelasan : 
+\par Yang dimaksudkan dari kode program tersebut dapat dijelaskan bahwa fungsnya ditujukan untuk melakukan one-hot encoding.
+\par One-hot encoding diambil dari 'CLASS'  dengan neuron bernilai satu nol(1,0) atau nol satu(0,1).
+\par
+\par
+\par
+\end{itemize}
+\par
+\par
+\item Jelaskan Maksud Dari Fungsi Di Listing 7.2. Gambarkan Ilustrasi Neural Networknya Dari Model Kode Tersebut.
+\begin{itemize}
+\item Code :
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/chapter-7-9-cahya.py}
+\item Penjelasan : 
+\par Berdasarkan code tersebut, dimaksudkan atau ditujukan untuk melakukan pemodelan dengan sequential.Terdapat 512 neuron inputan dengan input shape 2000 vektor. Selanjutnya model dilakukan aktivasi dengan fungsi 'relu' untuk pemotongan bobot  sebesar 50 persen.Setelah itu muncullah outputan yang diaktivasi menggunakan fungsi softmax.
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\item Jelaskan Maksud Dari Fungsi Di Listing 7.3. Dengan Parameter Berikut :
+\begin{itemize}
+\item Code :
+\lstinputlisting[firstline=8, lastline=20]{src/1164066/chapter-7-10-cahya.py}
+\item Penjelasan : 
+\par Berdasarkan code tersebut , dimaksudkan bahwa model yang telah dibuat akan dicompile dengan menggunakan algoritma optimisasi, fungsi loss, dan fungsi metrik.
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
 \item Apa itu Deep Learning :
 \begin{itemize}
 \item Penjelasan :
@@ -46,7 +130,25 @@
 \par
 \par
 \end{itemize}
-\item Bagaimana Perhitungan Algoritma Dengan Ukuran Stride (NPM mod3+1)x(NPM mod3+1) Yang  Terdapat Pada Max Pooling :
+\par
+\par
+\item Bagaimana Perhitungan Algoritma Dengan Ukuran Stride (NPM mod3+1)x(NPM mod3+1) Yang Terdapat Pada Max Pooling :
+\begin{itemize}
+\item Penjelasan :
+\par Konvolusi pada sebuah gambar dilakukan dalam pemrosesan image untuk menerapkan operator yang mempunyai nilai output dari piksel gambar yang berasal dari kombinasi linear.
+\par
+\item Langkah-langkah Algoritma Konvulasi Sesuai NPM : \ref{chapter-7-13-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.52]{figures/chapter-7-13-cahya.jpg}
+\caption{Langkah Algoritma Konvolusi- cahya}
+\label{chapter-7-13-cahya}
+\end{figure}
+\par
+\par
+\end{itemize}
 \end{enumerate}
 
 
