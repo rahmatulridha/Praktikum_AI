@@ -50,6 +50,115 @@ Fungsi tersebut akan membagi matrix tfidf tadi dengan amax yaitu mengembalikan m
 \label{Teori}
 \end{figure}
 
+\subsubsection{Jelaskan apa maksud fungsi dari \emph{d\_train\_outputs = np\_utils.to\_categorical(d['CLASS'].iloc[train\_idx])} dan \emph{d\_test\_outputs = np\_utils.to\_categorical(d['CLASS'].iloc[test\_idx])} dalam kode program, dilengkapi dengan ilustrasi atau gambar}
+
+Dalam variabel d\_train\_output dan d\_test\_outputs akan dilakukan one hot encoding, dimana np\_utilsakan mengubah vektor dengan bentuk integer ke matriks kelas biner untuk kolom CLASS dimana nantinya hanya akan ada dua pilihan yaitu 1 atau 0. 1 untuk spam 0 untuk non spam atau sebaliknya. Berikut gambar ilustrasinya :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Teori/chapter7tasya5.png}
+\caption{Ilustrasi One Hot Encoding Tasya}
+\label{Teori}
+\end{figure}
+
+\subsubsection{Jelaskan apa maksud dari fungsi di listing \ref{lst:7.1}. Gambarkan ilustrasi Neural Network nya dari model kode tersebut.}
+\begin{lstlisting}[caption=Membuat model Neural Network,label={lst:7.1}]
+       model = Sequential()
+       model.add(Dense(512, input_shape=(2000,)))
+       model.add(Activation('relu'))
+       model.add(Dropout(0.5))
+       model.add(Dense(2))
+       model.add(Activation('softmax'))
+\end{lstlisting}
+Penjelasannya sebagai berikut :\\
+\begin{itemize}
+\item Melakukan pemodelan Sequential
+\item Layer pertama dense dari 512 neuron untuk inputan dengan inputan tadi yang sudah dijadikan matriks sebanyak 2000
+\item Activationnya menggunakan fungsi relu yaitu jika ada inputan dengan nilai maksimum maka inputan itu yang akan terpilih.
+\item Dropout ini untuk melakukan pembobotan, dimana pembobotan hanya dilakukan 50\% saja agar tidak terjadi penumpukan data dari dense inputan tadi
+\item Dense 2 mengkategorikan 2 neuron untuk output nya yaitu 1 dan 0.
+\item Untuk dense diatas aktivasinya menggunakan fungsi Softmax.
+\end{itemize}
+
+Ilustrasinya seperti berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Teori/chapter7tasya6.png}
+\caption{Ilustrasi Neural Network Pemodelan Tasya}
+\label{Teori}
+\end{figure}
+
+\subsubsection{Jelaskan apa maksud dari fungsi di listing \ref{lst:7.2} dengan parameter tersebut}
+\begin{lstlisting}[caption=Compile model,label={lst:7.2}]
+	model.compile(loss='categorical_crossentropy', optimizer='adamax',
+	                  metrics=['accuracy'])
+\end{lstlisting}
+Melakukan peng compile-an dari model Sequential tadi dengan Loss yandengang merupakan fungsi optimisasi skor  menggunakan categorical\_crossentropy , dan menggunakan algoritma adam sebagai optimizer. Adam yaitu algoritma pengoptimalan yang dapat digunakan sebagai ganti dari prosedur penurunan gradien stokastik klasik untuk memperbarui bobot jaringan yang berulang berdasarkan data training.Dengan metrik yaitu fungsi yang digunakan untuk menilai kinerja mode Anda disini menggunakan fungsi accuracy.
+
+\subsubsection{Jelaskan apa itu Deep Learning}
+Deep Learning  adalah subbidang machine learning yang berkaitan dengan algoritma yang terinspirasi oleh struktur dan fungsi otak yang disebut jaringan saraf tiruan atau Artificial Neural Networks. Jaringan saraf tiruan, algoritma yang terinspirasi oleh otak manusia, belajar dari sejumlah besar data. Demikian pula dengan bagaimana kita belajar dari pengalaman, algoritma pembelajaran yang mendalam akan melakukan tugas berulang kali, setiap kali sedikit mengubahnya untuk meningkatkan hasilnya.
+
+\subsubsection{Jelaskan apa itu Deep Neural Network, dan apa bedanya dengan Deep Learning}
+Deep Neural Network adalah jaringan syaraf tiruan (JST) dengan beberapa lapisan antara lapisan input dan output. DNN menemukan manipulasi matematis yang benar untuk mengubah input menjadi output, apakah itu hubungan linear atau hubungan non-linear. Merupakan jaringan syaraf dengan tingkat kompleksitas tertentu, jaringan syaraf dengan lebih dari dua lapisan. Deep Neural Network menggunakan pemodelan matematika yang canggih untuk memproses data dengan cara yang kompleks.
+
+DNN hanya terdiri dari dua laipsan yaitu input dan output, sedangkan dalam Deep learning kita dapat mendefiniskan layer sebanyak yang kita inginkan atau butuhkan.
+
+\subsubsection{Jelaskan dengan ilustrasi gambar buatan sendiri(langkah per langkah) bagaimana perhitungan algoritma konvolusi dengan ukuran stride (NPM mod3+1) x (NPM mod3+1) yang terdapat max pooling}
+Stridenya 3
+\begin{itemize}
+\item terdapat data seperti berikut 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Teori/chapter7tasya7.png}
+\caption{Algoritma Konvulusi Tasya}
+\label{Teori}
+\end{figure}
+\item Kemudian hitung konvolusi untuk setiap matriksnya seperti berikut :
+\begin{itemize}
+\item pertama
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Teori/chapter7tasya8.png}
+\caption{Algoritma Konvulusi Tasya}
+\label{Teori}
+\end{figure}
+\item Kedua
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Teori/chapter7tasya9.png}
+\caption{Algoritma Konvulusi Tasya}
+\label{Teori}
+\end{figure}
+\item Ketiga
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Teori/chapter7tasya10.png}
+\caption{Algoritma Konvulusi Tasya}
+\label{Teori}
+\end{figure}
+\item Keempat
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Teori/chapter7tasya11.png}
+\caption{Algoritma Konvulusi Tasya}
+\label{Teori}
+\end{figure}
+\item Kelima
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Teori/chapter7tasya12.png}
+\caption{Algoritma Konvulusi Tasya}
+\label{Teori}
+\end{figure}
+\end{itemize}
+\item Didapatkan hasil akhir nilai konvolusi dan juga max poolingnya seperti berikut
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Teori/chapter7tasya13.png}
+\caption{Algoritma Konvulusi Tasya}
+\label{Teori}
+\end{figure}
+\end{itemize}
+
 
 
 \subsection{Praktek}
