@@ -160,8 +160,129 @@ Stridenya 3
 \end{itemize}
 
 
-
 \subsection{Praktek}
+\subsubsection{No.1 Kode Program Blok \# In 1}
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in1.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Pertama kita akan mengimpor librari csv
+\item Dimana dari librai PIL atau Pillow atau Python Imaging Library akan diimpor modul Image yang di inisiasikan sebagain pil\_image. Modul Image menyediakan kelas dengan nama yang sama yang digunakan untuk mewakili gambar PIL. Modul ini juga menyediakan sejumlah fungsi pabrik, termasuk fungsi untuk memuat image dari file, dan untuk membuat image baru.
+\item mengimpor librari image dari keras .Yang menghasilkan kumpulan data gambar tensor dengan augmentasi data waktu nyata. Data akan diulang (dalam batch). 
+\item Berikut Hasilnya :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya14.png}
+\caption{Kode Program Blok In 1 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.2 Kode Program Blok \# In 2}
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in2.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item variabel imgs berisikan array kosong
+\item Variabel classes berisikan array kosong
+\item Membuka file csv dari Folder HSYv2 dengan nama file hasy-data-labels.csv sebagai csvfile
+\item Variabel csvreader akan menggunakan fungsi reader pada library csv untuk membaca file csv tadi yang disimpan di csvfile.
+\item Dimana variabel i dimuali dari nol.
+\item Untuk setiap baris pada  csvreader
+\item Jika i lebih besar dari 0
+\item Jadi itu akan mengambil contoh Gambar PIL dan mengubahnya menjadi array numpy dengan mengambil data dari HSYv2 dan dimulai dari baris ke nol.
+\item Hasil dari variabel img akan dibagi dengan 255.0
+\item .append akan membuat list array baru untuk baris 0 baris 2 pada img.
+\item Menyimpan setiap class nya  pada baris 2
+\item Penambahan i sebanyak 1. 
+\item Hasilnya seperti berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya15.png}
+\caption{Kode Program Blok In 2 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.3 Kode Program Blok \# In 3}
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in3.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Impor librari Random dari Python
+\item Melakukan pengacakan untuk imgs dengan Metode Shuffle  untuk mengocok urutan di tempat. yaitu, mengubah posisi item dalam daftar.
+\item Membagi data dari imgs dengan cara mengalikan 80\% dengan jumlah data dari imgs.
+\item Untuk data train mengambil hasil dari perhitungan sebelumnya.
+\item Untuk data test mengambil sisa dari jumlah yang telah dijadikan data train
+\item Hasilnya seperti berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya16.png}
+\caption{Kode Program Blok In 3 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.4 Kode Program Blok \# In 4}
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in4.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Impor librari Numpy yang di inisiasikan sebagai np
+\item Variabel train\_input mengubah input menjadi sebuah array yang diambil dari baris 2, data train.
+\item Variabel test\_input mengubah input menjadi sebuah array yang diambil dari baris 2, data test.
+\item Variabel train\_output mengubah input menjadi sebuah array yang diambil dari baris 1, data train.
+\item Variabel train\_output mengubah input menjadi sebuah array yang diambil dari baris 1, data test.
+\item Hasilnya seperti berikut 
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya17.png}
+\caption{Kode Program Blok In 4 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.5 Kode Program Blok \# In 5}
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in5.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Impor Fungsi LabelEncoder
+\item Impor Fungsi OneHotEncoder
+\item Berikut hasilnya :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya18.png}
+\caption{Kode Program Blok In 5 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.6 Kode Program Blok \# In 6}
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in6.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Variabel label\_encoder akan memanggil fungsi LabelEncoder tadi.
+\item variabel integer\_encoded akan menggunakan labelencoder untuk melakukan fit pada classes agar berubah datanya menjadi integer.
+\item Berikut hasilnya :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya19.png}
+\caption{Kode Program Blok In 6 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.7 Kode Program Blok \# In 7}
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in7.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Variabel onehot\_encoder akan memanggil fungsi OneHotEncoder dimana tidak berisikan matriks sparse.
+\item Pada variabel integer\_encoded akan diubah bentuknya dimana setiap nilai integer akan direpresentasikan sebagai vektor binari dengan nilai 0 kecuali index dari integer tersebut ditandai dengan 1.
+\item Melakukan fit untuk one hot encoder kedalam integer\_encoder.
+\item Berikut hasilnya :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya20.png}
+\caption{Kode Program Blok In 7 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
 
 
 \subsection{Penanganan Error}
