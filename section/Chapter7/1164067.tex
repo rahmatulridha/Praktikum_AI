@@ -1,5 +1,5 @@
 \section{Annisa Fathoroni/1164067}
-\subsection{Teori}
+\subsection{Teori - 1164067}
 \subsubsection{Soal No. 1}
 Kenapa file teks harus dilakukan tokenizer, dilengkapi dengan ilustrasi atau gambar.
 
@@ -220,7 +220,395 @@ Hasil:
 
 \end{itemize}
 
-\subsection{Praktek}
+\subsection{Praktek - 1164067}
+\subsubsection{Soal No. 1}
+Jelaskan arti dari setiap baris kode program pada blok \# In[1] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7AnnisaFathoroni1.py}
+
+\item Penjelasan:
+
+Baris Code 1: Memasukkan atau mengimport file csv
+
+Baris Code 2: Memasukkan module image sebagai pil\_image dari library PIL
+
+Baris Code 3: Memasukkan atau mengimport fungsi keras.processing.image 
+
+\item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni1.jpg}
+\caption{1 - Annisa Fathoroni}
+\label{1 - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\subsubsection{Soal No. 2}
+Jelaskan arti dari setiap baris kode program pada blok \# In[2] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7AnnisaFathoroni2.py}
+
+\item Penjelasan:
+
+Baris Code 1: Membuat variabel imgs tanpa parameter
+
+Baris Code 2: Membuat variabel classes tanpa parameter
+
+Baris Code 3: Membuka file HASYv2/hasy-data-labels.csv
+
+Baris Code 4: Membuat variabel csvreader untuk pembacaan dari file csv yang dimasukkan
+
+Baris Code 5: Membuat variabel i dengan parameter 0
+
+Baris Code 6: Mengeksekusi baris dari pembacaan csv 
+
+Baris Code 7: Mengaplikasikan perintah "if" dengan ketentuan variabel i lebih besar dari angka 0, maka akan dilanjutkan ke perintah berikutnya
+
+Baris Code 8: Membuat variabel img yang mengubah image menjadi bentuk array dari file HASYv2 yang dibuka dengan row berparameter 0.
+
+Baris Code 9: Membuat variabel img atau dengan nilai 255.0
+
+Baris Code 10: Mendefinisikan fungsi imgs.append dimana merupakan proses melampirkan atau menggabungkan data dengan file lain atau set data yang ditentukan dengan 3 parameter yaitu row[0], row[2] dan variabel img.
+
+Baris Code 11: Mendefinisikan fungsi append kembali dari variabel classes dengan parameternya row[2].
+
+Baris Code 12: Mendefinisikan fungsi dimana i variabel i akan ditambah nilainya sehingga akan bernilai 1.
+
+\item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni2.jpg}
+\caption{2 - Annisa Fathoroni}
+\label{2 - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\subsubsection{Soal No. 3}
+Jelaskan arti dari setiap baris kode program pada blok \# In[3] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7AnnisaFathoroni3.py}
+
+\item Penjelasan:
+
+Baris Code 1: Memasukkan module random
+
+Baris Code 2: Melakukan pengocokan atau pengacakan pada module random dengan parameter variabelnya imgs
+
+Baris Code 3: Membagi dan memecah index dalam bentuk integer dengan mengkalikan nilai 0,8 dan fungsi len yang akan mengembalikan jumlah item dalam datanya dari variabel imgs
+
+Baris Code 4: Membuat variabel train yang mengeksekusi imgs dengan pemecahan index awal pada data
+
+Baris Code 5: Membuat variabel test yang mengeksekusi imgs dengan pemecahan index akhir pada data
+
+\item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni3.jpg}
+\caption{3 - Annisa Fathoroni}
+\label{3 - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\subsubsection{Soal No. 4}
+Jelaskan arti dari setiap baris kode program pada blok \# In[4] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7AnnisaFathoroni4.py}
+
+\item Penjelasan:
+
+Baris Code 1: Mengimport library numpy sebagai np
+
+Baris Code 2: Membuat variabel train\_input untuk input menjadi sebuah array dari np menggunakan fungsi list untuk mengkoleksikan data yang dipilih dan diubah. Didalamnya diterapkan fungsi map untuk mengembalikan iterator dari datanya dengan memfungsikan lamda pada row dengan parameter [2] untuk membuat objek fungsi menjadi lebih kecil dan mudah dieksekusi dari variabel train.
+
+Baris Code 3: Membuat variabel test\_input dengan fungsi seperti train\_input yang membedakan hanya datanya atau inputan yang diproses berasal dari variabel test
+
+Baris Code 4: Membuat variabel train\_output untuk mengubah keluaran menjadi sebuah array dari np dengan menggunakan fungsi list untuk mengkoleksi data yang dipilih dan diubah. Didalamnya diterapkan fungsi map untuk mengembalikan iterator dari datanya dengan memfungsikan lamda pada row dengan parameter[1] untuk membuat objek fungsi menjadi lebih kecil dan mudah dieksekusi dari variabel train.
+
+Baris Code 5: Membuat variabel test\_output dengan fungsi yang sama seperti train\_output yang membedakan hanya datanya atau inputan yang diproses berasal dari variabel test
+
+\item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni4.jpg}
+\caption{4 - Annisa Fathoroni}
+\label{4 - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\subsubsection{Soal No. 5}
+Jelaskan arti dari setiap baris kode program pada blok \# In[5] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7AnnisaFathoroni5.py}
+
+\item Penjelasan:
+
+Baris Code 1: Memasukkan modul atau fungsi LabelEncoder dari sklearn.processing untuk dapat digunakan menormalkan label dimana label encoder didefinisikan dengan nilai antara 0 dan n\_classes-1.
+
+Baris Code 2: Memasukkan modul atau fungsi OneHotEncoder dari sklearn.processing untuk mendefinisikan fitur input dimana mengambil nilai dalam kisaran [0, maks (nilai)).
+
+\item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni5.jpg}
+\caption{5 - Annisa Fathoroni}
+\label{5 - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\subsubsection{Soal No. 6}
+Jelaskan arti dari setiap baris kode program pada blok \# In[6] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7AnnisaFathoroni6.py}
+
+\item Penjelasan:
+
+Baris Code 1: Membuat variabel label\_encoder dengan modul atau fungsi dari LabelEncoder tanpa parameter
+
+Baris Code 2: Membuat variabel integer\_encoded dengan fungsi label\_encoder.fit\_transform dari variabel classes yang akan mengembalikan beberapa data yang diubah kembali dari variabel label\_encoder.
+
+\item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni6.jpg}
+\caption{6 - Annisa Fathoroni}
+\label{6 - Annisa Fathoroni}
+\end{figure}
+
+\end{itemize}
+
+\subsubsection{Soal No. 7}
+Jelaskan arti dari setiap baris kode program pada blok \# In[7] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/Chapter7AnnisaFathoroni7.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 8}
+Jelaskan arti dari setiap baris kode program pada blok \# In[8] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni8.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 9}
+Jelaskan arti dari setiap baris kode program pada blok \# In[9] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni9.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 10}
+Jelaskan arti dari setiap baris kode program pada blok \# In[10] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni10.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 11}
+Jelaskan arti dari setiap baris kode program pada blok \# In[11] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni11.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 12}
+Jelaskan arti dari setiap baris kode program pada blok \# In[12] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni12.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 13}
+Jelaskan arti dari setiap baris kode program pada blok \# In[13] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni13.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 14}
+Jelaskan arti dari setiap baris kode program pada blok \# In[14] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni14.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 15}
+Jelaskan arti dari setiap baris kode program pada blok \# In[15] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni15.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 16}
+Jelaskan arti dari setiap baris kode program pada blok \# In[16] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni16.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 17}
+Jelaskan arti dari setiap baris kode program pada blok \# In[17] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni17.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 18}
+Jelaskan arti dari setiap baris kode program pada blok \# In[18] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni18.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 19}
+Jelaskan arti dari setiap baris kode program pada blok \# In[19] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni19.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+\end{itemize}
+
+\subsubsection{Soal No. 20}
+Jelaskan arti dari setiap baris kode program pada blok \# In[20] dan hasil luarannya.
+
+\begin{itemize}
+\item Code:
+\lstinputlisting[firstline=8, lastline=20]{src/1164067/Chapter7AnnisaFathoroni20.py}
+
+\item Penjelasan:
+
+--
+
+\item Hasil output:
+
+
+\end{itemize}
 
 
 \subsection{Penanganan Error}
