@@ -408,9 +408,20 @@ Jelaskan arti dari setiap baris kode program pada blok \# In[7] dan hasil luaran
 
 \item Penjelasan:
 
---
+Baris 1: Membuat variabel onehot\_encoder yang memanggil fungsi OneHotEncoder tanpa mengembalikan matriks karena sparse=false.
+
+Baris 2: Membuat variabel integer\_encoded memanggil variabel integer\_encoded pada kode program 6 untuk dieksekusi memberikan bentuk baru ke array tanpa mengubah datanya dari mengembalikan panjang nilai dari integer\_encoded.
+
+Baris 3: Onehotencoding melakukan fitting pada integer\_encoded.
 
 \item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni7.jpg}
+\caption{6 - Annisa Fathoroni}
+\label{6 - Annisa Fathoroni}
+\end{figure}
 
 \end{itemize}
 
@@ -423,7 +434,24 @@ Jelaskan arti dari setiap baris kode program pada blok \# In[8] dan hasil luaran
 
 \item Penjelasan:
 
---
+Baris 1: Membuat variabel train\_output\_int yang mengeksekusi label\_encoder dengan mengubah nilai dari parameter variabel train\_output.
+
+Baris 2: Membuat variabel train\_output yang mengeksekusi variabel onehot\_encoder dari kode program 7 dengan mengubah nilai dari variabel parameter train\_output\_int yang datanya sudah diubah kedalam bentuk array dan panjang nilai dari train\_output\_int telah dikembalikan.
+
+Baris 3: Membuat variabel test\_output\_int yang mengeksekusi label\_encoder dengan mengubah nilai dari parameter variabel test\_output.
+
+Baris 4: Membuat variabel test\_output yang mengeksekusi variabel onehot\_encoder dari kode program 7 dengan mengubah nilai dari variabel parameter test\_output\_int yang datanya sudah diubah kedalam bentuk array dan panjang nilai dari test\_output\_int telah dikembalikan.
+
+Baris 5: Membuat variabel num\_classes untuk mengetahui jumlah class dari lebel\_encoder
+
+Baris 6: Perintah print digunakan untuk memunculkan hasil dari variabel num\_classes
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni8.jpg}
+\caption{6 - Annisa Fathoroni}
+\label{6 - Annisa Fathoroni}
+\end{figure}
 
 \item Hasil output:
 
@@ -438,9 +466,20 @@ Jelaskan arti dari setiap baris kode program pada blok \# In[9] dan hasil luaran
 
 \item Penjelasan:
 
---
+Baris 1: Melakukan importing fungsi model sequential dari library keras.
+
+Baris 2: Melakukan importing fungsi layer dense, dropout, dan flatten dari library keras.
+
+Baris 3: Melakukan importing fungsi layer Conv2D dan MaxPooling2D dari library keras.
 
 \item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni9.jpg}
+\caption{6 - Annisa Fathoroni}
+\label{6 - Annisa Fathoroni}
+\end{figure}
 
 \end{itemize}
 
@@ -457,6 +496,13 @@ Jelaskan arti dari setiap baris kode program pada blok \# In[10] dan hasil luara
 
 \item Hasil output:
 
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni10.jpg}
+\caption{6 - Annisa Fathoroni}
+\label{6 - Annisa Fathoroni}
+\end{figure}
+
 \end{itemize}
 
 \subsubsection{Soal No. 11}
@@ -468,9 +514,18 @@ Jelaskan arti dari setiap baris kode program pada blok \# In[11] dan hasil luara
 
 \item Penjelasan:
 
---
+Baris Code 1:  Melakukan import library keras.callbacks yang digunakan pada penulisan log untuk TensorBoard, untuk memvisualisasikan grafik dinamis dari pelatihan dan metrik pengujian.
+
+Baris Code 2: Membuat variabel tenserboard untuk mendefinisikan fungsi TensorBoard pada keras.callbacks yang digunakan sebagai alat visualisasi yang disediakan dengan TensorFlow. Dan untuk fungsi log\_dir memanggil data yaitu './logs/mnist-style'
 
 \item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni11.jpg}
+\caption{6 - Annisa Fathoroni}
+\label{6 - Annisa Fathoroni}
+\end{figure}
 
 \end{itemize}
 
@@ -483,9 +538,32 @@ Jelaskan arti dari setiap baris kode program pada blok \# In[12] dan hasil luara
 
 \item Penjelasan:
 
---
+Baris Code 1: Menerapkan fungsi model.fit yang didalamnya memproses train\_input, train\_output
+
+Baris Code 2: Penerapan fungsi yang sama difungsikan batch\_size apabila batch\_sizenya tidak ditemukan maka otomatis akan dijadikan nilai 32
+
+Baris Code 3: Penerapan fungsi yang sama, difungsikan epochs dimana perulangan dari berapa kali nilai yang digunakan untuk data, dan jumlahnya ialah 10
+
+Baris Code 4: Mendefinisikan fungsi verbose untuk digunakan sebagai opsi menghasilkan informasi logging dari data yang ditentukan dengan nilai 2
+
+Baris Code 5: Mendefinisikan fungsi validation\_split untuk memecah nilai dari perhitungan validasinya sebesar 0,2. (Fraksi data pelatihan untuk digunakan sebagai data validasi)
+
+Baris Code 6: Mendefinisikan fungsi callsbacks dengan parameternya yang mengeksekusi tensorboard dimana digunakan untuk visualisasikan parameter training, metrik, hiperparameter pada nilai/data yang diproses
+
+Baris Code 7: Mendefinisikan variabel score dengan fungsi evaluate dari model dengan parameter test\_input, tst\_output dan verbose=2 untuk memprediksi output dan input yang diberikan dan kemudian menghitung fungsi metrik yang ditentukan dalam modelnya
+
+Baris Code 8: Mencetak score optimasi dari test dengan ketentuan nilai parameter 0
+
+Baris Code 9: Mencetak score akurasi dari test dengan ketentuan nilai parameter 1
 
 \item Hasil output:
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.7]{figures/Chapter 7/1164067/Praktek/Chapter7AnnisaFathoroni12.jpg}
+\caption{6 - Annisa Fathoroni}
+\label{6 - Annisa Fathoroni}
+\end{figure}
 
 \end{itemize}
 
