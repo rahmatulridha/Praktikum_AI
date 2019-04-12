@@ -162,7 +162,7 @@ Stridenya 3
 
 \subsection{Praktek}
 \subsubsection{No.1 Kode Program Blok \# In 1}
-\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in1.py}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in1.py}
 Keterangannya sebagai berikut :\\
 \begin{itemize}
 \item Pertama kita akan mengimpor librari csv
@@ -178,7 +178,7 @@ Keterangannya sebagai berikut :\\
 \end{itemize}
 
 \subsubsection{No.2 Kode Program Blok \# In 2}
-\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in2.py}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in2.py}
 Keterangannya sebagai berikut :\\
 \begin{itemize}
 \item variabel imgs berisikan array kosong
@@ -203,7 +203,7 @@ Keterangannya sebagai berikut :\\
 \end{itemize}
 
 \subsubsection{No.3 Kode Program Blok \# In 3}
-\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in3.py}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in3.py}
 Keterangannya sebagai berikut :\\
 \begin{itemize}
 \item Impor librari Random dari Python
@@ -221,7 +221,7 @@ Keterangannya sebagai berikut :\\
 \end{itemize}
 
 \subsubsection{No.4 Kode Program Blok \# In 4}
-\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in4.py}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in4.py}
 Keterangannya sebagai berikut :\\
 \begin{itemize}
 \item Impor librari Numpy yang di inisiasikan sebagai np
@@ -239,7 +239,7 @@ Keterangannya sebagai berikut :\\
 \end{itemize}
 
 \subsubsection{No.5 Kode Program Blok \# In 5}
-\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in5.py}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in5.py}
 Keterangannya sebagai berikut :\\
 \begin{itemize}
 \item Impor Fungsi LabelEncoder
@@ -254,7 +254,7 @@ Keterangannya sebagai berikut :\\
 \end{itemize}
 
 \subsubsection{No.6 Kode Program Blok \# In 6}
-\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in6.py}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in6.py}
 Keterangannya sebagai berikut :\\
 \begin{itemize}
 \item Variabel label\_encoder akan memanggil fungsi LabelEncoder tadi.
@@ -269,7 +269,7 @@ Keterangannya sebagai berikut :\\
 \end{itemize}
 
 \subsubsection{No.7 Kode Program Blok \# In 7}
-\lstinputlisting[firstline=8, lastline=20]{src/Chapter7/1164086/in7.py}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in7.py}
 Keterangannya sebagai berikut :\\
 \begin{itemize}
 \item Variabel onehot\_encoder akan memanggil fungsi OneHotEncoder dimana tidak berisikan matriks sparse.
@@ -280,6 +280,100 @@ Keterangannya sebagai berikut :\\
 \centering
 \includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya20.png}
 \caption{Kode Program Blok In 7 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.8 Kode Program Blok \# In 8}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in8.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Variabel train\_output\_int  akan mengubah data dari train\_output menjadi LabeEncoder
+\item Dimana pada train\_output setelah diubah labelnya menjadi integer dilakukan one hot encoding diambil dari train\_output\_int dan menggunakan .reshape untuk memberikan bentuk baru ke array tanpa mengubah datanya dengan keterangan jika index dari integer tersebut ditandai dengan 1 dan sisanya yang bukan nol.
+\item Variabel test\_output\_int  akan mengubah data dari test\_output menjadi LabeEncoder
+\item Dimana pada train\_output setelah diubah labelnya menjadi integer dilakukan one hot encoding diambil dari test\_output\_int dan menggunakan .reshape untuk memberikan bentuk baru ke array tanpa mengubah datanya dengan keterangan jika index dari integer tersebut ditandai dengan 1 dan sisanya yang bukan nol.
+\item Variabel num\_classes akan menampilakn jumlah data dari classes yang telah dilakukan label encoder
+\item Menampilkan tulisan "Number of classes : \%d dmana mengembalikan nilai integer dari num\_classes.
+\item Hasilnya sebagai berikut : \\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya21.png}
+\caption{Kode Program Blok In 8 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.9 Kode Program Blok \# In 9}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in9.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Impor Sequential dari model pada librari Keras.
+\item Impor Dense, Dropout, Flatten dari modul Layers pada librari Keras.
+\item Impor Conv2D, MaxPooling2D dari modul Layers pada librari Keras.
+\item Hasilnya seperti berikut : \\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya22.png}
+\caption{Kode Program Blok In 9 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.10 Kode Program Blok \# In 10}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in10.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Melakukan pemodelan Sequential.
+\item Menambahkan Konvolusi 2D dengan 32 filter konvolusi masing-masing berukuran 3x3 dengan algoritam activation relu dengan data dari train\_input mulai dari baris nol.
+\item Menambahkan Max Pooling dengan matriks 2x2.
+\item Dilakukan lagi penambahkan Konvolusi 2D dengan 32 filter konvolusi masing-masing berukuran 3x3 dengan algoritam activation relu.
+\item Menambahkan lagi Max Pooling dengan matriks 2x2.
+\item Mendefinisikan inputan dengan 1024 neuron dan menggunakan algoritma tanh untuk activationnya.
+\item Dropout terdiri dari pengaturan secara acak tingkat pecahan unit input ke 0 pada setiap pembaruan selama waktu pelatihan, yang membantu mencegah overfitting sebesar 50\% .
+\item Untuk output layer menggunakan data dari variabel num\_classes dengan fugsi activationnya softmax.
+\item Mengonfigurasi proses pembelajaran, yang dilakukan melalui metode compile,sebelum melatih suatu model.
+\item Menampilkan atau mencetak representasi ringkasan model yang telah dibuat.
+\item Hasilnya sebagai berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya23.png}
+\caption{Kode Program Blok In 10 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.11 Kode Program Blok \# In 11}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in11.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Impor Modul Callbacks dari Librari Keras.
+\item Variabel callback mendefinisikan Callback ini untuk menulis log untuk TensorBoard, yang memungkinkan Anda untuk memvisualisasikan grafik dinamis dari pelatihan dan metrik pengujian Anda, serta histogram aktivasi untuk berbagai lapisan dalam model Anda.
+\item Hasilnya sebagai berikut : \\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya24.png}
+\caption{Kode Program Blok In 11 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.12 Kode Program Blok \# In 12}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in12.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Melakukan fit model dengan 32 ukuran subset dari sampel pelatihan Anda
+\item Epoch sebanyak 10 kali
+\item Vebrose=2 maksudnya menampilkan nomor dari epoch yang sedang berjalan atau yang sudah dijalankan.
+\item Validasi plit sebanayk 20\% sebagai fraksi data pelatihan untuk digunakan sebagai data validasi.
+\item Menggunakan TensorBoard sebagai callback untuk diterapkan selama pelatihan dan validasi.
+\item Variabel score mengembalikan nilai evaluate untuk menampilkan data lost dan data accuracy dari test
+\item Menampilkan data loss dengan menghitung jumlah kemunculan nol .
+\item Menampilkan data accuracy dengan menghitung jumlah kemunculan 1.
+\item Berikut hasilnya :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya25.png}
+\caption{Kode Program Blok In 12 Tasya}
 \label{Praktek}
 \end{figure}
 \end{itemize}
