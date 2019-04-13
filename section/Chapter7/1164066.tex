@@ -420,15 +420,20 @@ Penjelasan Tugas Harian 12 ( No 1-20 ).
 \lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-10-cahya.py, label={lst:chapter-7-10-cahya}]{src/1164066/chapter-7-10-cahya.py}
 \par
 \par
-\item Penjelasan Code Perbaris	: 
+\item Penjelasan Code Perbaris : 
 \begin{enumerate}
-\item Baris Code 1	:
-\item Baris Code 2	:
-\item Baris Code 3	:
-\item Baris Code 4	:
-\item Baris Code 5	:
-\item Baris Code 6	:
-\item Baris Code 7	:
+\item Baris Code 1 : Merealisasikan dan Mengfungsikan pemodelan Sequential
+\item Baris Code 2 : Mendefinisikan fungsi konvolusi 2D dengan 32 filter konvolusi 3x3 dengan algoritam activation relu
+\item Baris Code 3 : Dilanjutkan dengan data dari train\_input
+\item Baris Code 4	: Penambahan fungsi max pooling dengan matriks 2x2
+\item Baris Code 5	: Dilakukan konvolusi 2D dengan 32 filter konvolusi 3x3 dengan algoritam activation relu.
+\item Baris Code 6	: Memfungsikan kembali fungsi max pooling dengan matriks 2x2
+\item Baris Code 7	: Memfungsikan flatten untuk mengembalikan salinan array
+\item Baris Code 8	: Mendefinisikan inputan dengan 1024 neuron dan menggunakan algoritma tanh
+\item Baris Code 9	: Mendefinisikan fungsi Dropout dimana terdiri dari pengaturan secara acak tingkat pecahan unit, yang membantu mencegah overfitting sebesar 50\%.
+\item Baris Code 10	: Untuk output layer menggunakan data dari variabel num\_classes dengan fugsi activationnya softmax.
+\item Baris Code 11	: Mendefinisikan konfigurasi dari proses pembelajaran, yang dilakukan melalui metode compile.
+\item Baris Code 12	: Mencetak  representasi ringkasan modelnya
 \end{enumerate}
 \par
 \item Hasil : \ref{chapter-7-in-10-cahya}
@@ -452,10 +457,10 @@ Penjelasan Tugas Harian 12 ( No 1-20 ).
 \lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-11-cahya.py, label={lst:chapter-7-11-cahya}]{src/1164066/chapter-7-11-cahya.py}
 \par
 \par
-\item Penjelasan Code Perbaris	: 
+\item Penjelasan Code Perbaris : 
 \begin{enumerate}
-\item Baris Code 1	: Memasukkan / Mengimport library keras.callbacks dimana digunakan dalam penulisan log untuk TensorBoard
-\item Baris Code 2	: Membuat variabel tenserboard yang mendefinisikan fungsi TensorBoard pada keras.callbacks yang digunakan sebagai alat visualisasi yang disediakan dengan TensorFlow. Kemudian untuk fungsi log\_dir memanggil data yaitu './logs/mnist-style'
+\item Baris Code 1 : Memasukkan / Mengimport library keras.callbacks dimana digunakan dalam penulisan log untuk TensorBoard
+\item Baris Code 2 : Membuat variabel tenserboard yang mendefinisikan fungsi TensorBoard pada keras.callbacks yang digunakan sebagai alat visualisasi yang disediakan dengan TensorFlow. Kemudian untuk fungsi log\_dir memanggil data yaitu './logs/mnist-style'
 \end{enumerate}
 \par
 \item Hasil : \ref{chapter-7-in-11-cahya}
@@ -479,17 +484,17 @@ Penjelasan Tugas Harian 12 ( No 1-20 ).
 \lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-12-cahya.py, label={lst:chapter-7-12-cahya}]{src/1164066/chapter-7-12-cahya.py}
 \par
 \par
-\item Penjelasan Code Perbaris	: 
+\item Penjelasan Code Perbaris : 
 \begin{enumerate}
-\item Baris Code 1	: Menerapkan fungsi model.fit yang didalamnya memproses train\_input, train\_output
-\item Baris Code 2	: Selanjutnya pada penerapan fungsi yang sama difungsikan batch\_size apabila batch\_sizenya tidak ditemukan maka otomatis akan dijadikan nilai 32
-\item Baris Code 3	: Pada penerapan fungsi yang sama, difungsikan epochs dimana perulangan dari berapa kali nilai yang digunakan untuk data, dan jumlahnya ialah 10
-\item Baris Code 4	: Membuat fungsi verbose dimana digunakan sebagai opsi untuk menghasilkan informasi logging dari data yang ditentukan dengan nilai 2
-\item Baris Code 5	: Membuat fungsi validation\_split untuk memecah nilai dari perhitungan validasinya sebesar 0,2
-\item Baris Code 6	: Membuat fungsi callsbacks dengan parameternya yang mengeksekusi tensorboard 
-\item Baris Code 7	: Membuat variabel score dengan fungsi evaluate dari model yang ada dengan parameter test\_input, tst\_output dan verbose=2 dimana memprediksi output untuk input yang diberikan
-\item Baris Code 8	: Mencetak score optimasi dari test dengan ketentuan nilai parameter 0
-\item Baris Code 9	: Mencetak score akurasi dari test dengan ketentuan nilai parameter 1
+\item Baris Code 1 : Menerapkan fungsi model.fit yang didalamnya memproses train\_input, train\_output
+\item Baris Code 2 : Selanjutnya pada penerapan fungsi yang sama difungsikan batch\_size apabila batch\_sizenya tidak ditemukan maka otomatis akan dijadikan nilai 32
+\item Baris Code 3 : Pada penerapan fungsi yang sama, difungsikan epochs dimana perulangan dari berapa kali nilai yang digunakan untuk data, dan jumlahnya ialah 10
+\item Baris Code 4 : Membuat fungsi verbose dimana digunakan sebagai opsi untuk menghasilkan informasi logging dari data yang ditentukan dengan nilai 2
+\item Baris Code 5 : Membuat fungsi validation\_split untuk memecah nilai dari perhitungan validasinya sebesar 0,2
+\item Baris Code 6 : Membuat fungsi callsbacks dengan parameternya yang mengeksekusi tensorboard 
+\item Baris Code 7 : Membuat variabel score dengan fungsi evaluate dari model yang ada dengan parameter test\_input, tst\_output dan verbose=2 dimana memprediksi output untuk input yang diberikan
+\item Baris Code 8 : Mencetak score optimasi dari test dengan ketentuan nilai parameter 0
+\item Baris Code 9 : Mencetak score akurasi dari test dengan ketentuan nilai parameter 1
 \end{enumerate}
 \par
 \item Hasil : \ref{chapter-7-in-12-cahya}
@@ -501,13 +506,337 @@ Penjelasan Tugas Harian 12 ( No 1-20 ).
 \caption{Code Program Pada In [12] - cahya}
 \label{chapter-7-in-12-cahya}
 \end{figure}
+\par
+\par
 \end{itemize}
-
+\par
+\par
+\par
+\par
 \end{enumerate}
-
 
 
 \subsection{Penanganan Error}
 Penjelasan Tugas Harian 12 ( No 1-20 ).
 \par
 \par
+\par
+\par
+\par
+\item Jelaskan Kode Program Pada Blok \# In[13]. Jelaskan Arti Dari Setiap Baris Kode Yang Dibuat Dan Hasil Keluarannya Dari Komputer Sendiri.
+\begin{itemize}
+\item Code Yang Digunakan : \ref{lst:chapter-7-13-cahya}.
+\lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-13-cahya.py, label={lst:chapter-7-13-cahya}]{src/1164066/chapter-7-13-cahya.py}
+\par
+\par
+\item Penjelasan Code Perbaris : 
+\begin{enumerate}
+\item Baris Code 1	: Melakukan impor modul time dari python anaconda
+\item Baris Code 2	: Membuat variabel result berisikan array kosong.
+\item Baris Code 3	: Menggunakan convolution 2D
+\item Baris Code 4	: Mendefinisikan dense\_size
+\item Baris Code 5	: Mendefinsikan drop\_out
+\item Baris Code 6	: Menerapkan pemodelan Sequential
+\item Baris Code 7	: Perlu memasukkan bentuk input apabila data tersebut merupakan layer pertama
+\item Baris Code 8	: Apabila tidak maka hanya menambahkan layer
+\item Baris Code 9	: Ketika penambahan layer konvolusi selesai, maka dilakukan hal yang sama dengan max pooling.
+\item Baris Code 10	: Kemudian meratakan atau flatten pada data dan menambahkan dense size ukuran apa pun yang berasal dari dense\_size
+\item Baris Code 11	: Apabila dropout digunakan, dilakukan penambahan layer dropout. Dimisalkan 50\%, bahwa setiap kali ia memperbarui bobot setelah setiap batch, ada peluang 50\% untuk setiap bobot yang tidak akan diperbarui pada data tersebut
+\item Baris Code 12	: Melakukan penempatan hasil drouput di antara dua lapisan untuk melindunginya dari overfitting.
+\item Baris Code 13	: Lapisan terakhir akan selalu menjadi jumlah kelas karena itu harus
+\item Baris Code 14	: Mengatur direktori log yang berbeda untuk TensorBoard sehingga dapat membedakan konfigurasi yang berbeda.
+\item Baris Code 15	: Membuat variabel start yang akan memanggil modul time
+\item Baris Code 16	: Melakukan dan memfungsikan fit
+\item Baris Code 17	: Melakukan dan memfungsikan scoring dengan .evaluate yang akan menampilkan data loss dan accuracy dari model
+\item Baris Code 18	: Untuk end merupakan variabel untuk melihat waktu akhir pada saat pemodelan berhasil dilakukan.
+\item Baris Code 19	: Mencetak hasil dari run skrip
+\end{enumerate}
+\par
+\item Hasil : \ref{chapter-7-13-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.4]{figures/chapter-7-13-cahya.jpg}
+\caption{Code Program Pada  [13] - cahya}
+\label{chapter-7-13-cahya}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\end{enumerate}
+\par
+\par
+\par
+\item Jelaskan Kode Program Pada Blok \# In[14]. Jelaskan Arti Dari Setiap Baris Kode Yang Dibuat Dan Hasil Keluarannya Dari Komputer Sendiri.
+\begin{itemize}
+\item Code Yang Digunakan : \ref{lst:chapter-7-14-cahya}.
+\lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-14-cahya.py, label={lst:chapter-7-14-cahya}]{src/1164066/chapter-7-14-cahya.py}
+\par
+\par
+\item Penjelasan Code Perbaris : 
+\begin{enumerate}
+\item Baris Code 1	: Memfungsikan pemodelan Sequential pada code
+\item Baris Code 2	: Memfungsikan Convolution 2D dengan dmensi 32 untuk layer pertama,dan ukuran matriks 3x3 dengan function aktivasi yaitu relu
+\item Baris Code 3	: Memfungsikan max pooling 2D dengan ukuran matriks 2x2
+\item Baris Code 4	: Melakukan Convolusi lagi dengan kriteria yang sama tanpa menambahkan input untuk di layer kedua
+\item Baris Code 5	: Menambahkan fungsi Max pooling 2D dengan ukuran poolnya yaitu 2x2.
+\item Baris Code 6	: Mendefinisikan fungsi flatten dimana diugnakan untuk meratakan inputan yang ada dan mengembalikan salinan array
+\item Baris Code 7	: Menambahkan dense input sebanyak 128 neuron dengan menggunakan function aktivasi tanh.
+\item Baris Code 8	: Menambahkan fungsi dropout sebanyak 50\% untuk menghindari overfitting data
+\item Baris Code 9	: Memfungsikan dense pada model untuk output
+\item Baris Code 10	: Mengcompile model yang telah dibuat dan didefinisikan
+\item Baris Code 11	: Mencetak ringkasan dari pemodelan yang dilakukan
+\end{enumerate}
+\par
+\item Hasil : \ref{chapter-7-14-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.4]{figures/chapter-7-14-cahya.jpg}
+\caption{Code Program Pada  [14] - cahya}
+\label{chapter-7-14-cahya}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\end{enumerate}
+\par
+\par
+\par
+\item Jelaskan Kode Program Pada Blok \# In[15]. Jelaskan Arti Dari Setiap Baris Kode Yang Dibuat Dan Hasil Keluarannya Dari Komputer Sendiri.
+\begin{itemize}
+\item Code Yang Digunakan : \ref{lst:chapter-7-15-cahya}.
+\lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-15-cahya.py, label={lst:chapter-7-15-cahya}]{src/1164066/chapter-7-15-cahya.py}
+\par
+\par
+\item Penjelasan Code Perbaris : 
+\begin{enumerate}
+\item Baris Code 1	: Memfungsikan dan Melakukan fit dengan join data train\_input dan test\_input agar dapat dilakukan pelatihan.
+\item Baris Code 2	: Memfungsikan kembali np.concenate dengan data dari train\_output dan test\_output
+\item Baris Code 3	: Dilanjutkan dengan penerapan batch\_size sebesar 32, perulangan data 10 kali (epochs) dan verbose = 2
+\end{enumerate}
+\par
+\item Hasil : \ref{chapter-7-15-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.4]{figures/chapter-7-15-cahya.jpg}
+\caption{Code Program Pada  [15] - cahya}
+\label{chapter-7-15-cahya}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\end{enumerate}
+\par
+\par
+\par
+\item Jelaskan Kode Program Pada Blok \# In[16]. Jelaskan Arti Dari Setiap Baris Kode Yang Dibuat Dan Hasil Keluarannya Dari Komputer Sendiri.
+\begin{itemize}
+\item Code Yang Digunakan : \ref{lst:chapter-7-16-cahya}.
+\lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-16-cahya.py, label={lst:chapter-7-16-cahya}]{src/1164066/chapter-7-16-cahya.py}
+\par
+\par
+\item Penjelasan Code Perbaris : 
+\begin{enumerate}
+\item Baris Code 1: Save model yang telah di latih dengan nama mathsymbols.model
+\end{enumerate}
+\par
+\item Hasil : \ref{chapter-7-16-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.4]{figures/chapter-7-16-cahya.jpg}
+\caption{Code Program Pada  [16] - cahya}
+\label{chapter-7-16-cahya}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\end{enumerate}
+\par
+\par
+\par
+\item Jelaskan Kode Program Pada Blok \# In[17]. Jelaskan Arti Dari Setiap Baris Kode Yang Dibuat Dan Hasil Keluarannya Dari Komputer Sendiri.
+\begin{itemize}
+\item Code Yang Digunakan : \ref{lst:chapter-7-17-cahya}.
+\lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-17-cahya.py, label={lst:chapter-7-17-cahya}]{src/1164066/chapter-7-17-cahya.py}
+\par
+\par
+\item Penjelasan Code Perbaris : 
+\begin{enumerate}
+\item Baris Code 1: Menyimpan label enkoder (untuk membalikkan one-hot encoder) dengan nama classes.npy
+\end{enumerate}
+\par
+\item Hasil : \ref{chapter-7-17-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.4]{figures/chapter-7-17-cahya.jpg}
+\caption{Code Program Pada  [17] - cahya}
+\label{chapter-7-17-cahya}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\end{enumerate}
+\par
+\par
+\par
+\item Jelaskan Kode Program Pada Blok \# In[18]. Jelaskan Arti Dari Setiap Baris Kode Yang Dibuat Dan Hasil Keluarannya Dari Komputer Sendiri.
+\begin{itemize}
+\item Code Yang Digunakan : \ref{lst:chapter-7-18-cahya}.
+\lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-18-cahya.py, label={lst:chapter-7-18-cahya}]{src/1164066/chapter-7-18-cahya.py}
+\par
+\par
+\item Penjelasan Code Perbaris : 
+\begin{enumerate}
+\item Baris Code 1: Memasukkan  models dari librari Keras ( keras.models )
+\item Baris Code 2: Membuat variabel model2 yang akan difungsikan untuk memanggil model
+\item Baris Code 3: Mencetak ringkasan dari hasil pemodelan pada variabel model2
+\end{enumerate}
+\par
+\item Hasil : \ref{chapter-7-18-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.4]{figures/chapter-7-18-cahya.jpg}
+\caption{Code Program Pada  [18] - cahya}
+\label{chapter-7-18-cahya}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\end{enumerate}
+\par
+\par
+\par
+\item Jelaskan Kode Program Pada Blok \# In[19]. Jelaskan Arti Dari Setiap Baris Kode Yang Dibuat Dan Hasil Keluarannya Dari Komputer Sendiri.
+\begin{itemize}
+\item Code Yang Digunakan : \ref{lst:chapter-7-19-cahya}.
+\lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-19-cahya.py, label={lst:chapter-7-19-cahya}]{src/1164066/chapter-7-19-cahya.py}
+\par
+\par
+\item Penjelasan Code Perbaris : 
+\begin{enumerate}
+\item Baris Code 1: Melakukan pemanggilan fungsi LabelEncoder
+\item Baris Code 2: Membuat variabel label\_encoder akan memanggil class
+\item Baris Code 3: Menerapkan function predict
+\item Baris Code 4 : Fungsi prediksi dibuat variabel newing yang akan memproses perubahan format gambar menjadi array
+\item Baris Code 5: Variabel newing didefinisikan tidak sama dengan nilai 255.0
+\item Baris Code 5: Kemudian untuk variabel prediction akan melakukan prediksi untuk model2 dengan reshape variabel newimg
+\item Baris Code 5: Membuat variabel inverted yang akan mencari nilai tertinggi output dari hasil prediksi
+\item Baris Code 6: Menampilkan hasil dari variabel prediction dan inverted
+\end{enumerate}
+\par
+\item Hasil : \ref{chapter-7-19-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.4]{figures/chapter-7-19-cahya.jpg}
+\caption{Code Program Pada  [19] - cahya}
+\label{chapter-7-19-cahya}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\end{enumerate}
+\par
+\par
+\par
+\item Jelaskan Kode Program Pada Blok \# In[20]. Jelaskan Arti Dari Setiap Baris Kode Yang Dibuat Dan Hasil Keluarannya Dari Komputer Sendiri.
+\begin{itemize}
+\item Code Yang Digunakan : \ref{lst:chapter-7-20-cahya}.
+\lstinputlisting[firstline=1, lastline=19,caption=File chapter-7-19-cahya.py, label={lst:chapter-7-20-cahya}]{src/1164066/chapter-7-20-cahya.py}
+\par
+\par
+\item Penjelasan Code Perbaris : 
+\begin{enumerate}
+\item Baris Code 1: Menerapkan  prediksi dari pelatihan dari gambar v2-00010.png
+\item Baris Code 2: Menerapkan  prediksi dari pelatihan dari gambar v2-00500.png
+\item Baris Code 3: Menerapkan  prediksi dari pelatihan dari gambar v2-00700.png
+\end{enumerate}
+\par
+\item Hasil : \ref{chapter-7-20-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.4]{figures/chapter-7-20-cahya.jpg}
+\caption{Code Program Pada  [20] - cahya}
+\label{chapter-7-20-cahya}
+\end{figure}
+\par
+\par
+\end{itemize}
+\par
+\par
+\par
+\par
+\end{enumerate}
+
+\subsection{Penanganan Error}
+
+\subsection{Penanganan Error - Annisa Cahyani}
+\begin{enumerate}
+\item Error 1	:
+\begin{itemize}
+\item Screenshoot Error : \ref{chapter-7-error-cahya}
+\par
+\par
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=0.2]{figures/chapter-7-error-cahya.jpeg}
+\caption{erorr-cahya}
+\label{chapter-7-error-cahya}
+\end{figure}
+\par
+\item Code Error :
+\begin{lstlisting}
+NameError: name 'model' is not defined
+\end{lstlisting}
+\item Penanganan Error :
+\begin{enumerate}
+\item Pertama-tama pastikan salahnya seperti apa ( model dan jenis errornya )
+\item Kemudian, silahkan proses error tersebut dengan cara yang sesuai
+\item Berdasarkan error maka penyelesaiannya ialah melakukan pendefinisian variabel model sehingga code dapat dijalankan 
+\end{enumerate}
+\end{itemize}
+\end{enumerate}
+
+
