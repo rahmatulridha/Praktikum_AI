@@ -1,6 +1,6 @@
 \section{Tasya Wiendhyra / 1164086}
 \subsection{Teori}
-\subsubsection{Jelaskan kenapa teks harus di lakukan tokenizer. dilengkapi dengan ilustrasi atau gambar}
+\subsubsection{Jelaskan kenapa teks harus di lakukan tokenizer dilengkapi dengan ilustrasi atau gambar}
 Untuk memudahkan mesin memahami maksud dari apa yang kita inginkan dalam machine learning, kata pada teks disebut token, dan proses vektorisasi dari bentuk kata ke dalam token tersebut disebut tokenizer dan tokenizer akan merubah sebuah teks menjadi simbol, kata, ataupun biner dan bentuk lainnya kedalam token. Untuk lebih jelasnya perhatikan ilustrasi berikut. Disini saya mempunyai sebuah kalimat yaitu "Nama Saya Tasya Wiendhyra" maka ketika kita lakukan proses tokenizer maka akan berubah menjadi ['Nama', 'Saya', 'Tasya', 'Wiendhyra].
 
 \subsubsection{Jelaskan konsep dasar K Fold Cross Validation pada dataset komentar Youtube pada kode listing \ref{lst:7.0}.dilengkapi dengan ilustrasi atau gambar} 
@@ -378,5 +378,179 @@ Keterangannya sebagai berikut :\\
 \end{figure}
 \end{itemize}
 
+\subsubsection{No.13 Kode Program Blok \# In 13}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in13.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item impor modul time dari python anaconda
+\item Variabel result berisikan array kosong.
+\item Menggunakan convolution 2D yang dimana akan memiliki 1 atau 2 layer.
+\item Mendefinisikan dense\_size dengan ukuran 128, 256, 512, 1024, 2048
+\item Mendefinsikan drop\_out dengan 0, 25\%, 50\%, dan 75\%
+\item Melakukan pemodelan Sequential
+\item Jika ini adalah layer pertama, kita perlu memasukkan bentuk input.
+\item Kalau tidak kita hanya akan menambahkan layer.
+\item Kemudian, setelah menambahkan layer konvolusi, kita akan melakukan hal yang sama dengan max pooling.
+\item  Lalu, kita akan meratakan atau flatten dan menambahkandense size ukuran apa pun yang berasal dari dense\_size. Dimana akan selalu menggunakan algoritma tanh
+\item Jika dropout digunakan, kita akan menambahkan layer dropout. Menyebut dropout ini berarti, katakanlah 50\%, bahwa setiap kali ia memperbarui bobot setelah setiap batch, ada peluang 50\% untuk setiap bobot yang tidak akan diperbarui
+\item menempatkan ini di antara dua lapisan padat untuk dihidupkan dari melindunginya dari overfitting.
+\item  Lapisan terakhir akan selalu menjadi jumlah kelas karena itu harus, dan menggunakan softmax. Itu dikompilasi dengan cara yang sama.
+\item Atur direktori log yang berbeda untuk TensorBoard sehingga dapat membedakan konfigurasi yang berbeda.
+\item Variabel start akan memanggil modul time atau waktu
+\item Melakukan fit atau compile 
+\item MElakukan scoring dengan .evaluate yang akan menampilkan data loss dan accuracy dari model
+\item end merupakan variabel untuk melihat waktu akhir pada saat pemodelan berhasil dilakukan.
+\item Menampilkan hasil dari run skrip diatas
+\item Hasilnya sebagai berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya26.png}
+\caption{Kode Program Blok In 13 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize} 
+
+\subsubsection{No.14 Kode Program Blok \# In 14}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in14.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Melakukan pemodelan Sequential
+\item Untuk layer pertama, Menambahkan Convolutio 2D dengan dmensi 32, dan ukuran matriks 3x3 dengan function aktivasi yang digunakan yaitu relu dan menampilkan input\_shape
+\item Dilakukan Max Pooling 2D dengan ukuran matriks 2x2
+\item Untuk layer kedua, melakukan Convolusi lagi dengan kriteria yang sama tanpa menambahkan input, ini dilakukan untuk mendapatkan data yang terbaik
+\item Flatten digubakan ntuk meratakan inputan
+\item Menambahkan dense input sebanyak 128 neuron dengan menggunakan function aktivasi tanh.
+\item Dropout sebanyak 50\% untuk menghindari overfitting
+\item Menambahkan dense pada model untuk output dimana layer ini akan menjadi jumlah dari class yang ada.
+\item Mengcompile model yang didefinisikan diatas
+\item Menampilkan ringkasan dari pemodelan yang dilakukan
+\item Gambarnya seperti berikut :
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya27.png}
+\caption{Kode Program Blok In 14 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.15 Kode Program Blok \# In 15}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in15.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Melakukan fit dengan join data train dan test agar dapat dilakukan pelatihan untuk jaringan pada smeua data yang dimiliki.
+\item Hasilnya sebagai berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya29.png}
+\caption{Kode Program Blok In 15 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.16 Kode Program Blok \# In 16}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in16.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Menyimpan atau save model yang telah di latih dengan nama mathsymbols.model 
+\item Hasilnya seperti berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya30.png}
+\caption{Kode Program Blok In 16 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.17 Kode Program Blok \# In 17}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in17.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Simpan label enkoder (untuk membalikkan one-hot encoder) dengan nama classes.npy
+\item Hasilnya seperti berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya31.png}
+\caption{Kode Program Blok In 17 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.18 Kode Program Blok \# In 18}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in18.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Impor models dari librari Keras
+\item Variabel model2 akan memanggil model yang telah disave tadi 
+\item Menampilkan ringkasan dari hasil pemodelan
+\item Hasilnya sebagai berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya32.png}
+\caption{Kode Program Blok In 18 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.19 Kode Program Blok \# In 19}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in19.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Memanggil fungsi LabelEncoder
+\item Variabel label\_encoder akan memanggil class yang disave sebelumnya.
+\item Function Predict akan mengubah gambar kedalam bentuk array
+\item Variabel prediction akan melakukan prediksi untuk model2 dengan reshape variabel newimg dengan bentukarray 4D.
+\item Variabel inverted akan mencari nilai tertinggi output dari hasil prediksi tadi
+\item Menampilkan hasil dari variabel prediction dan inverted
+\item Hasilnya sebagai berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya33.png}
+\caption{Kode Program Blok In 19 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
+
+\subsubsection{No.20 Kode Program Blok \# In 20}
+\lstinputlisting[language=python, firstline=8, lastline=20]{src/Chapter7/1164086/in19.py}
+Keterangannya sebagai berikut :\\
+\begin{itemize}
+\item Melakukan prediksi dari pelatihan dari gambar v2-00010.png
+\item Melakukan prediksi dari pelatihan dari gambar v2-00500.png
+\item Melakukan prediksi dari pelatihan dari gambar v2-00700.png
+\item Hasilnya sebagai berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7tasya34.png}
+\caption{Kode Program Blok In 20 Tasya}
+\label{Praktek}
+\end{figure}
+\end{itemize}
 
 \subsection{Penanganan Error}
+\subsubsection{Error Starting Kernel}
+\begin{itemize}
+\item Berikut merupakan screenshot error
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7eror1.png}
+\caption{Error Tasya}
+\label{Error}
+\end{figure}
+
+\item Eror tersebut merupakan eror yang terjadi dan membuat kita tidak dapat mengakses dan menggunakan kernel atau konsol pada spyder.
+
+\item Untuk penanganannya sebagai berikut :\\
+\begin{enumerate}
+\item Tutup spyder yang sedang dijalankan
+\item Kemudian buka kembali spyder
+\item Atau jika tidak berhasil, buka anaconda promt dan ketikan "conda update spyder"
+\item Jika tidak berhasil juga bisa menginstall ulang anaconda
+\item Maka ketika dijaalankan lagi hasilnya seperti berikut :\\
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{figures/Chapter 7/1164086/Praktek/chapter7eror2.png}
+\caption{Penanganan Error Kernel Tasya}
+\label{Error}
+\end{figure}
+\end{enumerate}
+\end{itemize}
